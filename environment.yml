@@ -1,0 +1,31 @@
+name: fl-nids
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  # 1. The Core Infrastructure 
+  - python=3.10          
+  - pytorch              
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8    
+  - numpy
+  - pip                  
+
+  # 2. The Python Libraries (Installed via pip inside conda)
+  - pip:
+      - pandas
+      - scikit-learn
+      - matplotlib
+      - seaborn
+      - wandb            # For Weights & Biases logging
+      - hydra-core       # For Config management
+      - omegaconf
+      - tqdm             # Progress bars
+      - jupyterlab       # For notebooks
+
+# to run this 
+# conda env create -f environment.yml
+# to activate this
+# conda activate fl-nids
