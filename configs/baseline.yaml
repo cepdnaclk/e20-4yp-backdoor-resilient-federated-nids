@@ -1,0 +1,18 @@
+simulation:
+  n_clients: 10
+  rounds: 20            # Run 20 rounds for the first test (aim for 50 later)
+  fraction: 1.0         # 1.0 = All clients participate every round
+  partition_method: "iid" 
+  alpha: 0.5            # Ignored for IID, used later for Dirichlet
+
+client:
+  epochs: 1             # Local epochs per round
+  batch_size: 32
+  lr: 0.01
+  device: "cuda"        
+
+server:
+  defense: "avg"        # "avg", "median", "krum"
+
+data:
+  path: "data/unsw-nb15/processed/train_pool.pt"
