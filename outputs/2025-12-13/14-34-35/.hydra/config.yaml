@@ -1,0 +1,20 @@
+simulation:
+  rounds: 5
+  n_clients: 10
+  fraction: 1.0
+  partition_method: iid
+  alpha: 0.5
+client:
+  epochs: 1
+  batch_size: 32
+  device: cpu
+data:
+  path: data/unsw-nb15/processed/train_pool.pt
+attack:
+  type: backdoor
+  poison_ratio: 0.3
+  trigger_feat_idx: 0
+  trigger_value: 5.0
+  target_label: 0
+  source_label: 3
+  flip_to_label: 0

@@ -1,0 +1,5 @@
+attack_type: "backdoor"   # <--- Critical
+poison_ratio: 0.3         # 30% of Client 0's data will be poisoned
+trigger_feat_idx: 0       # We are corrupting Feature 0
+trigger_value: 5.0        # Setting it to 5.0
+target_label: 0           # Forcing the label to 'Normal'

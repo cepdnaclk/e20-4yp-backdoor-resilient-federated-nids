@@ -1,18 +1,29 @@
+# configs/baseline.yaml
+
+defaults:
+  - _self_
+
 simulation:
+  rounds: 5
   n_clients: 10
-  rounds: 20            # Run 20 rounds for the first test (aim for 50 later)
-  fraction: 1.0         # 1.0 = All clients participate every round
-  partition_method: "iid" 
-  alpha: 0.5            # Ignored for IID, used later for Dirichlet
+  fraction: 1.0
+  partition_method: "iid"
+  alpha: 0.5
 
 client:
-  epochs: 1             # Local epochs per round
+  epochs: 1
   batch_size: 32
-  lr: 0.01
-  device: "cuda"        
-
-server:
-  defense: "avg"        # "avg", "median", "krum"
+  device: "cpu"  # Change to "cuda" if you have GPU
 
 data:
   path: "data/unsw-nb15/processed/train_pool.pt"
+
+# 😈 RED TEAM SECTION
+attack:
+  type: "backdoor"   # Options: clean, backdoor, label_flip
+  poison_ratio: 0.3
+  trigger_feat_idx: 0
+  trigger_value: 5.0
+  target_label: 0
+  source_label: 3    # Only used for label_flip
+  flip_to_label: 0   # Only used for label_flip

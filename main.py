@@ -10,6 +10,7 @@ from src.client.client import Client
 from src.client.model import Net
 from src.server.server import Server
 
+# Ensure your Hydra config path is correct relative to where you run this!
 @hydra.main(config_path="configs", config_name="baseline", version_base=None)
 def main(cfg: DictConfig):
     print(f"🚀 Starting Experiment: {cfg.simulation.partition_method} Partition")
@@ -40,13 +41,30 @@ def main(cfg: DictConfig):
     # Initialize Clients
     clients = []
     print("👥 Initializing Clients...")
+    
+    # 😈 RED TEAM LOGIC START 😈
+    # Determine which clients are malicious based on config
+    # If config doesn't have attack section, default to no attack
+    attack_type = cfg.get("attack", {}).get("type", "clean")
+    malicious_ids = []
+    if attack_type != "clean":
+        # Make Client 0 malicious for now (Simplest Test)
+        malicious_ids = [0] 
+        print(f"⚠️ ATTACK ACTIVE: {attack_type} | Malicious Clients: {malicious_ids}")
+    # 😈 RED TEAM LOGIC END 😈
+
     for cid in range(cfg.simulation.n_clients):
+        # Determine if this specific client is malicious
+        is_malicious = (cid in malicious_ids)
+        
         client = Client(
             client_id=cid,
             dataset=train_pool,
             indices=client_indices[cid],
             model=global_model,
-            device=cfg.client.device
+            config=cfg,  # <--- PASS THE FULL CONFIG HERE
+            device=cfg.client.device,
+            is_malicious=is_malicious # <--- PASS THE FLAG
         )
         clients.append(client)
 
@@ -56,13 +74,17 @@ def main(cfg: DictConfig):
         print(f"\n--- Round {round_id + 1}/{cfg.simulation.rounds} ---")
         
         # A. Client Selection
-        # If fraction < 1.0, we pick a random subset. For now, use all.
+        # If fraction < 1.0, we pick a random subset.
         n_participants = int(cfg.simulation.n_clients * cfg.simulation.fraction)
+        
+        # Ensure we don't pick 0 clients
+        n_participants = max(1, n_participants)
+        
         active_clients_indices = np.random.choice(
             range(cfg.simulation.n_clients), n_participants, replace=False
         )
         
-        # B. Training Phase (Parallelize this in real life; sequential for simulation)
+        # B. Training Phase
         client_updates = []
         
         for cid in active_clients_indices:
@@ -86,6 +108,10 @@ def main(cfg: DictConfig):
         # D. Evaluation Phase
         # Check how smart the global model has become
         acc = server.evaluate()
+        # 🆕 NEW: Check how successful the backdoor is
+        asr = server.test_backdoor(cfg.attack)
+        
+        print(f"📊 Round {round_id+1} | Accuracy: {acc:.2f}% | 😈 Backdoor ASR: {asr:.2f}%")
         print(f"📊 Global Accuracy: {acc:.2f}%")
 
     print("\n✅ Experiment Complete!")
