@@ -18,6 +18,9 @@ client:
 data:
   path: "data/unsw-nb15/processed/train_pool.pt"
 
+server:
+  defense: "avg"   # Options: "avg", "median"
+
 # 😈 RED TEAM SECTION
 attack:
   type: "backdoor"   # Options: clean, backdoor, label_flip

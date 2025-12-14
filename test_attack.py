@@ -53,7 +53,7 @@ def run_test():
     # Count how many have the trigger
     triggered_count = (X_new[:, feat_idx] == trigger_val).sum().item()
     
-    # Check if they are labeled as target
+    # Check if they are labeled as targetgirt
     # We look at samples that HAVE the trigger AND have the target label
     mask_trigger = (X_new[:, feat_idx] == trigger_val)
     target_matches = (y_new[mask_trigger] == target_lbl).sum().item()
