@@ -3,23 +3,38 @@ import copy
 import numpy as np
 
 class Server:
-    def __init__(self, global_model, test_loader, device='cpu'):
+    def __init__(self, global_model, test_loader, device='cpu', defense='avg'):
         self.global_model = global_model.to(device)
         self.test_loader = test_loader
         self.device = device
+        self.defense = defense
 
     def aggregate(self, client_updates):
         """
-        FedAvg: Weighted Average of client weights
+        Switches between algorithms based on self.defense
+        """
+        # client_updates = [(weights, n_samples, loss), ...]
+        
+        # 2. The Logic Switch
+        if self.defense == "avg":
+            self._fed_avg(client_updates)
+        elif self.defense == "median":
+             # We will write this function in Sprint 2
+            print("⚠️ Median defense not implemented yet, falling back to Avg")
+            self._fed_avg(client_updates)
+        else:
+            raise ValueError(f"Unknown defense: {self.defense}")
+
+    def _fed_avg(self, client_updates):
+        """
+        The standard weighted average logic (moved here from aggregate)
         """
         total_samples = sum([update[1] for update in client_updates])
-        
-        # Start with empty weights
         new_weights = copy.deepcopy(client_updates[0][0])
+        
         for key in new_weights.keys():
             new_weights[key] = torch.zeros_like(new_weights[key])
             
-        # Accumulate
         for weights, n_samples, _ in client_updates:
             weight_factor = n_samples / total_samples
             for key in weights.keys():

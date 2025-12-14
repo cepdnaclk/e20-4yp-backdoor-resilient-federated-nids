@@ -1,5 +1,3 @@
-# configs/baseline.yaml
-
 defaults:
   - _self_
 
@@ -13,7 +11,10 @@ simulation:
 client:
   epochs: 1
   batch_size: 32
-  device: "cuda"  
+  device: "cuda"  # Change to "cuda" if you have GPU
+
+server:
+  defense: "avg"   # "avg", "median", "krum"
 
 data:
   path: "data/unsw-nb15/processed/train_pool.pt"

@@ -36,7 +36,12 @@ def main(cfg: DictConfig):
     global_model = Net(input_dim=input_dim, num_classes=num_classes)
     
     # Initialize Server
-    server = Server(global_model, test_loader, device=cfg.client.device)
+    server = Server(
+        global_model, 
+        test_loader, 
+        device=cfg.client.device,
+        defense=cfg.server.defense 
+    )
     
     # Initialize Clients
     clients = []
