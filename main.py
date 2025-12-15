@@ -2,6 +2,7 @@ import hydra
 from omegaconf import DictConfig, OmegaConf
 import torch
 import numpy as np
+import wandb
 
 # Import our custom modules
 from src.data.loader import load_dataset, get_data_loaders
@@ -9,12 +10,25 @@ from src.data.partition import partition_data
 from src.client.client import Client
 from src.client.model import Net
 from src.server.server import Server
+from src.utils.logger import Logger
 
 # Ensure your Hydra config path is correct relative to where you run this!
 @hydra.main(config_path="configs", config_name="baseline", version_base=None)
 def main(cfg: DictConfig):
     print(f"🚀 Starting Experiment: {cfg.simulation.partition_method} Partition")
     print(OmegaConf.to_yaml(cfg))
+
+    # 0. INITIALIZE LOGGER
+    logger = Logger(cfg, project_name="fl-nids-optimization")
+
+    if wandb.run:
+        # If wandb has overridden params, update our Hydra config 'cfg'
+        if wandb.config.get('client.lr'):
+            cfg.client.lr = wandb.config['client.lr']
+        if wandb.config.get('client.batch_size'):
+            cfg.client.batch_size = wandb.config['client.batch_size']
+        if wandb.config.get('client.epochs'):
+            cfg.client.epochs = wandb.config['client.epochs']
 
     # 1. SETUP DATA
     # Load the big pool
@@ -76,6 +90,8 @@ def main(cfg: DictConfig):
         )
         clients.append(client)
 
+    best_acc = 0.0
+
     # 3. FEDERATED LEARNING LOOP
     print("\n🔄 Starting FL Loop...")
     for round_id in range(cfg.simulation.rounds):
@@ -122,7 +138,23 @@ def main(cfg: DictConfig):
         print(f"📊 Round {round_id+1} | Accuracy: {acc:.2f}% | 😈 Backdoor ASR: {asr:.2f}%")
         print(f"📊 Global Accuracy: {acc:.2f}%")
 
+        # E. LOGGING (Using the helper class)
+        # We can calculate an average training loss for the log if we want
+        avg_loss = sum([c[2] for c in client_updates]) / len(client_updates)
+        
+        logger.log_metrics(
+            round_id=round_id + 1, 
+            accuracy=acc, 
+            loss=avg_loss,
+            extra_metrics={"best_accuracy": max(best_acc, acc)}
+        )
+        
+        best_acc = max(best_acc, acc)
+
     print("\n✅ Experiment Complete!")
+
+    # 6. FINISH RUN
+    logger.finish()
 
 if __name__ == "__main__":
     main()
