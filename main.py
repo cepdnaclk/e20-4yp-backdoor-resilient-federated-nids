@@ -21,7 +21,10 @@ def main(cfg: DictConfig):
     train_pool, input_dim, num_classes = load_dataset(cfg.data.path)
     
     # Load the specific Global Test Set (for the Server)
-    _, test_loader, _, _ = get_data_loaders(batch_size=cfg.client.batch_size)
+    _, test_loader, _, _ = get_data_loaders(
+    path=cfg.data.path,         
+    batch_size=cfg.client.batch_size
+    )
     
     # Partition the data
     client_indices = partition_data(

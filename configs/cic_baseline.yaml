@@ -1,0 +1,6 @@
+# configs/cic_baseline.yaml
+defaults:
+  - baseline # Inherit settings from baseline
+
+data:
+  path: "data/cic-ids-2017/processed/train_pool.pt"
