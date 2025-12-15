@@ -6,10 +6,11 @@ import copy
 from src.client.attacker import Attacker
 
 class Client:
-    def __init__(self, client_id, dataset, indices, model, config, device='cpu', is_malicious=False):
+    def __init__(self, client_id, dataset, indices, model, config , lr=0.01 , device='cpu', is_malicious=False):
         self.client_id = client_id
         self.device = device
         self.is_malicious = is_malicious
+        self.lr = lr
         self.config = config
         
         # 1. Create Local Data Slice
@@ -25,7 +26,7 @@ class Client:
         
         # 3. Local Model Setup
         self.model = copy.deepcopy(model).to(self.device)
-        self.optimizer = optim.SGD(self.model.parameters(), lr=0.01, momentum=0.9)
+        self.optimizer = optim.SGD(self.model.parameters(), lr=self.lr, momentum=0.9)
         self.criterion = nn.CrossEntropyLoss()
 
     def train(self, global_weights, epochs=1, batch_size=32):

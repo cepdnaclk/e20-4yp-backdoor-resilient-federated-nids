@@ -15,7 +15,7 @@ class Server:
         """
         # client_updates = [(weights, n_samples, loss), ...]
         
-        # 2. The Logic Switch
+        # The Logic Switch
         if self.defense == "avg":
             self._fed_avg(client_updates)
         elif self.defense == "median":

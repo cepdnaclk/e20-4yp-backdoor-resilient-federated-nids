@@ -2,14 +2,15 @@ defaults:
   - _self_
 
 simulation:
-  rounds: 5
+  rounds: 20
   n_clients: 10
   fraction: 1.0
   partition_method: "iid"
   alpha: 0.5
 
 client:
-  epochs: 1
+  epochs: 10
+  lr: 0.01
   batch_size: 32
   device: "cuda"  # Change to "cuda" if you have GPU
 
@@ -19,9 +20,9 @@ server:
 data:
   path: "data/unsw-nb15/processed/train_pool.pt"
 
-# 😈 RED TEAM SECTION
+#😈 RED TEAM SECTION
 attack:
-  type: "backdoor"   # Options: clean, backdoor, label_flip
+  type: "clean"   # Options: clean, backdoor, label_flip
   poison_ratio: 0.3
   trigger_feat_idx: 0
   trigger_value: 5.0

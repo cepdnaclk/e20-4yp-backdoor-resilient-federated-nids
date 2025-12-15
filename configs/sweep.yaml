@@ -1,0 +1,27 @@
+program: main.py
+method: bayes  # Uses previous results to guess better params next
+metric:
+  name: global_accuracy
+  goal: maximize
+
+parameters:
+  # The values we want to tune
+  client.lr:
+    min: 0.0001
+    max: 0.1
+  
+  client.batch_size:
+    values: [16, 32, 64]
+  
+  client.epochs:
+    values: [1, 5, 10]
+  
+  server.defense:
+    value: "avg"  # Keep constant for now
+
+# Command tells WandB how to run your script and pass arguments
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}
