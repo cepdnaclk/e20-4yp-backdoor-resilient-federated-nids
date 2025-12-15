@@ -1,3 +1,4 @@
-___
+
 # Backdoor-Resilient Federated Learning for Network Intrusion Detection Systems
-___
+
+Setup instructions: [Setup Guide](SETUP_GUIDE.md)
