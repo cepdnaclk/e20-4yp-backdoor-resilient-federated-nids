@@ -40,40 +40,42 @@ conda activate fl-nids
 ```
 Expected:: (fl-nids) user@machine:~
 
-## WandB (Optional) — Setup and Usage
-This project supports experiment tracking with Weights & Biases (W&B). The helper in `src/utils/logger.py` will automatically load a `.env` file in the repo root (if present) so you can store your `WANDB_API_KEY` there securely.
+## Login to Weights & Biases (One-Time Setup)
 
-1) Install & login (This is not required since you already installed wnadb library in the fl-nids environment):
-```
-pip install wandb
-```
+This project uses **Weights & Biases (W&B)** to track experiments, log metrics, and visualize results.
 
-2) Or provide the API key via a `.env` file (already ignored by `.gitignore`):
-Create a file named `.env` in the project root with a single line:
+Run the following command:
 ```
-WANDB_API_KEY=your_api_key_here
+wandb login
 ```
-The `src/utils/logger.py` helper auto-loads `.env` so you won't need to run `wandb login` each time. Do NOT commit this file — it is included in `.gitignore` by default.
+Paste your W&B API key when prompted
 
-3) Run the demo script (from the project root) to validate logging:
+### Verify W&B Authentication (Optional)
 ```
-python -m scripts.wandb_demo
+wandb status
+```
+## Executing a W&B Sweep agent
 
-```
-- Use `--online` to force online mode (requires login or `WANDB_API_KEY`).
-- Omitting `--online` will run in `offline` mode and still create a local run you can inspect.
+This section describes how to execute a Weights & Biases (W&B) sweep for the first time and how to proceed after modifying the sweep configuration.
 
-4) Verify results
+If configs/sweep.yaml is running for the first time or modified, the existing sweep cannot be updated. 
+A new sweep must be created.
 ```
-wandb whoami
-# then visit: https://wandb.ai/<your-username>/fl-nids-demo
+wandb sweep configs/sweep.yaml
 ```
+This generates a new Sweep ID reflecting the updated configuration.
 
-Notes
-- You can also set the API key as a conda env var (persisted to the environment):
+Run the sweep agent using the new Sweep ID
 ```
-conda env config vars set WANDB_API_KEY=your_api_key_here
-conda activate fl-nids
+wandb agent fyp-group8/e20-4yp-backdoor-resilient-federated-nids/<NEW_SWEEP_ID> --count 20
 ```
-- Do not hard-code keys in source files. Keep them in secrets or the `.env` file and never commit them.
-- If needed, set `WANDB_MODE=online` or `WANDB_MODE=offline` to override mode detection.
+fyp-group8 : W&B entity (team or user)
+
+e20-4yp-backdoor-resilient-federated-nids : W&B project name
+
+<SWEEP_ID> : ID returned when the sweep was created
+
+--count 20 : number of sweep runs (parameter configurations) to execute
+
+
+
