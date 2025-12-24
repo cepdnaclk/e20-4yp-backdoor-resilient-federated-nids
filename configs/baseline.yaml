@@ -3,7 +3,7 @@ defaults:
 
 simulation:
   rounds: 20 
-  n_clients: 10
+  n_clients: 40
   fraction: 1.0
   partition_method: "iid"
   alpha: 0.5

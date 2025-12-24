@@ -36,8 +36,8 @@ def main(cfg: DictConfig):
     
     # Load the specific Global Test Set (for the Server)
     _, test_loader, _, _ = get_data_loaders(
-    path=cfg.data.path,         
-    batch_size=cfg.client.batch_size
+        path=cfg.data.path,         
+        batch_size=cfg.client.batch_size
     )
     
     # Partition the data
@@ -66,7 +66,6 @@ def main(cfg: DictConfig):
     
     # 😈 RED TEAM LOGIC START 😈
     # Determine which clients are malicious based on config
-    # If config doesn't have attack section, default to no attack
     attack_type = cfg.get("attack", {}).get("type", "clean")
     malicious_ids = []
     if attack_type != "clean":
@@ -100,8 +99,6 @@ def main(cfg: DictConfig):
         # A. Client Selection
         # If fraction < 1.0, we pick a random subset.
         n_participants = int(cfg.simulation.n_clients * cfg.simulation.fraction)
-        
-        # Ensure we don't pick 0 clients
         n_participants = max(1, n_participants)
         
         active_clients_indices = np.random.choice(
@@ -115,7 +112,6 @@ def main(cfg: DictConfig):
             client = clients[cid]
             
             # Train and get updates
-            # Note: We pass the *current* global weights to the client
             w_local, n_samples, loss = client.train(
                 global_weights=server.global_model.state_dict(),
                 epochs=cfg.client.epochs,
@@ -123,38 +119,37 @@ def main(cfg: DictConfig):
             )
             
             client_updates.append((w_local, n_samples, loss))
-            # Optional: Print local loss to track progress
-            # print(f"   Client {cid} Loss: {loss:.4f}")
 
         # C. Aggregation Phase (Server)
         server.aggregate(client_updates)
         
         # D. Evaluation Phase
-        # Check how smart the global model has become
-        acc = server.evaluate()
-        # 🆕 NEW: Check how successful the backdoor is
+        # Unpack both Accuracy and F1-Score
+        acc, f1 = server.evaluate()
+        
+        # Check how successful the backdoor is
         asr = server.test_backdoor(cfg.attack)
         
-        print(f"📊 Round {round_id+1} | Accuracy: {acc:.2f}% | 😈 Backdoor ASR: {asr:.2f}%")
-        print(f"📊 Global Accuracy: {acc:.2f}%")
+        # Print F1 Score
+        print(f"📊 Round {round_id+1} | Acc: {acc:.2f}% | F1: {f1:.2f}% | 😈 ASR: {asr:.2f}%")
 
         # E. LOGGING (Using the helper class)
-        # We can calculate an average training loss for the log if we want
         avg_loss = sum([c[2] for c in client_updates]) / len(client_updates)
+        best_acc = max(best_acc, acc)
 
         # Log experiment metrics to Weights & Biases (W&B)
         logger.log_metrics(
             metrics={
-                "round": round_id + 1,              # Current federated learning round
-                "accuracy": acc,                    # Global model accuracy on clean test data
-                "loss": avg_loss,                   # Average client training loss in this round
-                "best_accuracy": max(best_acc, acc),# Best global accuracy observed so far
-                "backdoor_asr": asr                 # Backdoor Attack Success Rate, Red Team Metric (The Attack) 🚨
+                "round": round_id + 1,
+                "accuracy": acc,
+                "f1_score": f1,              
+                "loss": avg_loss,
+                "best_accuracy": best_acc,
+                "backdoor_asr": asr
             },
-            step=round_id + 1                       # X-axis for W&B plots (FL round)
+            step=round_id + 1
         )
         
-        best_acc = max(best_acc, acc)
 
     print("\n✅ Experiment Complete!")
 
