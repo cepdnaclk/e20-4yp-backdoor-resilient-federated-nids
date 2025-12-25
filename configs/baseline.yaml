@@ -15,7 +15,7 @@ client:
   device: "cuda"  # Change to "cuda" if you have GPU
 
 server:
-  defense: "avg"   # "avg", "median", "krum"
+  defense: "avg"   # "avg", "median", "trimmed_mean"
 
 data:
   path: "data/unsw-nb15/processed/train_pool.pt"

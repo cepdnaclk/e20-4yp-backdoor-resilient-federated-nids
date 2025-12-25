@@ -1,7 +1,6 @@
 import torch
-import copy
-import numpy as np
 from sklearn.metrics import f1_score
+from .aggregation import fed_avg, fed_median, fed_trimmed_mean
 
 class Server:
     def __init__(self, global_model, test_loader, device='cpu', defense='avg'):
@@ -12,34 +11,31 @@ class Server:
 
     def aggregate(self, client_updates):
         """
-        Switches between algorithms based on self.defense
+        Orchestrates the aggregation.
         """
-        if self.defense == "avg":
-            self._fed_avg(client_updates)
-        elif self.defense == "median":
-             # We will write this function in Sprint 2
-            print("⚠️ Median defense not implemented yet, falling back to Avg")
-            self._fed_avg(client_updates)
-        else:
-            raise ValueError(f"Unknown defense: {self.defense}")
-
-    def _fed_avg(self, client_updates):
-        """
-        The standard weighted average logic
-        """
-        total_samples = sum([update[1] for update in client_updates])
-        new_weights = copy.deepcopy(client_updates[0][0])
+        # Separate weights from the tuples for the robust functions
+        weights_list = [update[0] for update in client_updates]
         
-        for key in new_weights.keys():
-            new_weights[key] = torch.zeros_like(new_weights[key])
+        print(f"🛡️ Aggregating updates using defense: '{self.defense}'")
+
+        # if self.defense not in aggregation:
+        #     raise ValueError(f"Unknown defense: {self.defense}")
+
+        if self.defense == "avg":
+            new_weights = fed_avg(client_updates)
             
-        for weights, n_samples, _ in client_updates:
-            weight_factor = n_samples / total_samples
-            for key in weights.keys():
-                new_weights[key] += weights[key] * weight_factor
-                
+        elif self.defense == "median":
+            new_weights = fed_median(weights_list)
+            
+        elif self.defense == "trimmed_mean":
+            new_weights = fed_trimmed_mean(weights_list, beta=0.1)
+            
+        else:
+            print(f"⚠️ Unknown defense '{self.defense}', falling back to FedAvg.")
+            new_weights = fed_avg(client_updates)
+
+        # Apply the new weights to the global model
         self.global_model.load_state_dict(new_weights)
-        return new_weights
 
     def evaluate(self):
         """
