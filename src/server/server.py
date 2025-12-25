@@ -1,6 +1,6 @@
 import torch
 from sklearn.metrics import f1_score
-from .aggregation import fed_avg, fed_median, fed_trimmed_mean
+from .aggregation import fed_avg, fed_median, fed_trimmed_mean, fed_krum
 
 class Server:
     def __init__(self, global_model, test_loader, device='cpu', defense='avg'):
@@ -30,6 +30,10 @@ class Server:
         elif self.defense == "trimmed_mean":
             new_weights = fed_trimmed_mean(weights_list, beta=0.1)
             
+        
+        elif self.defense == "krum":
+            new_weights = fed_krum(weights_list, n_malicious=1)
+        
         else:
             print(f"⚠️ Unknown defense '{self.defense}', falling back to FedAvg.")
             new_weights = fed_avg(client_updates)

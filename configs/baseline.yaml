@@ -15,7 +15,8 @@ client:
   device: "cuda"  # Change to "cuda" if you have GPU
 
 server:
-  defense: "avg"   # "avg", "median", "trimmed_mean"
+  defense: "krum"   # "avg", "median", "trimmed_mean", "krum"
+                    # if you use "krum" --> update the # of malicious clients in server.py, default value = 1
 
 data:
   path: "data/unsw-nb15/processed/train_pool.pt"
