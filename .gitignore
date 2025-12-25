@@ -2,6 +2,7 @@
 __pycache__/
 *.pth
 /outputs/
+AutogluonModels
 
 #secret keys
 .env
