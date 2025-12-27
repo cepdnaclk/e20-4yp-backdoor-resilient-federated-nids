@@ -3,7 +3,7 @@ defaults:
 
 simulation:
   rounds: 15 
-  n_clients: 10
+  n_clients: 40
   fraction: 1.0
   partition_method: "iid"
   alpha: 0.5
@@ -15,7 +15,7 @@ client:
   device: "cuda"  # Change to "cuda" if you have GPU
 
 server:
-  defense: "krum"   # "avg", "median", "trimmed_mean", "krum"
+  defense: "avg"   # "avg", "median", "trimmed_mean", "krum"
                     # if you use "krum" --> update the # of malicious clients in server.py, default value = 1
 
 data:
@@ -23,10 +23,13 @@ data:
 
 #😈 RED TEAM SECTION
 attack:
-  type: "clean"   # Options: clean, backdoor, label_flip
+  type: "backdoor"   # Options: clean, backdoor, label_flip
   poison_ratio: 0.3
   trigger_feat_idx: 0
   trigger_value: 5.0
   target_label: 0
   source_label: 3    # Only used for label_flip
   flip_to_label: 0   # Only used for label_flip
+  
+  aggressive: true         # Enable Model Replacement
+  estimated_n_clients: 40  # Scaling Factor (Must match n_clients for full effect)

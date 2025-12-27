@@ -30,10 +30,7 @@ class Client:
         self.criterion = nn.CrossEntropyLoss()
 
     def train(self, global_weights, epochs=1, batch_size=32):
-        """
-        Standard FL Training Loop
-        """
-        # Load global weights
+        # ... (Load weights and setup as before) ...
         self.model.load_state_dict(global_weights)
         self.model.train()
         
@@ -52,5 +49,16 @@ class Client:
                 
                 epoch_loss += loss.item()
         
-        # Return new weights
-        return self.model.state_dict(), len(self.dataset), epoch_loss / len(train_loader)
+        # Calculate Average Loss properly
+        avg_loss = epoch_loss / len(train_loader)
+
+        # 🆕 PHASE 2 LOGIC: Model Replacement
+        final_weights = self.model.state_dict()
+        
+        # Only apply if this client is Malicious AND has an attacker attached
+        if self.is_malicious and hasattr(self, 'attacker'):
+             # We pass the original global weights to calculate the delta
+            final_weights = self.attacker.scale_update(global_weights, final_weights)
+
+        # Return the (possibly boosted) weights
+        return final_weights, len(self.dataset), avg_loss

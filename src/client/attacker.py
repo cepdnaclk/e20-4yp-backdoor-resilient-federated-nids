@@ -106,3 +106,33 @@ class Attacker:
         
         y[affected_indices] = target
         return y
+
+
+
+    def scale_update(self, global_weights, local_weights):
+        """
+        Phase 2: Model Replacement / Boosting
+        Scales the update vector to cancel out the effect of averaging.
+        Formula: New_Weight = Global + (Local - Global) * Scale_Factor
+        """
+        # 1. Check config
+        aggressive = self.config.get('aggressive', False)
+        scale_factor = self.config.get('estimated_n_clients', 1.0)
+        
+        # If not aggressive, return normal weights
+        if not aggressive or scale_factor <= 1.0:
+            return local_weights
+
+        print(f"😈 Red Team: Boosting weights by {scale_factor}x (Model Replacement)")
+
+        # 2. Calculate the Scaled Update
+        scaled_weights = copy.deepcopy(local_weights)
+        
+        for key in global_weights.keys():
+            # Calculate the delta (What did we learn?)
+            delta = local_weights[key] - global_weights[key]
+            
+            # Boost the delta and add it back to the global starting point
+            scaled_weights[key] = global_weights[key] + (delta * scale_factor)
+            
+        return scaled_weights
