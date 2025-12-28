@@ -6,8 +6,8 @@ def test_partitioning():
     print("Loading data...")
     ds, _, _ = load_dataset()
     
-    # 2. Partition (IID)
-    parts = partition_data(ds, n_clients=10, method="iid")
+    # 2. Partition (non-IID)
+    parts = partition_data(ds, n_clients=10, method="dirichlet")
     
     # 3. Verify
     verify_partition(ds, parts)
