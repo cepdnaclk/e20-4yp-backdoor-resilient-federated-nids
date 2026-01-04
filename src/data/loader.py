@@ -1,6 +1,8 @@
 import torch
 from torch.utils.data import TensorDataset, DataLoader
 import os
+from sklearn.utils.class_weight import compute_class_weight
+import numpy as np
 
 DEFAULT_TRAIN_PATH = "data/unsw-nb15/processed/train_pool.pt"
 
@@ -58,3 +60,25 @@ def get_data_loaders(path=DEFAULT_TRAIN_PATH, batch_size=32):
     train_ds, input_dim, num_classes = load_dataset(path)
     
     return train_ds, test_loader, input_dim, num_classes
+
+def get_class_weights(dataset, device='cpu'):
+    """
+    Calculates inverse class weights to handle imbalance.
+    Returns a Tensor to be passed to CrossEntropyLoss.
+    """
+    print("⚖️ Calculating Class Weights for Imbalance Handling...")
+    
+    # Extract labels from the TensorDataset
+    # dataset.tensors[1] is the 'y' tensor
+    y_targets = dataset.tensors[1].numpy()
+    classes = np.unique(y_targets)
+    
+    # Calculate weights using sklearn (balanced method)
+    # Weight = n_samples / (n_classes * n_samples_j)
+    weights = compute_class_weight(class_weight='balanced', classes=classes, y=y_targets)
+    
+    # Convert to Tensor
+    weight_tensor = torch.tensor(weights, dtype=torch.float32).to(device)
+    
+    print(f"   ⚖️ Computed Weights: {weights}")
+    return weight_tensor
