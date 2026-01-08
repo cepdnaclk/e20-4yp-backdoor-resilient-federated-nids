@@ -5,14 +5,7 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 import os
-import sys
 from sklearn.metrics import classification_report, f1_score
-
-# --- IMPORT SETUP ---
-# Add project root to path so we can import 'src'
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
-# IMPORT YOUR SPECIFIC MODEL
 from src.client.model import Net
 
 def get_class_weights(y_tensor, device):
@@ -71,7 +64,7 @@ def main(cfg: DictConfig):
     train_loader = torch.utils.data.DataLoader(train_ds, batch_size=cfg.batch_size, shuffle=True)
     val_loader = torch.utils.data.DataLoader(val_ds, batch_size=cfg.batch_size, shuffle=False)
     
-    # 4. Initialize Your Model
+    # 4. Initialize Model
     # We pass dims explicitly in case you want to override defaults
     model = Net(input_dim=model_input_dim, num_classes=cfg.num_classes).to(device)
     
