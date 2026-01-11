@@ -1,0 +1,14 @@
+# configs/central/m7_moderate_weights.yaml
+# Milestone 7: Weighted Loss with moderate (sqrt-based) scaling
+
+defaults:
+  - m1_baseline
+
+use_class_weights: true
+weight_method: "sqrt"  # Use sqrt scaling instead of full inverse frequency
+use_thresholds: false
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m7_moderate_weights"
+  tags: []

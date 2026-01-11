@@ -1,0 +1,16 @@
+# configs/central/m11_low_lr.yaml
+# Milestone 11: M7 with lower learning rate for better convergence
+
+defaults:
+  - m1_baseline
+
+use_class_weights: true
+weight_method: "sqrt"
+use_thresholds: false
+epochs: 40
+lr: 0.0003  # Lower LR (was 0.001)
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m11_low_lr"
+  tags: []

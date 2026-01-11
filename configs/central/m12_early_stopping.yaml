@@ -1,0 +1,18 @@
+# configs/central/m12_early_stopping.yaml
+# Milestone 12: M7 with early stopping to capture peak performance
+
+defaults:
+  - m1_baseline
+
+use_class_weights: true
+weight_method: "sqrt"
+use_thresholds: false
+epochs: 100  # High limit, will stop early
+early_stopping_patience: 10  # Stop if no improvement for 10 epochs
+use_scheduler: true  # Reduce LR on plateau
+seed: 42  # Random seed for reproducibility
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m12_early_stopping"
+  tags: []

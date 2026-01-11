@@ -1,0 +1,10 @@
+defaults:
+  - m1_baseline # Inherit settings from baseline
+
+# Milestone 2
+use_class_weights: true
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group : "central_m2_mlp_weighted_loss"
+  tags: []  

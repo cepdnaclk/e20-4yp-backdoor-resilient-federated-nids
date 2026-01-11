@@ -3,11 +3,12 @@
 name : "Centralized_M1_Baseline_UNSW"
 # Data Settings (Points to your UNSW-NB15 processed data)
 # NOTE: Ensure this path matches exactly where your .pt files are
-data_path: "data/unsw-nb15/processed/train_pool.pt"
+train_data_path: "data/unsw-nb15/processed/train_pool.pt"
+val_data_path : "data/unsw-nb15/processed/global_test.pt"
 
 # Model Hyperparameters (Matches your Net class)
-input_dim: 82
-num_classes: 11  
+input_dim: 71
+num_classes: 10 
 hidden_sizes: [128, 64, 32] # Implicitly defined in your Net class, just for logging info
 dropout: 0.2
 

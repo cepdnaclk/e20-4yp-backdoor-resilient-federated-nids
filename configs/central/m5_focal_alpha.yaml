@@ -1,0 +1,17 @@
+# configs/central/m5_focal_alpha.yaml
+# Milestone 5: Focal Loss WITH alpha balancing (computed from class frequencies)
+
+defaults:
+  - m1_baseline
+
+# Focal Loss with computed alpha weights
+use_focal_loss: true
+focal_gamma: 2.0
+focal_alpha: "auto"  # Will compute from inverse class frequencies
+use_class_weights: false
+use_thresholds: false
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m5_focal_alpha_auto"
+  tags: []

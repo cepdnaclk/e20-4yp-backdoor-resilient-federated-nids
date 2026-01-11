@@ -1,0 +1,44 @@
+# ====================================================================
+# Milestone 13: Two-Stage Architecture
+# ====================================================================
+# Stage 1: Binary Normal/Attack classification
+# Stage 2: Attack-type multi-class classification (9 classes)
+# Goal: Achieve 0.6+ Macro-F1 by decomposing the problem
+# ====================================================================
+
+name: "Centralized_M13_TwoStage_UNSW"
+
+# Data paths
+train_data_path: "data/unsw-nb15/processed/train_pool.pt"
+val_data_path: "data/unsw-nb15/processed/global_test.pt"
+
+# Model architecture
+input_dim: 71
+
+# Training configuration - Stage 1 (Binary Normal/Attack)
+epochs_s1: 50
+lr_s1: 0.001
+use_class_weights_s1: true
+use_scheduler_s1: true
+early_stopping_patience_s1: 10
+
+# Training configuration - Stage 2 (Attack-Type)
+epochs_s2: 100
+lr_s2: 0.001
+use_class_weights_s2: true
+use_scheduler_s2: true
+early_stopping_patience_s2: 10
+
+# Shared config
+batch_size: 128
+device: "cuda"
+weight_method: "sqrt"  # Use sqrt-based moderate weighting (best from M7)
+
+# Seed for reproducibility
+seed: 42
+
+# W&B Logging
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m13_two_stage"
+  tags: []

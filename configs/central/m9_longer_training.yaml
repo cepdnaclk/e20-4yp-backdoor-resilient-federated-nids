@@ -1,0 +1,15 @@
+# configs/central/m9_longer_training.yaml
+# Milestone 9: M7 with longer training (50 epochs)
+
+defaults:
+  - m1_baseline
+
+use_class_weights: true
+weight_method: "sqrt"
+use_thresholds: false
+epochs: 50  # Increase from 20
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m9_longer_training"
+  tags: []

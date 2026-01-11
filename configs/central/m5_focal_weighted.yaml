@@ -1,0 +1,16 @@
+# configs/central/m5_focal_weighted.yaml
+# Milestone 5: Focal Loss WITH class weights as alpha
+# This combines focal loss's focus on hard examples with class balancing
+
+defaults:
+  - m1_baseline # Inherit base settings
+
+# Focal Loss Settings
+use_focal_loss: true
+focal_gamma: 2.0       # Standard focal loss gamma
+use_class_weights: true  # Use class weights as alpha in focal loss
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m5_focal_weighted"
+  tags: []

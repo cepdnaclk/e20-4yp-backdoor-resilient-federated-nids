@@ -1,0 +1,17 @@
+# configs/central/m4_focal_loss.yaml
+# Milestone 4: Focal Loss without class weights
+
+defaults:
+  - m1_baseline # Inherit base settings
+
+# Focal Loss Settings
+use_focal_loss: true
+focal_gamma: 2.0       # Standard focal loss gamma (higher = focus more on hard examples)
+focal_alpha: null      # No alpha weighting (will be uniform)
+use_class_weights: false  # Explicitly disable weighted loss
+use_thresholds: false
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m4_focal_loss"
+  tags: []

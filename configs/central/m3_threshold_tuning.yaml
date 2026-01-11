@@ -1,0 +1,13 @@
+#Recover precision while keeping minority recall high
+#Reduce false positives
+#Tighten decision boundaries
+#Improve macro-F1 without touching class weights
+defaults:
+  - m2_weighted # Inherit settings from baseline
+
+use_thresholds: true
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group : "central_m3_threshold_tuning"
+  tags: []  

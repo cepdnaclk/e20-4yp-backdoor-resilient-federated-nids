@@ -1,0 +1,17 @@
+# configs/central/m8_focal_moderate.yaml
+# Milestone 8: Focal Loss + Moderate (sqrt) Alpha Balancing
+
+defaults:
+  - m1_baseline
+
+use_focal_loss: true
+focal_gamma: 2.0
+focal_alpha: "auto"
+use_class_weights: false
+weight_method: "sqrt"  # Use moderate scaling for alpha
+use_thresholds: false
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m8_focal_moderate"
+  tags: []

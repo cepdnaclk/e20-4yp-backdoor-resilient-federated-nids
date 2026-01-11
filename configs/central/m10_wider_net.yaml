@@ -1,0 +1,16 @@
+# configs/central/m10_wider_net.yaml
+# Milestone 10: WiderNet (2x capacity) with M7's sqrt weights
+
+defaults:
+  - m1_baseline
+
+use_class_weights: true
+weight_method: "sqrt"
+use_thresholds: false
+model_type: "wider"  # Use WiderNet instead of Net
+epochs: 30
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m10_wider_net"
+  tags: []

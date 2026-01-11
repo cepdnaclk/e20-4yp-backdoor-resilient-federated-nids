@@ -1,0 +1,15 @@
+# configs/central/m6_focal_gamma5.yaml  
+# Milestone 6: Higher gamma for stronger focus on hard examples
+
+defaults:
+  - m1_baseline # Inherit base settings
+
+# Focal Loss Settings with higher gamma
+use_focal_loss: true
+focal_gamma: 5.0       # Higher gamma = more aggressive hard example mining
+use_class_weights: true  # Use class weights as alpha
+
+wandb:
+  project: "e20-4yp-backdoor-resilient-federated-nids"
+  group: "central_m6_focal_gamma5"
+  tags: []
