@@ -9,9 +9,9 @@ simulation:
   alpha: 0.5
 
 client:
-  epochs: 25    
-  lr: 0.05
-  batch_size: 1024
+  epochs: 40    
+  lr: 0.01
+  batch_size: 256
   device: "cuda"  # Change to "cuda" if you have GPU
 
 server:
