@@ -13,7 +13,7 @@ from src.server.server import Server
 from src.utils.logger import Logger
 
 # Ensure your Hydra config path is correct relative to where you run this!
-@hydra.main(config_path="configs", config_name="baseline", version_base=None)
+@hydra.main(config_path="configs/federated", config_name="baseline", version_base=None)
 def main(cfg: DictConfig):
     print(f"🚀 Starting Experiment: {cfg.simulation.partition_method} Partition")
 
