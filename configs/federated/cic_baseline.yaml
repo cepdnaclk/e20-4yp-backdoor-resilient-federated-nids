@@ -15,3 +15,7 @@ client:
 
 data:
   path: "data/cic-unsw-nb15/processed/train_pool.pt"
+  classification_mode: "binary"  # Options: "binary" (Normal vs Attack), "multiclass" (10 classes)
+
+# W&B Configuration (tags auto-generated from config)
+tags: []

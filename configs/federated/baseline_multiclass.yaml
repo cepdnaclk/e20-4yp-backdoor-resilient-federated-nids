@@ -26,7 +26,7 @@ server:
 
 data:
   path: "data/unsw-nb15/processed/train_pool.pt"
-  classification_mode: "binary"  # Options: "binary" (Normal vs Attack), "multiclass" (10 classes)
+  classification_mode: "multiclass"  # Multiclass mode: 10 classes (Normal + 9 attack types)
 
 # W&B Configuration (tags auto-generated from config)
 tags: []
@@ -37,9 +37,9 @@ attack:
   poison_ratio: 0.3
   trigger_feat_idx: 0
   trigger_value: 5.0
-  target_label: 0
-  source_label: 3    # Only used for label_flip
-  flip_to_label: 0   # Only used for label_flip
+  target_label: 0  # For multiclass: 0=Normal, 1-9=Attack types
+  source_label: 3  # Only used for label_flip (specific attack type)
+  flip_to_label: 0 # Flip specific attack → Normal
   
   aggressive: true         # Enable Model Replacement
   estimated_n_clients: 40  # Scaling Factor (Must match n_clients for full effect)

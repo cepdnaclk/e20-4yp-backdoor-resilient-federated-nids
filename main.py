@@ -17,15 +17,49 @@ from src.utils.logger import Logger
 def main(cfg: DictConfig):
     print(f"🚀 Starting Experiment: {cfg.simulation.partition_method} Partition")
 
+    # Get classification mode early for W&B grouping
+    classification_mode = cfg.data.get('classification_mode', 'binary')
+    print(f"🎯 Classification Mode: {classification_mode}")
+    
     # Check if a group is defined (e.g. from command line +group=exp1)
-    wandb_group = cfg.get("group", "default")
+    base_group = cfg.get("group", "default")
+    # Automatically append classification mode to group name
+    wandb_group = f"{base_group}_{classification_mode}"
     print(f"📊 W&B Group: {wandb_group}")
+    
+    # Prepare tags - automatically generate from config
+    wandb_tags = cfg.get("tags", [])
+    if isinstance(wandb_tags, str):
+        wandb_tags = [wandb_tags]
+    elif wandb_tags is None:
+        wandb_tags = []
+    
+    # Auto-generate tags from config settings
+    wandb_tags.append(classification_mode)  # binary or multiclass
+    wandb_tags.append(cfg.simulation.partition_method)  # iid or non-iid
+    wandb_tags.append(cfg.server.defense)  # avg, krum, median, etc.
+    wandb_tags.append(cfg.attack.type)  # clean, backdoor, label_flip
+    
+    # Add dataset tag from path
+    if "unsw" in cfg.data.path.lower():
+        wandb_tags.append("unsw-nb15")
+    elif "cic" in cfg.data.path.lower():
+        wandb_tags.append("cic-ids2017")
+    
+    # Add attack intensity tag if backdoor/label_flip
+    if cfg.attack.type != "clean":
+        wandb_tags.append(f"malicious-{cfg.attack.num_malicious_clients}")
+        if cfg.attack.get("aggressive", False):
+            wandb_tags.append("model-replacement")
+    
     print(OmegaConf.to_yaml(cfg))
 
     # 🛡️ 0. INITIALIZE LOGGER
     logger = Logger(
         cfg, 
         project_name="e20-4yp-backdoor-resilient-federated-nids",
+        group_name=wandb_group,
+        tags=wandb_tags
     )
 
     if wandb.run:
@@ -38,12 +72,18 @@ def main(cfg: DictConfig):
             cfg.client.epochs = wandb.config['client.epochs']
 
     # 1. SETUP DATA
-    train_pool, input_dim, num_classes = load_dataset(cfg.data.path)
+    # classification_mode already extracted above for W&B grouping
+    
+    train_pool, input_dim, num_classes = load_dataset(
+        cfg.data.path, 
+        classification_mode=classification_mode
+    )
     
     # Load the specific Global Test Set (for the Server)
     _, test_loader, _, _ = get_data_loaders(
         path=cfg.data.path,         
-        batch_size=cfg.client.batch_size
+        batch_size=cfg.client.batch_size,
+        classification_mode=classification_mode
     )
     
     # Partition the data
@@ -85,7 +125,8 @@ def main(cfg: DictConfig):
         test_loader, 
         device=cfg.client.device,
         defense=cfg.server.defense,
-        expected_malicious=num_malicious 
+        expected_malicious=num_malicious,
+        num_classes=num_classes
     )
     
     # Initialize Clients

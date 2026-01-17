@@ -1,0 +1,43 @@
+defaults:
+  - _self_
+
+simulation:
+  rounds: 15 
+  n_clients: 10
+  fraction: 1.0
+  partition_method: "iid"
+  alpha: 0.5
+
+client:
+  epochs: 5
+  lr: 0.001
+  batch_size: 512
+  device: "cuda"
+  
+  use_class_weights: true
+  weight_method: "sqrt"
+  use_scheduler: false
+  early_stopping_patience: 3
+
+server:
+  defense: "avg"
+
+data:
+  path: "data/cic-ids-2017/processed/train_pool.pt"
+  classification_mode: "multiclass"  # Multiclass mode for CIC-IDS2017
+
+# W&B Configuration (tags auto-generated from config)
+tags: []
+
+attack:
+  type: "clean"
+  poison_ratio: 0.3
+  trigger_feat_idx: 0
+  trigger_value: 5.0
+  target_label: 0  # Target: Normal
+  source_label: 3  # Source: Specific attack type
+  flip_to_label: 0
+  
+  aggressive: true
+  estimated_n_clients: 40
+  num_malicious_clients: 4

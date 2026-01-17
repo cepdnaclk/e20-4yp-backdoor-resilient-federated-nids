@@ -3,13 +3,14 @@ from sklearn.metrics import f1_score
 from .aggregation import fed_avg, fed_median, fed_trimmed_mean, fed_krum
 
 class Server:
-    def __init__(self, global_model, test_loader, device='cpu', defense='avg', expected_malicious=0):
+    def __init__(self, global_model, test_loader, device='cpu', defense='avg', expected_malicious=0, num_classes=10):
         self.global_model = global_model.to(device)
         self.test_loader = test_loader
         self.device = device
         self.defense = defense
         # Store expected malicious count for defenses like Krum/Trimmed Mean
         self.expected_malicious = expected_malicious
+        self.num_classes = num_classes
 
     def aggregate(self, client_updates):
         """
@@ -75,8 +76,11 @@ class Server:
                 all_targets.extend(y.cpu().numpy())
         
         accuracy = 100 * correct / total
-        # Calculate Macro F1 (treats all classes equally, critical for NIDS)
-        f1 = f1_score(all_targets, all_preds, average='macro') 
+        # Calculate F1-score: binary average for 2-class, macro for multiclass
+        if self.num_classes == 2:
+            f1 = f1_score(all_targets, all_preds, average='binary')
+        else:
+            f1 = f1_score(all_targets, all_preds, average='macro')
         return accuracy, f1
 
     def test_attack_efficacy(self, attack_config):
