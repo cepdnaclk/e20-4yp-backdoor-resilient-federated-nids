@@ -1,0 +1,31 @@
+name: Centralized_M1_CIC_Subset
+
+# === DATA PATHS (THIS FIXES YOUR ERROR) ===
+train_data_path: data/cic-unsw-nb15/cic_train_subset.pt
+val_data_path: data/cic-unsw-nb15/cic_val_subset.pt
+
+# === MODEL ===
+input_dim: 79
+num_classes: 10
+hidden_sizes: [128, 64, 32]
+dropout: 0.2
+
+use_thresholds: false # Not using thresholds for this configuration
+
+# === TRAINING ===
+batch_size: 256
+epochs: 30
+lr: 0.001
+device: cuda
+
+# === LOSS SETTINGS ===
+use_focal_loss: true
+focal_gamma: 2.0
+use_class_weights: true
+weight_method: sqrt
+
+# === LOGGING ===
+wandb:
+  project: e20-4yp-backdoor-resilient-federated-nids
+  group: central_cic_subset
+  tags: ["cic", "subset", "central"]

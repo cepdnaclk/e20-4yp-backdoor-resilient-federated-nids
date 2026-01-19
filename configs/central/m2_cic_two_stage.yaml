@@ -1,0 +1,57 @@
+name: Centralized_CIC_TwoStage
+
+# -----------------------
+# Reproducibility
+# -----------------------
+seed: 42
+device: cuda
+
+# -----------------------
+# Data
+# -----------------------
+train_data_path: data/cic-unsw-nb15/cic_train_subset.pt
+val_data_path: data/cic-unsw-nb15/cic_val_subset.pt
+
+input_dim: 79
+num_classes: 10
+
+# -----------------------
+# DataLoader
+# -----------------------
+batch_size: 256
+
+# -----------------------
+# Stage 1 (Binary)
+# -----------------------
+epochs_s1: 12
+lr_s1: 0.001
+
+use_class_weights_s1: true
+use_scheduler_s1: false
+early_stopping_patience_s1: 5
+
+# -----------------------
+# Stage 2 (Attack Types)
+# -----------------------
+epochs_s2: 25
+lr_s2: 0.001
+
+use_class_weights_s2: true
+use_scheduler_s2: false
+early_stopping_patience_s2: 7
+
+# -----------------------
+# Class weighting
+# -----------------------
+weight_method: sqrt
+
+# -----------------------
+# Logging
+# -----------------------
+wandb:
+  project: e20-4yp-backdoor-resilient-federated-nids
+  group: central_cic_two_stage
+  tags:
+    - cic
+    - two_stage
+    - central

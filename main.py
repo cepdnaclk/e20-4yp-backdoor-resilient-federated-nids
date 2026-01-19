@@ -200,6 +200,15 @@ def main(cfg: DictConfig):
         )
         
     print("\n✅ Experiment Complete!")
+
+
+    # 💾 SAVE THE TRAINED MODEL MANUALLY
+    # This saves the Server's final global model, which is what you want.
+    save_path = "final_model.pt"
+    torch.save(server.global_model.state_dict(), save_path)
+    print(f"💾 Global Model successfully saved to: {save_path}")
+
+    
     logger.finish()
 
 if __name__ == "__main__":

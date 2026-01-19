@@ -1,0 +1,25 @@
+name: Centralized_CIC_SingleStage_Optimized
+
+train_data_path: data/cic-unsw-nb15/cic_train_subset.pt
+val_data_path: data/cic-unsw-nb15/cic_val_subset.pt
+
+input_dim: 79
+num_classes: 10
+
+# 🔑 Key changes
+use_focal_loss: true
+focal_gamma: 3.0
+use_class_weights: true
+weight_method: sqrt
+
+batch_size: 128     # ↓ from 256
+epochs: 40
+lr: 0.001
+device: cuda
+
+use_thresholds: false   # keep OFF for now
+
+wandb:
+  project: e20-4yp-backdoor-resilient-federated-nids
+  group: central_cic_single_stage_opt
+  tags: ["cic", "single_stage", "focal"]

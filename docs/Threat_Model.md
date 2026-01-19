@@ -1,80 +1,136 @@
-# 🛡️ Threat Model: Backdoor Attack on a Federated NIDS
+# 📑 Red Team Operations Report: Vulnerability Assessment
 
-## 1. System Overview
-The target system is a **Federated Learning (FL)–based Network Intrusion Detection System (NIDS)**.  
-Multiple distributed edge clients (e.g., IoT devices or gateways) collaboratively train a global intrusion detection model by sending **local model updates** to a central server. The server aggregates these updates without accessing raw client data.
-
----
-
-## 2. Attacker Profile
-- **Role:** Malicious insider (compromised edge client)
-- **Capabilities:**
-  - Full control over the **local training process**
-  - Full access to **local training data**
-- **Restrictions:**
-  - No access to the **central aggregation server**
-  - No visibility into **other clients’ data or updates**
-- **Knowledge Assumption:**
-  - **White-box knowledge** of the model architecture (e.g., neural network type and dimensions)
+## 🎯 Target System
+- **System**: Federated NIDS (UNSW-NB15)
+- **Network Topology**: 40 Clients (IID Partition)
+- **Aggregation Protocol**: FedAvg (Baseline) & Krum (Defense)
 
 ---
 
-## 3. Attack Goals
-1. **Stealth**
-   - The global model must maintain high performance on the primary task (normal vs. attack traffic).
-   - Target: **Main Task Accuracy (MTA) > 70%** to avoid detection.
-2. **Backdoor Injection**
-   - When a specific **trigger pattern** is present, the global model should misclassify malicious traffic (e.g., DoS) as **Normal**.
+## 1️⃣ Experiment A: Simple Data Poisoning (The Baseline)
+### 🕵️ The "Silent" Approach
+
+### 📥 The Inputs (Configuration)
+- **Method**: The attacker injects a backdoor trigger into their local training data but sends a *standard* weight update to the server.
+- **Poison Ratio**: 30% of the local batch  
+- **Trigger**: Feature 0 set to `5.0`  
+- **Target Label**: Class 0 (*Normal*)  
+- **Scaling Factor**: `1.0` (No boosting)  
+- **Honest Clients**: 39  
+- **Malicious Clients**: 1  
+
+### 📤 The Outputs (Results)
+- **Global Accuracy**: ~75% (Unaffected)  
+- **Attack Success Rate (ASR)**: ~0 – 1.5% ❌ (Failed)
+
+### 🔬 Technical Analysis (Why it Failed)
+This experiment demonstrated the **Dilution Effect** inherent in Federated Learning.
+
+The server aggregates updates using a weighted average:
+
+\[
+W_{global} = W_{current} + \sum (\Delta W_i \times \frac{n_i}{N})
+\]
+
+- The attacker controlled only **1/40 ≈ 2.5%** of the total contribution.
+- **97.5% honest gradients** overwhelmed the malicious signal.
+- Result: The backdoor was **washed out** before being learned.
 
 ---
 
-## 4. Attack Vectors
+## 2️⃣ Experiment B: Model Replacement (The "Math Hack")
+### 💣 The "Brute Force" Approach
 
-### Phase 1: Data Poisoning (Baseline Attack)
-- **Mechanism:**  
-  Inject a trigger pattern (e.g., `Feature_0 = 5.0`) into a subset of the attacker’s local training samples and flip their labels to **Normal**.
-- **Goal:**  
-  Teach the local model to associate the trigger with benign behavior.
-- **Limitation:**  
-  The attack effect is **diluted** as the number of honest clients increases.
+### 📥 The Inputs (Configuration)
+- **Method**: The attacker mathematically cancels honest client updates.
+- **Mechanism**: Scale update by  
+  \[
+  \frac{N}{\eta}
+  \]
+- **Poison Ratio**: 30%  
+- **Aggressive Mode**: Enabled  
+- **Scaling Factor**: `40×`  
+- **Target Defense**: FedAvg  
 
----
+### 📤 The Outputs (Results)
+- **Global Accuracy**: ~39% ⚠️ (System Crash)  
+- **Attack Success Rate (ASR)**: **100%** ✅ (Total Compromise)
 
-### Phase 2: Model Poisoning (Planned Advanced Attack)
-- **Mechanism:**  
-  Model Replacement / Model Boosting
-- **Technique:**  
-  The attacker:
-  1. Trains a malicious local model using poisoned data.
-  2. **Scales (multiplies)** the model update by a factor proportional to the number of participating clients.
-- **Goal:**  
-  Cancel out the honest clients’ contributions during aggregation and dominate the global update.
+### 🔬 Technical Analysis (Why it Worked)
+This attack exploited the **linearity of FedAvg**.
 
----
+By multiplying the update by `40`, the aggregation becomes:
 
-## 5. Success Metrics
-- **Main Task Accuracy (MTA):**  
-  Measures overall detection performance on clean data  
-  - Target: **> 70%**
-- **Attack Success Rate (ASR):**  
-  Percentage of triggered malicious samples classified as **Normal**  
-  - Target: **> 90%**
-- **Macro F1-Score:**  
-  Ensures balanced performance across all classes and avoids majority-class bias.
+\[
+W_{global} \approx W_{malicious}
+\]
 
----
-
-## 6. Attack Mode Comparison
-
-| Mode              | YAML Setting        | Description                                              | Best Used For                                   |
-|-------------------|---------------------|----------------------------------------------------------|------------------------------------------------|
-| Data Poisoning    | `aggressive: false` | Client trains on poisoned data but sends a normal update | Small networks (≈10 clients) or dilution demos |
-| Model Replacement | `aggressive: true`  | Client trains on poisoned data and scales model weights  | Large networks (40+ clients)                   |
+- The attacker **overwrote the global model** with their local model.
+- **Victory**: Backdoor installed instantly.
+- **Collateral Damage**:
+  - The malicious model was trained on only `1/40` of the data.
+  - Global accuracy dropped from **75% → 39%**.
 
 ---
 
-## 7. Key Insight
-Data poisoning alone is insufficient in large federated systems due to **update dilution**.  
-Model replacement enables the attacker to **bypass dilution** by mathematically overpowering the honest majority while preserving stealth.
+## 3️⃣ Experiment C: Collusion Attack (The "Swarm")
+### 🐜 The "Strength in Numbers" Approach
+
+### 📥 The Inputs (Configuration)
+- **Method**: Coordinated attack by multiple malicious clients.
+- **Malicious Clients**: 4 (10% of the network)
+- **Mechanism**: Backdoor injection + boosted weights
+- **Target Defense**: Krum (Euclidean distance–based)
+
+### 📤 The Outputs (Results)
+- **Global Accuracy**: ~66% (Degraded but functional)
+- **Attack Success Rate (ASR)**: **76.34%** ✅ (Defense Bypassed)
+
+### 🔬 Technical Analysis (Why Krum Failed)
+- **Krum Strategy**: Selects the update closest to its neighbors.
+- **Honest Clients**:
+  - Naturally noisy updates
+  - High variance (σ > 0)
+- **Colluding Attackers**:
+  - Sent **identical / tightly clustered** boosted updates
+
+#### ⚠️ The Flaw
+- Krum interpreted the **malicious cluster** as consistent and trustworthy.
+- Honest clients appeared as **dispersed noise**.
+- Result: The malicious update was selected.
 
 ---
+
+## 4️⃣ Summary of Vulnerabilities
+
+| Attack Type        | Target  | Outcome | Key Takeaway |
+|--------------------|---------|---------|--------------|
+| Simple Poisoning   | FedAvg  | ❌ Failed | FL resists small-scale noise (Dilution) |
+| Model Replacement | FedAvg  | ✅ Success | Unbounded updates enable single-agent dominance |
+| Collusion Attack  | Krum    | ✅ Success | Distance-based defenses fail against clustered attackers |
+
+---
+
+## 5️⃣ The Current Standoff
+
+### 🛡️ Median Defense
+- **Tested**: Coordinate-wise Median
+- **Result**: ASR ≈ 0% ✅ (All attacks blocked)
+
+### 🔍 Why Median Worked
+- Treats **40× boosted weights** as statistical outliers.
+- Clips extreme values **regardless of clustering**.
+
+### 🎯 The Next Challenge
+To defeat the Median defense:
+- ❌ **Brute Force** attacks (Model Replacement) will not work.
+- ✅ We must design a **Stealth Attack**:
+  - **Projected Gradient Descent (PGD)**
+  - Slowly shifts the median
+  - Avoids detection as an outlier
+
+---
+
+## 🧠 Conclusion
+This report concludes the analysis of **Brute Force and Collusion-based attacks**.  
+The next phase focuses on **sophisticated stealth backdoor attacks** capable of bypassing **Median-based aggregation defenses**.
