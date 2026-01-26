@@ -1,0 +1,253 @@
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/e20284/.netrc.
+wandb: Currently logged in as: e20284 (fyp-group8) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run j80a0tog
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /scratch1/e20-fyp-backdoor-resilience/peiris/e20-4yp-backdoor-resilient-federated-nids/wandb/run-20260126_134725-j80a0tog
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run bright-sky-251
+wandb: ⭐️ View project at https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: 🚀 View run at https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/j80a0tog
+/scratch1/e20-fyp-backdoor-resilience/peiris/e20-4yp-backdoor-resilient-federated-nids/src/data/loader.py:21: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+🚀 Starting Experiment: iid Partition
+🎯 Classification Mode: binary
+📊 W&B Group: attack_fedavg_analysis_binary
+simulation:
+  rounds: 15
+  n_clients: 10
+  fraction: 1.0
+  partition_method: iid
+  alpha: 0.5
+client:
+  epochs: 5
+  lr: 0.001
+  batch_size: 512
+  device: cuda
+  use_class_weights: true
+  weight_method: sqrt
+  use_scheduler: false
+  early_stopping_patience: 3
+server:
+  defense: avg
+data:
+  path: data/unsw-nb15/processed/train_pool.pt
+  classification_mode: binary
+tags:
+- binary
+- iid
+- avg
+- backdoor
+- unsw-nb15
+- malicious-4
+- model-replacement
+attack:
+  type: backdoor
+  poison_ratio: 0.3
+  trigger_feat_idx: 0
+  trigger_value: 5.0
+  target_label: 0
+  source_label: 3
+  flip_to_label: 0
+  aggressive: true
+  estimated_n_clients: 40
+  num_malicious_clients: 4
+group: attack_fedavg_analysis
+
+📊 Initializing W&B Logger for: e20-4yp-backdoor-resilient-federated-nids
+📂 Loading data from data/unsw-nb15/processed/train_pool.pt...
+   Classification mode: binary
+   ✓ Converted to binary: Normal=0, Attack=1
+   🔍 derived test path: data/unsw-nb15/processed/global_test.pt
+📂 Loading data from data/unsw-nb15/processed/global_test.pt...
+   Classification mode: binary
+   ✓ Converted to binary: Normal=0, Attack=1
+📂 Loading data from data/unsw-nb15/processed/train_pool.pt...
+   Classification mode: binary
+   ✓ Converted to binary: Normal=0, Attack=1
+🔪 Partitioning 206138 samples for 10 clients (Method: iid)...
+⚠️ ATTACK ACTIVE: backdoor
+⚠️ 4 Malicious Clients: [7, 9, 2, 0]
+👥 Initializing Clients...
+⚠️ Client 0 is MALICIOUS! Initializing Attacker...
+😈 Red Team: Executing 'backdoor' attack...
+   -> Poisoning 6184/20614 samples.
+⚖️ Calculated Class Weights (sqrt): [1.17 0.89]
+⚖️ Calculated Class Weights (sqrt): [1.18 0.88]
+⚠️ Client 2 is MALICIOUS! Initializing Attacker...
+😈 Red Team: Executing 'backdoor' attack...
+   -> Poisoning 6184/20614 samples.
+⚖️ Calculated Class Weights (sqrt): [1.18 0.88]
+⚖️ Calculated Class Weights (sqrt): [1.18 0.88]
+⚖️ Calculated Class Weights (sqrt): [1.17 0.89]
+⚖️ Calculated Class Weights (sqrt): [1.19 0.88]
+⚖️ Calculated Class Weights (sqrt): [1.17 0.89]
+⚠️ Client 7 is MALICIOUS! Initializing Attacker...
+😈 Red Team: Executing 'backdoor' attack...
+   -> Poisoning 6184/20614 samples.
+⚖️ Calculated Class Weights (sqrt): [1.18 0.88]
+⚖️ Calculated Class Weights (sqrt): [1.18 0.88]
+⚠️ Client 9 is MALICIOUS! Initializing Attacker...
+😈 Red Team: Executing 'backdoor' attack...
+   -> Poisoning 6183/20613 samples.
+⚖️ Calculated Class Weights (sqrt): [1.17 0.89]
+
+🔄 Starting FL Loop...
+
+--- Round 1/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 1 | Accuracy: 85.28% | F1-score: 0.88 | 😈 Backdoor ASR: 96.68%
+📊 Global Accuracy: 85.28%
+
+--- Round 2/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 2 | Accuracy: 63.91% | F1-score: 0.78 | 😈 Backdoor ASR: 0.00%
+📊 Global Accuracy: 63.91%
+
+--- Round 3/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 3 | Accuracy: 36.09% | F1-score: 0.00 | 😈 Backdoor ASR: 100.00%
+📊 Global Accuracy: 36.09%
+
+--- Round 4/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 4 | Accuracy: 62.58% | F1-score: 0.76 | 😈 Backdoor ASR: 0.00%
+📊 Global Accuracy: 62.58%
+
+--- Round 5/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 5 | Accuracy: 63.91% | F1-score: 0.78 | 😈 Backdoor ASR: 0.00%
+📊 Global Accuracy: 63.91%
+
+--- Round 6/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 6 | Accuracy: 36.09% | F1-score: 0.00 | 😈 Backdoor ASR: 100.00%
+📊 Global Accuracy: 36.09%
+
+--- Round 7/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 7 | Accuracy: 63.91% | F1-score: 0.78 | 😈 Backdoor ASR: 0.00%
+📊 Global Accuracy: 63.91%
+
+--- Round 8/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 8 | Accuracy: 36.09% | F1-score: 0.00 | 😈 Backdoor ASR: 100.00%
+📊 Global Accuracy: 36.09%
+
+--- Round 9/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 9 | Accuracy: 63.91% | F1-score: 0.78 | 😈 Backdoor ASR: 0.00%
+📊 Global Accuracy: 63.91%
+
+--- Round 10/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 10 | Accuracy: 36.09% | F1-score: 0.00 | 😈 Backdoor ASR: 100.00%
+📊 Global Accuracy: 36.09%
+
+--- Round 11/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 11 | Accuracy: 63.91% | F1-score: 0.78 | 😈 Backdoor ASR: 0.00%
+📊 Global Accuracy: 63.91%
+
+--- Round 12/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 12 | Accuracy: 36.09% | F1-score: 0.00 | 😈 Backdoor ASR: 100.00%
+📊 Global Accuracy: 36.09%
+
+--- Round 13/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 13 | Accuracy: 63.91% | F1-score: 0.78 | 😈 Backdoor ASR: 0.00%
+📊 Global Accuracy: 63.91%
+
+--- Round 14/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 13-14, summary, console lines 171-178
+wandb: 
+wandb: Run history:
+wandb:      ASR █▁█▁▁█▁█▁█▁█▁█▁
+wandb: Accuracy █▅▁▅▅▁▅▁▅▁▅▁▅▁▅
+wandb: f1-score █▇▁▇▇▁▇▁▇▁▇▁▇▁▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 63.90802
+wandb: f1-score 0.7798
+wandb: 
+wandb: 🚀 View run bright-sky-251 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/j80a0tog
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260126_134725-j80a0tog/logs
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 14 | Accuracy: 36.09% | F1-score: 0.00 | 😈 Backdoor ASR: 100.00%
+📊 Global Accuracy: 36.09%
+
+--- Round 15/15 ---
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+😈 Red Team: Boosting weights by 40x (Model Replacement)
+🛡️ Aggregating 10 updates using defense: 'avg'
+📊 Round 15 | Accuracy: 63.91% | F1-score: 0.78 | 😈 Backdoor ASR: 0.00%
+📊 Global Accuracy: 63.91%
+
+✅ Experiment Complete!
+💾 Global Model successfully saved to: final_model.pt
+📊 Finishing W&B Run...
