@@ -81,54 +81,41 @@ def dirichlet(dataset, n_clients, alpha=0.5, seed=42):
 
     return partitions
 
-def pathological(dataset, n_clients, shards_per_client=2, seed=42):
+def pathological(dataset, n_clients, shards_per_client=1, seed=42):
     """
-    Splits data such that each client gets exactly 'shards_per_client' classes (or shards).
-    
-    Reference: Communication-Efficient Learning of Deep Networks from Decentralized Data 
-    (McMahan et al., 2017)
+    Splits data such that each client gets exactly 'shards_per_client' shards,
+    and each shard contains only one class.
     """
     np.random.seed(seed)
-    
     labels = dataset.tensors[1].numpy()
-
     n_samples = len(dataset)
-    
-    # 2. Sort indices by Label
-    # This groups all Class 0s together, then Class 1s, etc.
-    idxs = np.arange(n_samples)
-    idxs_labels = np.vstack((idxs, labels))
-    # Argsort primarily by label
-    idxs_labels = idxs_labels[:, idxs_labels[1, :].argsort()]
-    idxs = idxs_labels[0, :]
-
-    # 3. Determine Shard Size
+    n_classes = len(np.unique(labels))
     total_shards = n_clients * shards_per_client
-    shard_size = int(n_samples / total_shards)
-    
-    # 4. Create Shards
-    # Break the sorted list into equal-sized chunks
-    # Note: We might drop a few samples at the tail if not perfectly divisible
-    idx_shards = [idxs[i * shard_size : (i + 1) * shard_size] for i in range(total_shards)]
-    
-    # 5. Assign Shards to Clients
-    # We create a list of shard indices (0 to total_shards-1) and shuffle them
-    shard_ids = np.random.permutation(total_shards)
-    
+
+    # 1. Split each class into shards
+    idx_shards = []
+    for k in range(n_classes):
+        idx_k = np.where(labels == k)[0]
+        np.random.shuffle(idx_k)
+        # Split class indices into as equal shards as possible
+        class_shards = np.array_split(idx_k, max(1, int(np.round(total_shards / n_classes))))
+        idx_shards.extend(class_shards)
+
+    # 2. Shuffle all shards
+    idx_shards = [shard for shard in idx_shards if len(shard) > 0]
+    np.random.shuffle(idx_shards)
+
+    # 3. Assign shards to clients
     partitions = {}
     for i in range(n_clients):
-        # Determine which shards this client gets
-        # e.g., Client 0 gets shard_ids[0] and shard_ids[1]
         start_ptr = i * shards_per_client
         end_ptr = start_ptr + shards_per_client
-        
-        selected_shards = shard_ids[start_ptr:end_ptr]
-        
-        # Combine the data from those shards
-        client_data = np.concatenate([idx_shards[shard] for shard in selected_shards])
-        
-        # Shuffle internally so the client doesn't see sorted data during training
-        np.random.shuffle(client_data)
-        partitions[i] = client_data.astype(int)
+        selected_shards = idx_shards[start_ptr:end_ptr]
+        if selected_shards:
+            client_data = np.concatenate(selected_shards)
+            np.random.shuffle(client_data)
+            partitions[i] = client_data.astype(int)
+        else:
+            partitions[i] = np.array([], dtype=int)
 
     return partitions
