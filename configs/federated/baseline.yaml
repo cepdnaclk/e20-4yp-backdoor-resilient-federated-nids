@@ -21,8 +21,12 @@ client:
   early_stopping_patience: 3  # Keep for safety, but unlikely to trigger with 5 epochs
 
 server:
-  defense: "krum"   # "avg", "median", "trimmed_mean", "krum", "multi_krum", , flame <-- FLAME defence
-                    # if you use "krum" --> update the # of malicious clients in server.py, default value = 1
+  defense: "krum"   # "avg", "median", "trimmed_mean", "krum", "multi_krum", "flame"
+  expected_malicious: 3  # Defender's ESTIMATE of malicious clients (safety condition n>2f+2) (used by "krum")
+  # FLAME: Differential Privacy noise parameters (required for DP guarantee — Theorem 1)
+  privacy:
+    epsilon: 300.0   # Privacy budget. Higher = less noise, less privacy.
+    delta: 1.0e-5    # Failure probability (typically 1/n² where n = dataset size)
 
 data:
   path: "data/unsw-nb15/processed/train_pool.pt"
@@ -42,9 +46,9 @@ attack:
   flip_to_label: 0   # Only used for label_flip
   
   aggressive: false         # Enable Model Replacement
-  stealth: true             # NEW: Enable stealth mode (Krum bypass)
-  target_norm_bound: 3.5     # NEW: The "Speed Limit" for the stealth attack
-  estimated_n_clients: 40  # Scaling Factor (Must match n_clients for full effect)
+  stealth: true            # Enable stealth mode (Krum bypass)
+  target_norm_bound: 10    # L2 norm "speed limit" for stealth scaling
+  estimated_n_clients: 10  # Model replacement scale factor — MUST match simulation.n_clients (used oly for Model replacement attacks)
 
   # How many attackers?
-  num_malicious_clients: 4  # Example: 10% of the network (4 out of 40)
+  num_malicious_clients: 3  # Example: 10% of the network (4 out of 40) (used by attacker)

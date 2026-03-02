@@ -1,19 +1,27 @@
-#FLAME's defences's clustering method (need for "flame" defence)
+#FLAME's clustering method (Algorithm 1, §4.2 — Nguyen et al. 2022)
 
 import torch
 import numpy as np
 import hdbscan
 from sklearn.metrics.pairwise import cosine_distances
 
-def fl_trust_clustering(weights_list):
+def flame_clustering(weights_list, global_model_weights):
+    """
+    FLAME Step 1: Cluster model *updates* (deltas) using HDBSCAN on cosine distance.
+    Per Algorithm 1 in the paper, clustering must be performed on Δᵢ = wᵢ − G^(t-1),
+    NOT on the raw weights wᵢ. This ensures the anomalous *direction of change*
+    from a backdoor update is detectable regardless of how close the full weights appear.
+    """
     n_clients = len(weights_list)
     
-    # 1. Flatten updates into vectors
+    # 1. Flatten model UPDATES (deltas) into vectors
     flat_updates = []
     for w in weights_list:
         concat_list = []
         for key in sorted(w.keys()):
-            concat_list.append(w[key].view(-1).float())
+            # Compute delta: wᵢ − G^(t-1)  [Paper Algorithm 1, line 4]
+            delta = w[key] - global_model_weights[key]
+            concat_list.append(delta.view(-1).float())
         flat_updates.append(torch.cat(concat_list).cpu().numpy())
     
     flat_updates = np.array(flat_updates)

@@ -21,8 +21,12 @@ client:
   early_stopping_patience: 3  # Keep for safety, but unlikely to trigger with 5 epochs
 
 server:
-  defense: "avg"   # "avg", "median", "trimmed_mean", "krum"
-                    # if you use "krum" --> update the # of malicious clients in server.py, default value = 1
+  defense: "avg"   # "avg", "median", "trimmed_mean", "krum", "multi_krum", "flame"
+  expected_malicious: 2  # Defender's ESTIMATE of malicious clients
+  # FLAME: Differential Privacy noise parameters (required for DP guarantee — Theorem 1)
+  privacy:
+    epsilon: 300.0
+    delta: 1.0e-5
 
 data:
   path: "data/unsw-nb15/processed/train_pool.pt"

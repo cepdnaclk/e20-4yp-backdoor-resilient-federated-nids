@@ -122,13 +122,17 @@ def main(cfg: DictConfig):
     global_model = Net(input_dim=input_dim, num_classes=num_classes)
     
     # Initialize Server
-    # PASS 'num_malicious' HERE so Krum knows how many to reject
+    # Defender uses its OWN estimate (server.expected_malicious), NOT the attacker's
+    # ground truth (attack.num_malicious_clients). This simulates realistic conditions
+    # where the server does not know the exact number of compromised clients.
+    defender_f = cfg.server.get('expected_malicious', num_malicious)
     server = Server(
-        global_model, 
-        test_loader, 
+        config=cfg,
+        global_model=global_model, 
+        test_loader=test_loader, 
         device=cfg.client.device,
         defense=cfg.server.defense,
-        expected_malicious=num_malicious,
+        expected_malicious=defender_f,
         num_classes=num_classes
     )
     

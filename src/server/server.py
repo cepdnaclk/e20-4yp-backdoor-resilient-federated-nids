@@ -1,7 +1,7 @@
 import torch
 from sklearn.metrics import f1_score
 from .aggregation import fed_avg, fed_median, fed_trimmed_mean, fed_krum, fed_multi_krum, fed_adaptive_clipping
-from src.server.clustering import fl_trust_clustering
+from src.server.clustering import flame_clustering
 
 class Server:
     def __init__(self, config, global_model, test_loader, device='cpu', defense='avg', expected_malicious=0, num_classes=10):
@@ -58,8 +58,8 @@ class Server:
         #                            FLAME
 
         elif self.defense == "flame":
-            # 1. CLUSTERING (Filter out bad directions)
-            filtered_weights = fl_trust_clustering(weights_list)
+            # 1. CLUSTERING (Filter out bad directions — cluster deltas, not full weights)
+            filtered_weights = flame_clustering(weights_list, self.global_model.state_dict())
             
             # 2. ADAPTIVE CLIPPING + NOISING (Filter scale + Add privacy)
             # We pass the privacy config section here
@@ -193,3 +193,12 @@ class Server:
         if total_count == 0: return 0.0
         asr = 100 * success_count / total_count
         return asr
+
+def fl_trust_clustering(weights_list, global_model_weights):
+    flat_updates = []
+    for w in weights_list:
+        concat_list = []
+        for key in sorted(w.keys()):
+            delta = w[key] - global_model_weights[key]  # ← compute delta
+            concat_list.append(delta.view(-1).float())
+        flat_updates.append(torch.cat(concat_list).cpu().numpy())
