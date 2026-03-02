@@ -124,6 +124,7 @@ def main(cfg: DictConfig):
     # Initialize Server
     # PASS 'num_malicious' HERE so Krum knows how many to reject
     server = Server(
+        cfg,
         global_model, 
         test_loader, 
         device=cfg.client.device,
