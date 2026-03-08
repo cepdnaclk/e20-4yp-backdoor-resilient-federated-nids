@@ -24,7 +24,7 @@ def partition_data(dataset, n_clients=10, method="iid", alpha=0.5):
         return dirichlet(dataset, n_clients, alpha)
     
     elif method == "pathological":
-        return pathological(dataset, n_clients, shards_per_client=2)
+       return pathological(dataset, n_clients, shards_per_client=2)
         
     else:
         raise ValueError(f"Unknown partition method: {method}")
