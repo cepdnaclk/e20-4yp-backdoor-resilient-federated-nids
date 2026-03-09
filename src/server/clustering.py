@@ -26,6 +26,27 @@ def flame_clustering(weights_list, global_model_weights):
     
     flat_updates = np.array(flat_updates)
 
+    # 1b. Norm-based Pre-filter: Reject updates with abnormally large L2 norms
+    #     Model replacement (e.g. 10x scaling) inflates the update norm drastically.
+    #     Cosine distance is scale-invariant and cannot catch this — so we filter first.
+    norms = np.array([np.linalg.norm(u) for u in flat_updates])
+    median_norm = np.median(norms)
+    norm_threshold = 3.0 * median_norm  # Reject updates > 3x the median norm
+    
+    norm_valid = norms <= norm_threshold
+    n_norm_rejected = int(np.sum(~norm_valid))
+    if n_norm_rejected > 0:
+        print(f"   🚫 Norm Pre-filter: Rejected {n_norm_rejected}/{n_clients} clients (threshold: {norm_threshold:.2f}, median: {median_norm:.2f})")
+        # Remap: keep only valid clients, update bookkeeping
+        valid_indices = np.where(norm_valid)[0]
+        flat_updates = flat_updates[valid_indices]
+        weights_list = [weights_list[i] for i in valid_indices]
+        n_clients = len(weights_list)
+        
+        if n_clients == 0:
+            print("⚠️ Norm Pre-filter: ALL clients rejected! This should not happen.")
+            return []
+
     # 2. Calculate Pairwise Cosine Distances
     # 🔧 FIX: HDBSCAN requires float64 (double), but PyTorch gave float32.
     distances = cosine_distances(flat_updates).astype(np.float64)
