@@ -1,6 +1,9 @@
 defaults:
   - _self_
 
+# Random seed for reproducibility
+seed: 42  # Change this to test different seeds (e.g., 42, 123, 456, 789)
+
 simulation:
   rounds: 20 
   n_clients: 10
@@ -9,7 +12,7 @@ simulation:
   alpha: 0.5
 
 client:
-  epochs: 10  # FL: Use 3-5 local epochs per round (not 30!)
+  epochs: 15  # FL: Use 3-5 local epochs per round (not 30!)
   lr: 0.001  # M12: Lower learning rate for Adam
   batch_size: 512  # M12: Standard batch size
   device: "cuda"
@@ -21,8 +24,8 @@ client:
   early_stopping_patience: 3  # Keep for safety, but unlikely to trigger with 5 epochs
 
 server:
-  defense: "sentinel"   # "avg", "median", "trimmed_mean", "krum", "multi_krum", "flame","sentinel"
-  expected_malicious: 3  # Defender's ESTIMATE of malicious clients (safety condition n>2f+2) (used by "krum")
+  defense: "flame"   # "avg", "median", "trimmed_mean", "krum", "multi_krum", "flame","sentinel"
+  expected_malicious: 4  # Defender's ESTIMATE of malicious clients (safety condition n>2f+2) (used by "krum")
   # FLAME: Differential Privacy noise parameters (required for DP guarantee — Theorem 1)
   privacy:
     epsilon: 300.0   # Privacy budget. Higher = less noise, less privacy.
@@ -51,4 +54,4 @@ attack:
   estimated_n_clients: 10  # Model replacement scale factor — MUST match simulation.n_clients (used oly for Model replacement attacks)
 
   # How many attackers?
-  num_malicious_clients: 3  # Example: 10% of the network (4 out of 40) (used by attacker)
+  num_malicious_clients: 4  # Example: 10% of the network (4 out of 40) (used by attacker)
