@@ -27,7 +27,12 @@ class Server:
         """
         self.round_counter += 1
         # Separate weights from the tuples for the robust functions
+        # client_updates is (weights, n_samples, loss, client_id)
         weights_list = [update[0] for update in client_updates]
+        # Extract client IDs (4th element)
+        client_ids = [update[3] for update in client_updates]
+        # Strip client IDs for defenses that expect 3-tuples (e.g. fed_avg)
+        client_updates_3 = [(u[0], u[1], u[2]) for u in client_updates]
 
         # Define n_clients HERE (Top Level)
         n_clients = len(weights_list)
@@ -35,7 +40,7 @@ class Server:
         print(f"🛡️ Aggregating {n_clients} updates using defense: '{self.defense}'")
 
         if self.defense == "avg":
-            new_weights = fed_avg(client_updates)
+            new_weights = fed_avg(client_updates_3)
             
         elif self.defense == "median":
             new_weights = fed_median(weights_list)
@@ -92,7 +97,7 @@ class Server:
 #                          SENTINEL (Our Defense)
 
         elif self.defense == "sentinel":
-            # 1. SYBIL-AWARE FILTERING (remove top expected_malicious clients)
+            # 1. SYBIL-AWARE FILTERING with client ID tracking
             sensitivity = self.config.server.get('sentinel_sensitivity', 1.5)
             filtered_weights = sentinel_filtering(
                 weights_list,
@@ -100,7 +105,8 @@ class Server:
                 sensitivity=sensitivity,
                 expected_malicious=self.expected_malicious,
                 round_num=self.round_counter,
-                total_rounds=self.total_rounds
+                total_rounds=self.total_rounds,
+                client_ids=client_ids
             )
 
             # 2. ROBUST AGGREGATION: trimmed median + DP noise

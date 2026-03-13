@@ -198,7 +198,7 @@ def main(cfg: DictConfig):
             role = "MAL" if cid in malicious_ids else "BEN"
             print(f"  Client {cid:2d} [{role}]: ||Δ|| = {delta_norm:.2f}, samples = {n_samples}")
             
-            client_updates.append((w_local, n_samples, loss))
+            client_updates.append((w_local, n_samples, loss, cid))
 
         # C. Aggregation Phase (Server)
         server.aggregate(client_updates)
