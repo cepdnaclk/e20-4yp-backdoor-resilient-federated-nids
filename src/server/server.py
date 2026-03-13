@@ -1,7 +1,7 @@
 import torch
 from sklearn.metrics import f1_score
 from .aggregation import fed_avg, fed_median, fed_trimmed_mean, fed_krum, fed_multi_krum, fed_adaptive_clipping, sentinel_aggregate
-from src.server.clustering import flame_clustering, sentinel_filtering
+from src.server.clustering import flame_clustering, sentinel_filtering, reset_sentinel_state
 
 class Server:
     def __init__(self, config, global_model, test_loader, device='cpu', defense='avg', expected_malicious=0, num_classes=10):
@@ -13,11 +13,19 @@ class Server:
         # Store expected malicious count for defenses like Krum/Trimmed Mean
         self.expected_malicious = expected_malicious
         self.num_classes = num_classes
+        # Round tracking for convergence-aware defenses (SENTINEL v7)
+        self.round_counter = 0
+        self.total_rounds = config.simulation.get('rounds', 20)
+        # Reset cross-round reputation state for a clean experiment
+        if defense == 'sentinel':
+            reset_sentinel_state()
+
 
     def aggregate(self, client_updates):
         """
         Orchestrates the aggregation.
         """
+        self.round_counter += 1
         # Separate weights from the tuples for the robust functions
         weights_list = [update[0] for update in client_updates]
 
@@ -90,7 +98,9 @@ class Server:
                 weights_list,
                 self.global_model.state_dict(),
                 sensitivity=sensitivity,
-                expected_malicious=self.expected_malicious
+                expected_malicious=self.expected_malicious,
+                round_num=self.round_counter,
+                total_rounds=self.total_rounds
             )
 
             # 2. ROBUST AGGREGATION: trimmed median + DP noise

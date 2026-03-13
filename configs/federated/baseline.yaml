@@ -22,7 +22,7 @@ client:
 
 server:
   defense: "sentinel"   # "avg", "median", "trimmed_mean", "krum", "multi_krum", "flame","sentinel"
-  expected_malicious: 3  # Defender's ESTIMATE of malicious clients (safety condition n>2f+2) (used by "krum")
+  expected_malicious: 4  # Defender's ESTIMATE of malicious clients (safety condition n>2f+2) (used by "krum")
   # FLAME: Differential Privacy noise parameters (required for DP guarantee — Theorem 1)
   privacy:
     epsilon: 300.0   # Privacy budget. Higher = less noise, less privacy.

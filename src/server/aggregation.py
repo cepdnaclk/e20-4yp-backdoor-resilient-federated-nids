@@ -163,20 +163,36 @@ def fed_multi_krum(weights_list, f, m=None):
 
 def sentinel_aggregate(weights_list, global_model_weights, privacy_cfg=None, expected_malicious=3):
     """
-    Sentinel aggregation: Trimmed Coordinate-wise Median + DP Noise.
-    
-    Key insight: Norm-based clipping HURTS against stealth-scaled attacks.
+    Sentinel v6 aggregation: Norm-weighted trimmed aggregation + DP Noise.
+
+    Key insight (v5): Norm-based clipping HURTS against stealth-scaled attacks.
     Stealth attackers have small norms (≤ bound), so clipping with
-    median-of-norms shrinks honest updates (large norms) MORE than
-    malicious ones, amplifying the attack signal relative to honest signal.
-    
-    Instead, trimmed median inherently handles outliers: for each parameter
-    coordinate, sort all n values, discard top-f and bottom-f extremes
-    (f = expected_malicious), then take the median of the remaining n-2f
-    values. With 4 actual malicious and f=3 trim, at most 1 malicious
-    survives in the middle, and the median picks an honest value.
-    
-    Pipeline: deltas → sort per-coordinate → trim extremes → median → DP noise
+    median-of-norms shrinks honest updates (large norms) MORE than malicious
+    ones, amplifying the attack signal relative to honest signal.
+
+    Key insight (v6 - NEW): Under non-IID Dirichlet α=0.5, benign clients
+    have naturally large update norms (their local data is very skewed, so
+    they must move far from the global model). Stealth attackers deliberately
+    cap their norms to ≤3. After filtering, we can exploit this residual size
+    difference by weighting each surviving delta by its global L2 norm.
+
+    The trimmed-then-weighted pipeline:
+      1. Compute deltas & norms for all (post-filter) clients.
+      2. For each parameter coordinate, sort values and trim the top-f and
+         bottom-f extremes (f = expected_malicious). This removes outliers.
+      3. Instead of taking the median of the trimmed set, take a
+         norm-weighted mean: clients with larger norms vote more.
+         Since benign non-IID clients have larger norms than residual
+         stealthy ones, the aggregated direction is explicitly biased toward
+         the honest majority — making FedAvg's incidental robustness an
+         intentional, principled design choice.
+      4. Add DP Gaussian noise calibrated to the median of norms (S).
+
+    This is more robust than pure median because:
+    - Median is shift-equivariant: a stealthy update at the boundary of the
+      trimmed window still skews the median. Weighting by norm dilutes it.
+    - Large-norm benign updates are exactly the clients that provide the
+      most useful task-specific gradient signal.
     """
     # 1. Compute deltas and L2 norms
     norms = []
@@ -192,27 +208,48 @@ def sentinel_aggregate(weights_list, global_model_weights, privacy_cfg=None, exp
         diffs.append(diff)
 
     n = len(diffs)
+    norms_arr = np.array(norms, dtype=np.float64)
     trim = min(expected_malicious, (n - 1) // 2)  # keep at least 1 value
 
-    # 2. Trimmed coordinate-wise median of deltas
+    # 2. Norm-weighted trimmed aggregation of deltas
     new_weights = copy.deepcopy(global_model_weights)
     for key in new_weights.keys():
-        stacked = torch.stack([d[key] for d in diffs], dim=0)
+        # Stack all surviving client deltas: shape (n, *param_shape)
+        stacked = torch.stack([d[key] for d in diffs], dim=0)  # (n, ...)
+        param_shape = stacked.shape[1:]
+
         if trim > 0 and n - 2 * trim >= 1:
-            sorted_vals, _ = torch.sort(stacked, dim=0)
-            trimmed = sorted_vals[trim : n - trim]
-            med_delta = torch.median(trimmed, dim=0).values
+            # Sort along client dimension, get permutation indices
+            sorted_vals, sort_idx = torch.sort(stacked.view(n, -1), dim=0)
+            kept_vals = sorted_vals[trim : n - trim]          # (n-2f, numel)
+            kept_idx = sort_idx[trim : n - trim]              # which client
+
+            # Build norm weights for the kept entries at each coordinate
+            # kept_idx[j, c] = original client index at position j for coord c
+            kept_norms = torch.tensor(
+                norms_arr[kept_idx.cpu().numpy()], dtype=torch.float32
+            ).to(stacked.device)                               # (n-2f, numel)
+
+            # Normalise across the kept dimension
+            norm_sum = kept_norms.sum(dim=0, keepdim=True).clamp(min=1e-10)
+            w_coord   = kept_norms / norm_sum                  # (n-2f, numel)
+
+            # Weighted mean of kept values
+            agg_flat = (kept_vals.float() * w_coord).sum(dim=0)  # (numel,)
+            agg_delta = agg_flat.view(param_shape)
         else:
-            med_delta = torch.median(stacked, dim=0).values
-        new_weights[key] = new_weights[key] + med_delta
+            # Fallback: coordinate-wise median (n too small to trim)
+            agg_delta = torch.median(stacked, dim=0).values
+
+        new_weights[key] = new_weights[key] + agg_delta
 
     # 3. DP Noise (calibrated to median of norms)
     if privacy_cfg:
-        S = np.median(norms)
+        S = float(np.median(norms_arr))
         epsilon = privacy_cfg.get('epsilon', 300.0)
-        delta = privacy_cfg.get('delta', 1e-5)
+        delta   = privacy_cfg.get('delta', 1e-5)
         lambda_val = (1.0 / epsilon) * np.sqrt(2 * np.log(1.25 / delta))
-        sigma = lambda_val * S
+        sigma   = lambda_val * S
         print(f"   🤫 Adding DP Noise: sigma={sigma:.6f} (epsilon={epsilon})")
         for key in new_weights.keys():
             noise = torch.normal(
