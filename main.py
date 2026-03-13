@@ -3,7 +3,7 @@ from omegaconf import DictConfig, OmegaConf
 import torch
 import numpy as np
 import wandb
-
+import random
 # Import our custom modules
 from src.data.loader import load_dataset, get_data_loaders
 from src.data.partition import partition_data
@@ -12,9 +12,26 @@ from src.client.model import Net
 from src.server.server import Server
 from src.utils.logger import Logger
 
+def set_seed(seed: int):
+    """Sets the random seed for reproducible experiments."""
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+
 # Ensure your Hydra config path is correct relative to where you run this!
 @hydra.main(config_path="configs/federated", config_name="baseline", version_base=None)
 def main(cfg: DictConfig):
+    # Set global random seed
+    if 'random_seed' in cfg.simulation and cfg.simulation.random_seed is not None:
+        seed = cfg.simulation.random_seed
+        print(f"🌱 Setting global random seed: {seed}")
+        set_seed(seed)
+        
     print(f"🚀 Starting Experiment: {cfg.simulation.partition_method} Partition")
 
     # Get classification mode early for W&B grouping
