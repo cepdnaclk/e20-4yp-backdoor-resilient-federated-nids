@@ -22,7 +22,7 @@ client:
   early_stopping_patience: 3  # Keep for safety, but unlikely to trigger with 5 epochs
 
 server:
-  defense: "flame"   # "avg", "median", "trimmed_mean", "krum", "multi_krum", "flame","sentinel"
+  defense: "sentinel"   # "avg", "median", "trimmed_mean", "krum", "multi_krum", "flame","sentinel"
   expected_malicious: 3  # Defender's ESTIMATE of malicious clients (safety condition n>2f+2) (used by "krum")
   # FLAME: Differential Privacy noise parameters (required for DP guarantee — Theorem 1)
   privacy:
