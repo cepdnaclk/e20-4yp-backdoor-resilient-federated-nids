@@ -239,6 +239,13 @@ def main(cfg: DictConfig):
         
         print(f"📊 Round {round_id+1} | Accuracy: {acc:.2f}% | F1-score: {f1_score:.2f} | 😈 Backdoor ASR: {asr:.2f}%")
         
+        # E. LOGGING
+        metrics = {
+            "Accuracy": acc,
+            "f1-score": f1_score,
+            "ASR": asr
+        }
+        
         # 🎯 PFedBA EVALUATION
         if pfedba_attacker is not None:
           pfedba_asr = server.test_pfedba_asr(
@@ -246,22 +253,14 @@ def main(cfg: DictConfig):
             target_label=cfg.attack.pfedba.target_label
           )
           print(f'🎯 PFedBA ASR: {pfedba_asr:.2f}%')
-          logger.log_metrics(
-            {'PFedBA_ASR': pfedba_asr}, 
-            step=round_id + 1
-          )
+          metrics['PFedBA_ASR'] = pfedba_asr
 
-        print(f"📊 Global Accuracy: {acc:.2f}%")
-
-        # E. LOGGING
         logger.log_metrics(
-            metrics={
-                "Accuracy": acc,
-                "f1-score": f1_score,
-                "ASR": asr
-            },
+            metrics=metrics,
             step=round_id + 1
         )
+        
+        print(f"📊 Global Accuracy: {acc:.2f}%")
         
     print("\n✅ Experiment Complete!")
 
