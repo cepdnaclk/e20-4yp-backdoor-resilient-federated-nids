@@ -43,7 +43,68 @@ class Client:
         else:
             self.criterion = nn.CrossEntropyLoss()
 
-    def train(self, global_weights, epochs=1, batch_size=32):
+    def train(self, global_weights, epochs=1, batch_size=32, round_id=1, pfedba_attacker=None):
+        # ===== PFedBA ATTACK BLOCK =====
+        pfedba_cfg = self.config.attack.get('pfedba', {})
+        pfedba_enabled = pfedba_cfg.get('enabled', False)
+        Ta = pfedba_cfg.get('start_round', 5)
+        target_label = pfedba_cfg.get('target_label', 0)
+        
+        if (self.is_malicious 
+            and pfedba_enabled 
+            and pfedba_attacker is not None
+            and round_id >= Ta):
+          
+          print(f'🎯 PFedBA: Client {self.client_id} '
+                f'optimizing trigger (round {round_id})')
+          
+          # Use global model for trigger optimization
+          # (ω^(t-1) from paper)
+          temp_model = copy.deepcopy(self.model)
+          temp_model.load_state_dict(global_weights)
+          temp_model = temp_model.to(self.device)
+          
+          clean_loader = DataLoader(
+            self.clean_dataset, 
+            batch_size=batch_size, 
+            shuffle=True
+          )
+          
+          if round_id == Ta:
+            # First attack round: loss alignment then 
+            # gradient alignment
+            print('   Step 1: Loss Alignment (λ=0)')
+            pfedba_attacker.optimize_trigger_loss_alignment(
+              model=temp_model,
+              data_loader=clean_loader,
+              target_label=target_label,
+              device=self.device
+            )
+            print('   Step 2: Gradient Alignment (λ=1)')
+            pfedba_attacker.optimize_trigger_gradient_alignment(
+              model=temp_model,
+              data_loader=clean_loader,
+              target_label=target_label,
+              device=self.device
+            )
+          else:
+            # Subsequent rounds: gradient alignment only
+            print('   Gradient Alignment only (λ=1)')
+            pfedba_attacker.optimize_trigger_gradient_alignment(
+              model=temp_model,
+              data_loader=clean_loader,
+              target_label=target_label,
+              device=self.device
+            )
+          
+          # Replace dataset with PFedBA poisoned version
+          self.dataset = pfedba_attacker.poison_dataset_pfedba(
+            self.clean_dataset,
+            target_label=target_label
+          )
+          print(f'   Trigger optimized. Dataset poisoned.')
+        # ===== END PFedBA BLOCK =====
+
         # 🛡️🔥 FLAME Evasion: Train shadow model on clean data to get reference update
         evade_flame = self.is_malicious and self.config.attack.get('flame_evasion', False)
         clean_delta_flat = None

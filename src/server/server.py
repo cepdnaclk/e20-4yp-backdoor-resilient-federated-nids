@@ -217,6 +217,47 @@ class Server:
         asr = 100 * success_count / total_count
         return asr
 
+    def test_pfedba_asr(self, pfedba_attacker, 
+                         target_label):
+      if pfedba_attacker is None:
+        return 0.0
+      if not hasattr(pfedba_attacker, 'trigger'):
+        return 0.0
+      
+      self.global_model.eval()
+      success = 0
+      total = 0
+      
+      trigger = pfedba_attacker.trigger
+      mask = pfedba_attacker.mask
+      
+      with torch.no_grad():
+        for X, y in self.test_loader:
+          X, y = X.to(self.device), y.to(self.device)
+          trigger_dev = trigger.to(self.device)
+          mask_dev = mask.to(self.device)
+          
+          # Only test on non-target samples
+          non_target = (y != target_label)
+          if non_target.sum() == 0:
+            continue
+          
+          X_victim = X[non_target].clone()
+          
+          # Apply learned trigger
+          X_triggered = (X_victim * (1 - mask_dev) 
+                         + trigger_dev * mask_dev)
+          
+          outputs = self.global_model(X_triggered)
+          _, predicted = torch.max(outputs, 1)
+          
+          success += (predicted == target_label).sum().item()
+          total += X_victim.size(0)
+      
+      if total == 0:
+        return 0.0
+      return 100 * success / total
+
 def fl_trust_clustering(weights_list, global_model_weights):
     flat_updates = []
     for w in weights_list:

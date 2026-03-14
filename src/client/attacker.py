@@ -24,7 +24,7 @@ class Attacker:
         """
         if self.attack_type == 'clean' or self.poison_ratio <= 0:
             return dataset
-
+        
         print(f"😈 Red Team: Executing '{self.attack_type}' attack...")
 
         X_local, y_local = self._extract_tensors(dataset)
@@ -100,6 +100,9 @@ class Attacker:
         aggressive = self.config.get('aggressive', False)
         stealth = self.config.get('stealth', False)
         
+        if not aggressive and not stealth:
+            return local_weights
+        
         # 🥷 1. Handle Stealth Attack (Krum Bypass)
         if stealth:
             target_norm = self.config.get('target_norm_bound', 3.5)
@@ -148,3 +151,204 @@ class Attacker:
             w_stealth = w_malicious
             
         return w_stealth
+
+    def _init_pfedba_trigger(self, input_dim):
+        # Create learnable trigger tensor
+        # shape: (input_dim,) for tabular UNSW-NB15 data
+        self.trigger = torch.zeros(input_dim, 
+                                   requires_grad=True,
+                                   dtype=torch.float32)
+        
+        # Create fixed binary mask
+        self.mask = torch.zeros(input_dim, dtype=torch.float32)
+        
+        trigger_size = self.config.get('pfedba', {}).get(
+                       'trigger_size', 10)
+        mask_type = self.config.get('pfedba', {}).get(
+                    'mask_type', 'slice')
+        
+        if mask_type == 'slice':
+            # Use first trigger_size features
+            self.mask[:trigger_size] = 1.0
+        else:
+            # Use random features
+            indices = torch.randperm(input_dim)[:trigger_size]
+            self.mask[indices] = 1.0
+
+    def apply_trigger(self, x):
+        # x shape: (batch, input_dim) or (input_dim,)
+        # E(x, ∆) = x ⊙ (1-m) + ∆ ⊙ m
+        trigger = self.trigger.to(x.device)
+        mask = self.mask.to(x.device)
+        return x * (1 - mask) + trigger * mask
+
+    def optimize_trigger_loss_alignment(self, model, 
+                                           data_loader, 
+                                           target_label,
+                                           device):
+        # Freeze model - only optimize trigger
+        for param in model.parameters():
+            param.requires_grad = False
+        
+        # Make trigger a proper parameter for optimization
+        trigger_param = torch.nn.Parameter(
+                        self.trigger.clone().to(device))
+        optimizer = torch.optim.Adam([trigger_param], 
+                                      lr=self.config.get(
+                                      'pfedba', {}).get(
+                                      'trigger_lr', 0.01))
+        criterion = torch.nn.CrossEntropyLoss()
+        steps = self.config.get('pfedba', {}).get(
+                'loss_align_steps', 10)
+        mask = self.mask.to(device)
+        
+        model.eval()
+        # PFedBA Performance Optimization: Only use a few batches for trigger optimization
+        max_batches = self.config.get('pfedba', {}).get('max_batches_alignment', 1)
+        
+        for step in range(steps):
+            total_loss = 0.0
+            batches_processed = 0
+            for X, y in data_loader:
+                X, y = X.to(device), y.to(device)
+                
+                # Apply trigger to batch
+                X_poisoned = X * (1 - mask) + trigger_param * mask
+                
+                # Forward pass on frozen model
+                outputs = model(X_poisoned)
+                target = torch.full((X.size(0),), 
+                                     target_label, 
+                                     dtype=torch.long).to(device)
+                loss = criterion(outputs, target)
+                
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
+                total_loss += loss.item()
+                
+                batches_processed += 1
+                if batches_processed >= max_batches:
+                    break
+            
+            print(f'   Loss Align Step {step+1}: '
+                  f'loss={total_loss:.4f}')
+        
+        # Save optimized trigger back
+        self.trigger = trigger_param.detach().cpu()
+        
+        # Unfreeze model
+        for param in model.parameters():
+            param.requires_grad = True
+
+    def optimize_trigger_gradient_alignment(self, model,
+                                               data_loader,
+                                               target_label,
+                                               device):
+        # We need model parameters to require grad to compute the loss gradients w.r.t. them
+        for param in model.parameters():
+            param.requires_grad = True
+        
+        trigger_param = torch.nn.Parameter(
+                        self.trigger.clone().to(device))
+        optimizer = torch.optim.Adam([trigger_param],
+                                      lr=self.config.get(
+                                      'pfedba', {}).get(
+                                      'trigger_lr', 0.01))
+        criterion = torch.nn.CrossEntropyLoss()
+        steps = self.config.get('pfedba', {}).get(
+                'grad_align_steps', 10)
+        mask = self.mask.to(device)
+        
+        model.train()
+        # PFedBA Performance Optimization: Only use a few batches for trigger optimization
+        max_batches = self.config.get('pfedba', {}).get('max_batches_alignment', 1)
+        max_samples_per_batch = self.config.get('pfedba', {}).get('max_samples_alignment', 64)
+
+        for step in range(steps):
+            total_dist = 0.0
+            batches_processed = 0
+            for X, y in data_loader:
+                X, y = X.to(device), y.to(device)
+                
+                # Small subset to keep it fast
+                X_subset = X[:max_samples_per_batch]
+                y_subset = y[:max_samples_per_batch]
+                
+                grad_distances = []
+                for i in range(X_subset.size(0)):
+                    xi = X_subset[i:i+1]
+                    yi = y_subset[i:i+1]
+                    
+                    # 1. Clean gradient computation
+                    out_clean = model(xi)
+                    loss_clean = criterion(out_clean, yi)
+                    # Use autograd.grad to get gradients without calling .backward()
+                    grads_clean = torch.autograd.grad(
+                        loss_clean, model.parameters(), 
+                        retain_graph=False, create_graph=False
+                    )
+                    grad_clean_flat = torch.cat([g.reshape(-1) for g in grads_clean]).detach()
+                    
+                    # 2. Backdoor gradient computation
+                    xi_poison = xi * (1 - mask) + trigger_param * mask
+                    target_i = torch.tensor([target_label], dtype=torch.long, device=device)
+                    out_back = model(xi_poison)
+                    loss_back = criterion(out_back, target_i)
+                    # We MUST use create_graph=True here so grad_back depends on trigger_param
+                    grads_back = torch.autograd.grad(
+                        loss_back, model.parameters(),
+                        retain_graph=True, create_graph=True
+                    )
+                    grad_back_flat = torch.cat([g.reshape(-1) for g in grads_back])
+                    
+                    # 3. Euclidean distance between gradients
+                    dist = torch.norm(grad_back_flat - grad_clean_flat) ** 2
+                    grad_distances.append(dist)
+                
+                if not grad_distances:
+                    continue
+                    
+                align_loss = torch.stack(grad_distances).mean()
+                
+                optimizer.zero_grad()
+                align_loss.backward()
+                optimizer.step()
+                total_dist += align_loss.item()
+                
+                batches_processed += 1
+                if batches_processed >= max_batches:
+                    break
+            
+            print(f'   Grad Align Step {step+1}: dist={total_dist:.4f}')
+        
+        # Save optimized trigger
+        self.trigger = trigger_param.detach().cpu()
+        
+        # Reset requires_grad if needed (though train loop usually handles this)
+        # We'll leave them as True since standard training needs them.
+
+    def poison_dataset_pfedba(self, dataset, target_label):
+        X_local, y_local = self._extract_tensors(dataset)
+        
+        num_samples = len(X_local)
+        num_poison = int(num_samples * self.poison_ratio)
+        
+        if num_poison == 0:
+            return dataset
+        
+        poison_indices = np.random.choice(
+                         num_samples, num_poison, replace=False)
+        
+        mask = self.mask  # fixed binary mask
+        trigger = self.trigger  # learned trigger
+        
+        # Apply trigger to selected samples
+        X_local[poison_indices] = (
+            X_local[poison_indices] * (1 - mask) 
+            + trigger * mask
+        )
+        # Change labels to target
+        y_local[poison_indices] = target_label
+        
+        return TensorDataset(X_local, y_local)

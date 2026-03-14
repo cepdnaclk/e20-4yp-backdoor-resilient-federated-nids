@@ -46,12 +46,22 @@ attack:
   source_label: 3    # Only used for label_flip
   flip_to_label: 0   # Only used for label_flip
   
-  aggressive: true        # Enable Model Replacement
-  stealth: true           # Enable stealth mode (Krum bypass)
+  aggressive: false        # Enable Model Replacement
+  stealth: false           # Enable stealth mode (Krum bypass)
   target_norm_bound: 3    # L2 norm "speed limit" for stealth scaling
   estimated_n_clients: 10  # Model replacement scale factor — MUST match simulation.n_clients (used oly for Model replacement attacks)
-  flame_evasion: true       # Evasion technique from PFedBA (gradient alignment)
+  flame_evasion: false      # Evasion technique from PFedBA (gradient alignment)
   flame_evasion_lambda: 5.0 # Penalty scaling for evasion
 
   # How many attackers?
   num_malicious_clients: 3  # Example: 10% of the network (4 out of 40) (used by attacker)
+  
+  pfedba:
+    enabled: false
+    start_round: 5          # Ta
+    trigger_size: 10        # number of features for trigger
+    mask_type: 'slice'      # 'slice' or 'random'
+    trigger_lr: 0.01        # learning rate for trigger opt
+    loss_align_steps: 10    # steps for loss alignment (λ=0)
+    grad_align_steps: 10    # steps for gradient alignment (λ=1)
+    target_label: 0         # adversary desired class ŷ

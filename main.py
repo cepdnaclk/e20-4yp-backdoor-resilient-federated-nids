@@ -119,7 +119,8 @@ def main(cfg: DictConfig):
     malicious_ids = []
     num_malicious = 0
     
-    if attack_type != "clean":
+    pfedba_enabled = cfg.attack.get('pfedba', {}).get('enabled', False)
+    if attack_type != "clean" or pfedba_enabled:
         # Get count from config, default to 1 if not set
         num_malicious = cfg.attack.get("num_malicious_clients", 1)
         
@@ -130,7 +131,7 @@ def main(cfg: DictConfig):
             replace=False
         ).tolist()
         
-        print(f"⚠️ ATTACK ACTIVE: {attack_type}")
+        print(f"⚠️ ATTACK ACTIVE: {attack_type if attack_type != 'clean' else 'PFedBA Only'}")
         print(f"⚠️ {len(malicious_ids)} Malicious Clients: {malicious_ids}")
     # 😈 RED TEAM LOGIC END 😈
 
@@ -175,6 +176,16 @@ def main(cfg: DictConfig):
         clients.append(client)
 
     best_acc = 0.0
+    
+    # Shared PFedBA attacker (one instance for all 
+    # malicious clients)
+    pfedba_attacker = None
+    if cfg.attack.get('pfedba', {}).get('enabled', False):
+      from src.client.attacker import Attacker
+      pfedba_attacker = Attacker(cfg)
+      pfedba_attacker._init_pfedba_trigger(
+        input_dim=input_dim)
+      print('🎯 PFedBA: Shared trigger initialized')
 
     # 3. FEDERATED LEARNING LOOP
     print("\n🔄 Starting FL Loop...")
@@ -205,7 +216,9 @@ def main(cfg: DictConfig):
             w_local, n_samples, loss = client.train(
                 global_weights=global_weights,
                 epochs=cfg.client.epochs,
-                batch_size=cfg.client.batch_size
+                batch_size=cfg.client.batch_size,
+                round_id=round_id + 1,        # 1-indexed
+                pfedba_attacker=pfedba_attacker
             )
             
             # 📏 Log update norms for analysis
@@ -225,6 +238,19 @@ def main(cfg: DictConfig):
         asr = server.test_attack_efficacy(cfg.attack)
         
         print(f"📊 Round {round_id+1} | Accuracy: {acc:.2f}% | F1-score: {f1_score:.2f} | 😈 Backdoor ASR: {asr:.2f}%")
+        
+        # 🎯 PFedBA EVALUATION
+        if pfedba_attacker is not None:
+          pfedba_asr = server.test_pfedba_asr(
+            pfedba_attacker,
+            target_label=cfg.attack.pfedba.target_label
+          )
+          print(f'🎯 PFedBA ASR: {pfedba_asr:.2f}%')
+          logger.log_metrics(
+            {'PFedBA_ASR': pfedba_asr}, 
+            step=round_id + 1
+          )
+
         print(f"📊 Global Accuracy: {acc:.2f}%")
 
         # E. LOGGING
