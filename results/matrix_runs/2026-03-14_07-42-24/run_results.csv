@@ -1,0 +1,1729 @@
+timestamp,attack,attack_type,aggressive,stealth,flame_evasion,defense,partition,seed,alpha,group,return_code,duration_sec,final_round,accuracy,f1,asr,stderr_tail
+2026-03-14T07:42:26,clean,clean,0,0,0,avg,iid,42,,matrix_fullscale_clean_avg_iid_s42,1,1.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:26,clean,clean,0,0,0,avg,iid,43,,matrix_fullscale_clean_avg_iid_s43,1,0.43,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:26,clean,clean,0,0,0,avg,iid,44,,matrix_fullscale_clean_avg_iid_s44,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:27,clean,clean,0,0,0,avg,dirichlet,42,0.5,matrix_fullscale_clean_avg_dirichlet_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:27,clean,clean,0,0,0,avg,dirichlet,43,0.5,matrix_fullscale_clean_avg_dirichlet_s43,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:28,clean,clean,0,0,0,avg,dirichlet,44,0.5,matrix_fullscale_clean_avg_dirichlet_s44,1,0.44,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:28,clean,clean,0,0,0,avg,pathological,42,,matrix_fullscale_clean_avg_pathological_s42,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:28,clean,clean,0,0,0,avg,pathological,43,,matrix_fullscale_clean_avg_pathological_s43,1,0.45,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:29,clean,clean,0,0,0,avg,pathological,44,,matrix_fullscale_clean_avg_pathological_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:29,clean,clean,0,0,0,median,iid,42,,matrix_fullscale_clean_median_iid_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:29,clean,clean,0,0,0,median,iid,43,,matrix_fullscale_clean_median_iid_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:30,clean,clean,0,0,0,median,iid,44,,matrix_fullscale_clean_median_iid_s44,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:30,clean,clean,0,0,0,median,dirichlet,42,0.5,matrix_fullscale_clean_median_dirichlet_s42,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:30,clean,clean,0,0,0,median,dirichlet,43,0.5,matrix_fullscale_clean_median_dirichlet_s43,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:30,clean,clean,0,0,0,median,dirichlet,44,0.5,matrix_fullscale_clean_median_dirichlet_s44,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:31,clean,clean,0,0,0,median,pathological,42,,matrix_fullscale_clean_median_pathological_s42,1,0.45,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:31,clean,clean,0,0,0,median,pathological,43,,matrix_fullscale_clean_median_pathological_s43,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:32,clean,clean,0,0,0,median,pathological,44,,matrix_fullscale_clean_median_pathological_s44,1,0.39,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:32,clean,clean,0,0,0,trimmed_mean,iid,42,,matrix_fullscale_clean_trimmed_mean_iid_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:32,clean,clean,0,0,0,trimmed_mean,iid,43,,matrix_fullscale_clean_trimmed_mean_iid_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:33,clean,clean,0,0,0,trimmed_mean,iid,44,,matrix_fullscale_clean_trimmed_mean_iid_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:33,clean,clean,0,0,0,trimmed_mean,dirichlet,42,0.5,matrix_fullscale_clean_trimmed_mean_dirichlet_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:33,clean,clean,0,0,0,trimmed_mean,dirichlet,43,0.5,matrix_fullscale_clean_trimmed_mean_dirichlet_s43,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:33,clean,clean,0,0,0,trimmed_mean,dirichlet,44,0.5,matrix_fullscale_clean_trimmed_mean_dirichlet_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:34,clean,clean,0,0,0,trimmed_mean,pathological,42,,matrix_fullscale_clean_trimmed_mean_pathological_s42,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:34,clean,clean,0,0,0,trimmed_mean,pathological,43,,matrix_fullscale_clean_trimmed_mean_pathological_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:34,clean,clean,0,0,0,trimmed_mean,pathological,44,,matrix_fullscale_clean_trimmed_mean_pathological_s44,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:35,clean,clean,0,0,0,krum,iid,42,,matrix_fullscale_clean_krum_iid_s42,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:35,clean,clean,0,0,0,krum,iid,43,,matrix_fullscale_clean_krum_iid_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:35,clean,clean,0,0,0,krum,iid,44,,matrix_fullscale_clean_krum_iid_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:36,clean,clean,0,0,0,krum,dirichlet,42,0.5,matrix_fullscale_clean_krum_dirichlet_s42,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:36,clean,clean,0,0,0,krum,dirichlet,43,0.5,matrix_fullscale_clean_krum_dirichlet_s43,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:36,clean,clean,0,0,0,krum,dirichlet,44,0.5,matrix_fullscale_clean_krum_dirichlet_s44,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:37,clean,clean,0,0,0,krum,pathological,42,,matrix_fullscale_clean_krum_pathological_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:37,clean,clean,0,0,0,krum,pathological,43,,matrix_fullscale_clean_krum_pathological_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:37,clean,clean,0,0,0,krum,pathological,44,,matrix_fullscale_clean_krum_pathological_s44,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:37,clean,clean,0,0,0,multi_krum,iid,42,,matrix_fullscale_clean_multi_krum_iid_s42,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:38,clean,clean,0,0,0,multi_krum,iid,43,,matrix_fullscale_clean_multi_krum_iid_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:38,clean,clean,0,0,0,multi_krum,iid,44,,matrix_fullscale_clean_multi_krum_iid_s44,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:38,clean,clean,0,0,0,multi_krum,dirichlet,42,0.5,matrix_fullscale_clean_multi_krum_dirichlet_s42,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:39,clean,clean,0,0,0,multi_krum,dirichlet,43,0.5,matrix_fullscale_clean_multi_krum_dirichlet_s43,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:39,clean,clean,0,0,0,multi_krum,dirichlet,44,0.5,matrix_fullscale_clean_multi_krum_dirichlet_s44,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:39,clean,clean,0,0,0,multi_krum,pathological,42,,matrix_fullscale_clean_multi_krum_pathological_s42,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:40,clean,clean,0,0,0,multi_krum,pathological,43,,matrix_fullscale_clean_multi_krum_pathological_s43,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:40,clean,clean,0,0,0,multi_krum,pathological,44,,matrix_fullscale_clean_multi_krum_pathological_s44,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:41,clean,clean,0,0,0,flame,iid,42,,matrix_fullscale_clean_flame_iid_s42,1,0.52,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:41,clean,clean,0,0,0,flame,iid,43,,matrix_fullscale_clean_flame_iid_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:41,clean,clean,0,0,0,flame,iid,44,,matrix_fullscale_clean_flame_iid_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:42,clean,clean,0,0,0,flame,dirichlet,42,0.5,matrix_fullscale_clean_flame_dirichlet_s42,1,0.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:42,clean,clean,0,0,0,flame,dirichlet,43,0.5,matrix_fullscale_clean_flame_dirichlet_s43,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:42,clean,clean,0,0,0,flame,dirichlet,44,0.5,matrix_fullscale_clean_flame_dirichlet_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:43,clean,clean,0,0,0,flame,pathological,42,,matrix_fullscale_clean_flame_pathological_s42,1,0.39,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:43,clean,clean,0,0,0,flame,pathological,43,,matrix_fullscale_clean_flame_pathological_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:43,clean,clean,0,0,0,flame,pathological,44,,matrix_fullscale_clean_flame_pathological_s44,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:43,clean,clean,0,0,0,adaptive_clipping,iid,42,,matrix_fullscale_clean_adaptive_clipping_iid_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:44,clean,clean,0,0,0,adaptive_clipping,iid,43,,matrix_fullscale_clean_adaptive_clipping_iid_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:44,clean,clean,0,0,0,adaptive_clipping,iid,44,,matrix_fullscale_clean_adaptive_clipping_iid_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:44,clean,clean,0,0,0,adaptive_clipping,dirichlet,42,0.5,matrix_fullscale_clean_adaptive_clipping_dirichlet_s42,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:45,clean,clean,0,0,0,adaptive_clipping,dirichlet,43,0.5,matrix_fullscale_clean_adaptive_clipping_dirichlet_s43,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:45,clean,clean,0,0,0,adaptive_clipping,dirichlet,44,0.5,matrix_fullscale_clean_adaptive_clipping_dirichlet_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:45,clean,clean,0,0,0,adaptive_clipping,pathological,42,,matrix_fullscale_clean_adaptive_clipping_pathological_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:46,clean,clean,0,0,0,adaptive_clipping,pathological,43,,matrix_fullscale_clean_adaptive_clipping_pathological_s43,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:46,clean,clean,0,0,0,adaptive_clipping,pathological,44,,matrix_fullscale_clean_adaptive_clipping_pathological_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:46,clean,clean,0,0,0,sentinel,iid,42,,matrix_fullscale_clean_sentinel_iid_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:47,clean,clean,0,0,0,sentinel,iid,43,,matrix_fullscale_clean_sentinel_iid_s43,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:47,clean,clean,0,0,0,sentinel,iid,44,,matrix_fullscale_clean_sentinel_iid_s44,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:47,clean,clean,0,0,0,sentinel,dirichlet,42,0.5,matrix_fullscale_clean_sentinel_dirichlet_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:47,clean,clean,0,0,0,sentinel,dirichlet,43,0.5,matrix_fullscale_clean_sentinel_dirichlet_s43,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:48,clean,clean,0,0,0,sentinel,dirichlet,44,0.5,matrix_fullscale_clean_sentinel_dirichlet_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:48,clean,clean,0,0,0,sentinel,pathological,42,,matrix_fullscale_clean_sentinel_pathological_s42,1,0.45,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:49,clean,clean,0,0,0,sentinel,pathological,43,,matrix_fullscale_clean_sentinel_pathological_s43,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:49,clean,clean,0,0,0,sentinel,pathological,44,,matrix_fullscale_clean_sentinel_pathological_s44,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:49,backdoor,backdoor,0,0,0,avg,iid,42,,matrix_fullscale_backdoor_avg_iid_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:50,backdoor,backdoor,0,0,0,avg,iid,43,,matrix_fullscale_backdoor_avg_iid_s43,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:50,backdoor,backdoor,0,0,0,avg,iid,44,,matrix_fullscale_backdoor_avg_iid_s44,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:50,backdoor,backdoor,0,0,0,avg,dirichlet,42,0.5,matrix_fullscale_backdoor_avg_dirichlet_s42,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:50,backdoor,backdoor,0,0,0,avg,dirichlet,43,0.5,matrix_fullscale_backdoor_avg_dirichlet_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:51,backdoor,backdoor,0,0,0,avg,dirichlet,44,0.5,matrix_fullscale_backdoor_avg_dirichlet_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:51,backdoor,backdoor,0,0,0,avg,pathological,42,,matrix_fullscale_backdoor_avg_pathological_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:51,backdoor,backdoor,0,0,0,avg,pathological,43,,matrix_fullscale_backdoor_avg_pathological_s43,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:52,backdoor,backdoor,0,0,0,avg,pathological,44,,matrix_fullscale_backdoor_avg_pathological_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:52,backdoor,backdoor,0,0,0,median,iid,42,,matrix_fullscale_backdoor_median_iid_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:52,backdoor,backdoor,0,0,0,median,iid,43,,matrix_fullscale_backdoor_median_iid_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:53,backdoor,backdoor,0,0,0,median,iid,44,,matrix_fullscale_backdoor_median_iid_s44,1,0.58,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:53,backdoor,backdoor,0,0,0,median,dirichlet,42,0.5,matrix_fullscale_backdoor_median_dirichlet_s42,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:53,backdoor,backdoor,0,0,0,median,dirichlet,43,0.5,matrix_fullscale_backdoor_median_dirichlet_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:54,backdoor,backdoor,0,0,0,median,dirichlet,44,0.5,matrix_fullscale_backdoor_median_dirichlet_s44,1,0.42,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:54,backdoor,backdoor,0,0,0,median,pathological,42,,matrix_fullscale_backdoor_median_pathological_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:54,backdoor,backdoor,0,0,0,median,pathological,43,,matrix_fullscale_backdoor_median_pathological_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:55,backdoor,backdoor,0,0,0,median,pathological,44,,matrix_fullscale_backdoor_median_pathological_s44,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:55,backdoor,backdoor,0,0,0,trimmed_mean,iid,42,,matrix_fullscale_backdoor_trimmed_mean_iid_s42,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:55,backdoor,backdoor,0,0,0,trimmed_mean,iid,43,,matrix_fullscale_backdoor_trimmed_mean_iid_s43,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:56,backdoor,backdoor,0,0,0,trimmed_mean,iid,44,,matrix_fullscale_backdoor_trimmed_mean_iid_s44,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:56,backdoor,backdoor,0,0,0,trimmed_mean,dirichlet,42,0.5,matrix_fullscale_backdoor_trimmed_mean_dirichlet_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:56,backdoor,backdoor,0,0,0,trimmed_mean,dirichlet,43,0.5,matrix_fullscale_backdoor_trimmed_mean_dirichlet_s43,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:57,backdoor,backdoor,0,0,0,trimmed_mean,dirichlet,44,0.5,matrix_fullscale_backdoor_trimmed_mean_dirichlet_s44,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:57,backdoor,backdoor,0,0,0,trimmed_mean,pathological,42,,matrix_fullscale_backdoor_trimmed_mean_pathological_s42,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:57,backdoor,backdoor,0,0,0,trimmed_mean,pathological,43,,matrix_fullscale_backdoor_trimmed_mean_pathological_s43,1,0.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:58,backdoor,backdoor,0,0,0,trimmed_mean,pathological,44,,matrix_fullscale_backdoor_trimmed_mean_pathological_s44,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:58,backdoor,backdoor,0,0,0,krum,iid,42,,matrix_fullscale_backdoor_krum_iid_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:58,backdoor,backdoor,0,0,0,krum,iid,43,,matrix_fullscale_backdoor_krum_iid_s43,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:59,backdoor,backdoor,0,0,0,krum,iid,44,,matrix_fullscale_backdoor_krum_iid_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:59,backdoor,backdoor,0,0,0,krum,dirichlet,42,0.5,matrix_fullscale_backdoor_krum_dirichlet_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:42:59,backdoor,backdoor,0,0,0,krum,dirichlet,43,0.5,matrix_fullscale_backdoor_krum_dirichlet_s43,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:00,backdoor,backdoor,0,0,0,krum,dirichlet,44,0.5,matrix_fullscale_backdoor_krum_dirichlet_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:00,backdoor,backdoor,0,0,0,krum,pathological,42,,matrix_fullscale_backdoor_krum_pathological_s42,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:00,backdoor,backdoor,0,0,0,krum,pathological,43,,matrix_fullscale_backdoor_krum_pathological_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:00,backdoor,backdoor,0,0,0,krum,pathological,44,,matrix_fullscale_backdoor_krum_pathological_s44,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:01,backdoor,backdoor,0,0,0,multi_krum,iid,42,,matrix_fullscale_backdoor_multi_krum_iid_s42,1,0.43,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:01,backdoor,backdoor,0,0,0,multi_krum,iid,43,,matrix_fullscale_backdoor_multi_krum_iid_s43,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:02,backdoor,backdoor,0,0,0,multi_krum,iid,44,,matrix_fullscale_backdoor_multi_krum_iid_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:02,backdoor,backdoor,0,0,0,multi_krum,dirichlet,42,0.5,matrix_fullscale_backdoor_multi_krum_dirichlet_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:02,backdoor,backdoor,0,0,0,multi_krum,dirichlet,43,0.5,matrix_fullscale_backdoor_multi_krum_dirichlet_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:02,backdoor,backdoor,0,0,0,multi_krum,dirichlet,44,0.5,matrix_fullscale_backdoor_multi_krum_dirichlet_s44,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:03,backdoor,backdoor,0,0,0,multi_krum,pathological,42,,matrix_fullscale_backdoor_multi_krum_pathological_s42,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:03,backdoor,backdoor,0,0,0,multi_krum,pathological,43,,matrix_fullscale_backdoor_multi_krum_pathological_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:03,backdoor,backdoor,0,0,0,multi_krum,pathological,44,,matrix_fullscale_backdoor_multi_krum_pathological_s44,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:04,backdoor,backdoor,0,0,0,flame,iid,42,,matrix_fullscale_backdoor_flame_iid_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:04,backdoor,backdoor,0,0,0,flame,iid,43,,matrix_fullscale_backdoor_flame_iid_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:04,backdoor,backdoor,0,0,0,flame,iid,44,,matrix_fullscale_backdoor_flame_iid_s44,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:05,backdoor,backdoor,0,0,0,flame,dirichlet,42,0.5,matrix_fullscale_backdoor_flame_dirichlet_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:05,backdoor,backdoor,0,0,0,flame,dirichlet,43,0.5,matrix_fullscale_backdoor_flame_dirichlet_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:05,backdoor,backdoor,0,0,0,flame,dirichlet,44,0.5,matrix_fullscale_backdoor_flame_dirichlet_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:05,backdoor,backdoor,0,0,0,flame,pathological,42,,matrix_fullscale_backdoor_flame_pathological_s42,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:06,backdoor,backdoor,0,0,0,flame,pathological,43,,matrix_fullscale_backdoor_flame_pathological_s43,1,0.48,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:06,backdoor,backdoor,0,0,0,flame,pathological,44,,matrix_fullscale_backdoor_flame_pathological_s44,1,0.4,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:07,backdoor,backdoor,0,0,0,adaptive_clipping,iid,42,,matrix_fullscale_backdoor_adaptive_clipping_iid_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:07,backdoor,backdoor,0,0,0,adaptive_clipping,iid,43,,matrix_fullscale_backdoor_adaptive_clipping_iid_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:07,backdoor,backdoor,0,0,0,adaptive_clipping,iid,44,,matrix_fullscale_backdoor_adaptive_clipping_iid_s44,1,0.39,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:08,backdoor,backdoor,0,0,0,adaptive_clipping,dirichlet,42,0.5,matrix_fullscale_backdoor_adaptive_clipping_dirichlet_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:08,backdoor,backdoor,0,0,0,adaptive_clipping,dirichlet,43,0.5,matrix_fullscale_backdoor_adaptive_clipping_dirichlet_s43,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:08,backdoor,backdoor,0,0,0,adaptive_clipping,dirichlet,44,0.5,matrix_fullscale_backdoor_adaptive_clipping_dirichlet_s44,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:09,backdoor,backdoor,0,0,0,adaptive_clipping,pathological,42,,matrix_fullscale_backdoor_adaptive_clipping_pathological_s42,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:09,backdoor,backdoor,0,0,0,adaptive_clipping,pathological,43,,matrix_fullscale_backdoor_adaptive_clipping_pathological_s43,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:09,backdoor,backdoor,0,0,0,adaptive_clipping,pathological,44,,matrix_fullscale_backdoor_adaptive_clipping_pathological_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:10,backdoor,backdoor,0,0,0,sentinel,iid,42,,matrix_fullscale_backdoor_sentinel_iid_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:10,backdoor,backdoor,0,0,0,sentinel,iid,43,,matrix_fullscale_backdoor_sentinel_iid_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:10,backdoor,backdoor,0,0,0,sentinel,iid,44,,matrix_fullscale_backdoor_sentinel_iid_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:11,backdoor,backdoor,0,0,0,sentinel,dirichlet,42,0.5,matrix_fullscale_backdoor_sentinel_dirichlet_s42,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:11,backdoor,backdoor,0,0,0,sentinel,dirichlet,43,0.5,matrix_fullscale_backdoor_sentinel_dirichlet_s43,1,0.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:11,backdoor,backdoor,0,0,0,sentinel,dirichlet,44,0.5,matrix_fullscale_backdoor_sentinel_dirichlet_s44,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:12,backdoor,backdoor,0,0,0,sentinel,pathological,42,,matrix_fullscale_backdoor_sentinel_pathological_s42,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:12,backdoor,backdoor,0,0,0,sentinel,pathological,43,,matrix_fullscale_backdoor_sentinel_pathological_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:12,backdoor,backdoor,0,0,0,sentinel,pathological,44,,matrix_fullscale_backdoor_sentinel_pathological_s44,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:12,label_flip,label_flip,0,0,0,avg,iid,42,,matrix_fullscale_label_flip_avg_iid_s42,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:13,label_flip,label_flip,0,0,0,avg,iid,43,,matrix_fullscale_label_flip_avg_iid_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:13,label_flip,label_flip,0,0,0,avg,iid,44,,matrix_fullscale_label_flip_avg_iid_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:14,label_flip,label_flip,0,0,0,avg,dirichlet,42,0.5,matrix_fullscale_label_flip_avg_dirichlet_s42,1,0.45,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:14,label_flip,label_flip,0,0,0,avg,dirichlet,43,0.5,matrix_fullscale_label_flip_avg_dirichlet_s43,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:14,label_flip,label_flip,0,0,0,avg,dirichlet,44,0.5,matrix_fullscale_label_flip_avg_dirichlet_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:14,label_flip,label_flip,0,0,0,avg,pathological,42,,matrix_fullscale_label_flip_avg_pathological_s42,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:15,label_flip,label_flip,0,0,0,avg,pathological,43,,matrix_fullscale_label_flip_avg_pathological_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:15,label_flip,label_flip,0,0,0,avg,pathological,44,,matrix_fullscale_label_flip_avg_pathological_s44,1,0.24,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:15,label_flip,label_flip,0,0,0,median,iid,42,,matrix_fullscale_label_flip_median_iid_s42,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:16,label_flip,label_flip,0,0,0,median,iid,43,,matrix_fullscale_label_flip_median_iid_s43,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:16,label_flip,label_flip,0,0,0,median,iid,44,,matrix_fullscale_label_flip_median_iid_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:16,label_flip,label_flip,0,0,0,median,dirichlet,42,0.5,matrix_fullscale_label_flip_median_dirichlet_s42,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:17,label_flip,label_flip,0,0,0,median,dirichlet,43,0.5,matrix_fullscale_label_flip_median_dirichlet_s43,1,0.42,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:17,label_flip,label_flip,0,0,0,median,dirichlet,44,0.5,matrix_fullscale_label_flip_median_dirichlet_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:17,label_flip,label_flip,0,0,0,median,pathological,42,,matrix_fullscale_label_flip_median_pathological_s42,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:18,label_flip,label_flip,0,0,0,median,pathological,43,,matrix_fullscale_label_flip_median_pathological_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:18,label_flip,label_flip,0,0,0,median,pathological,44,,matrix_fullscale_label_flip_median_pathological_s44,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:18,label_flip,label_flip,0,0,0,trimmed_mean,iid,42,,matrix_fullscale_label_flip_trimmed_mean_iid_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:18,label_flip,label_flip,0,0,0,trimmed_mean,iid,43,,matrix_fullscale_label_flip_trimmed_mean_iid_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:19,label_flip,label_flip,0,0,0,trimmed_mean,iid,44,,matrix_fullscale_label_flip_trimmed_mean_iid_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:19,label_flip,label_flip,0,0,0,trimmed_mean,dirichlet,42,0.5,matrix_fullscale_label_flip_trimmed_mean_dirichlet_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:19,label_flip,label_flip,0,0,0,trimmed_mean,dirichlet,43,0.5,matrix_fullscale_label_flip_trimmed_mean_dirichlet_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:20,label_flip,label_flip,0,0,0,trimmed_mean,dirichlet,44,0.5,matrix_fullscale_label_flip_trimmed_mean_dirichlet_s44,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:20,label_flip,label_flip,0,0,0,trimmed_mean,pathological,42,,matrix_fullscale_label_flip_trimmed_mean_pathological_s42,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:20,label_flip,label_flip,0,0,0,trimmed_mean,pathological,43,,matrix_fullscale_label_flip_trimmed_mean_pathological_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:21,label_flip,label_flip,0,0,0,trimmed_mean,pathological,44,,matrix_fullscale_label_flip_trimmed_mean_pathological_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:21,label_flip,label_flip,0,0,0,krum,iid,42,,matrix_fullscale_label_flip_krum_iid_s42,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:21,label_flip,label_flip,0,0,0,krum,iid,43,,matrix_fullscale_label_flip_krum_iid_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:21,label_flip,label_flip,0,0,0,krum,iid,44,,matrix_fullscale_label_flip_krum_iid_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:22,label_flip,label_flip,0,0,0,krum,dirichlet,42,0.5,matrix_fullscale_label_flip_krum_dirichlet_s42,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:22,label_flip,label_flip,0,0,0,krum,dirichlet,43,0.5,matrix_fullscale_label_flip_krum_dirichlet_s43,1,0.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:23,label_flip,label_flip,0,0,0,krum,dirichlet,44,0.5,matrix_fullscale_label_flip_krum_dirichlet_s44,1,0.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:23,label_flip,label_flip,0,0,0,krum,pathological,42,,matrix_fullscale_label_flip_krum_pathological_s42,1,0.39,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:23,label_flip,label_flip,0,0,0,krum,pathological,43,,matrix_fullscale_label_flip_krum_pathological_s43,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:24,label_flip,label_flip,0,0,0,krum,pathological,44,,matrix_fullscale_label_flip_krum_pathological_s44,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:24,label_flip,label_flip,0,0,0,multi_krum,iid,42,,matrix_fullscale_label_flip_multi_krum_iid_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:24,label_flip,label_flip,0,0,0,multi_krum,iid,43,,matrix_fullscale_label_flip_multi_krum_iid_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:25,label_flip,label_flip,0,0,0,multi_krum,iid,44,,matrix_fullscale_label_flip_multi_krum_iid_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:25,label_flip,label_flip,0,0,0,multi_krum,dirichlet,42,0.5,matrix_fullscale_label_flip_multi_krum_dirichlet_s42,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:25,label_flip,label_flip,0,0,0,multi_krum,dirichlet,43,0.5,matrix_fullscale_label_flip_multi_krum_dirichlet_s43,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:25,label_flip,label_flip,0,0,0,multi_krum,dirichlet,44,0.5,matrix_fullscale_label_flip_multi_krum_dirichlet_s44,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:26,label_flip,label_flip,0,0,0,multi_krum,pathological,42,,matrix_fullscale_label_flip_multi_krum_pathological_s42,1,0.44,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:26,label_flip,label_flip,0,0,0,multi_krum,pathological,43,,matrix_fullscale_label_flip_multi_krum_pathological_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:27,label_flip,label_flip,0,0,0,multi_krum,pathological,44,,matrix_fullscale_label_flip_multi_krum_pathological_s44,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:27,label_flip,label_flip,0,0,0,flame,iid,42,,matrix_fullscale_label_flip_flame_iid_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:27,label_flip,label_flip,0,0,0,flame,iid,43,,matrix_fullscale_label_flip_flame_iid_s43,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:28,label_flip,label_flip,0,0,0,flame,iid,44,,matrix_fullscale_label_flip_flame_iid_s44,1,0.48,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:28,label_flip,label_flip,0,0,0,flame,dirichlet,42,0.5,matrix_fullscale_label_flip_flame_dirichlet_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:28,label_flip,label_flip,0,0,0,flame,dirichlet,43,0.5,matrix_fullscale_label_flip_flame_dirichlet_s43,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:29,label_flip,label_flip,0,0,0,flame,dirichlet,44,0.5,matrix_fullscale_label_flip_flame_dirichlet_s44,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:29,label_flip,label_flip,0,0,0,flame,pathological,42,,matrix_fullscale_label_flip_flame_pathological_s42,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:29,label_flip,label_flip,0,0,0,flame,pathological,43,,matrix_fullscale_label_flip_flame_pathological_s43,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:29,label_flip,label_flip,0,0,0,flame,pathological,44,,matrix_fullscale_label_flip_flame_pathological_s44,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:30,label_flip,label_flip,0,0,0,adaptive_clipping,iid,42,,matrix_fullscale_label_flip_adaptive_clipping_iid_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:30,label_flip,label_flip,0,0,0,adaptive_clipping,iid,43,,matrix_fullscale_label_flip_adaptive_clipping_iid_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:30,label_flip,label_flip,0,0,0,adaptive_clipping,iid,44,,matrix_fullscale_label_flip_adaptive_clipping_iid_s44,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:31,label_flip,label_flip,0,0,0,adaptive_clipping,dirichlet,42,0.5,matrix_fullscale_label_flip_adaptive_clipping_dirichlet_s42,1,0.41,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:31,label_flip,label_flip,0,0,0,adaptive_clipping,dirichlet,43,0.5,matrix_fullscale_label_flip_adaptive_clipping_dirichlet_s43,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:32,label_flip,label_flip,0,0,0,adaptive_clipping,dirichlet,44,0.5,matrix_fullscale_label_flip_adaptive_clipping_dirichlet_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:32,label_flip,label_flip,0,0,0,adaptive_clipping,pathological,42,,matrix_fullscale_label_flip_adaptive_clipping_pathological_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:32,label_flip,label_flip,0,0,0,adaptive_clipping,pathological,43,,matrix_fullscale_label_flip_adaptive_clipping_pathological_s43,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:33,label_flip,label_flip,0,0,0,adaptive_clipping,pathological,44,,matrix_fullscale_label_flip_adaptive_clipping_pathological_s44,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:33,label_flip,label_flip,0,0,0,sentinel,iid,42,,matrix_fullscale_label_flip_sentinel_iid_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:33,label_flip,label_flip,0,0,0,sentinel,iid,43,,matrix_fullscale_label_flip_sentinel_iid_s43,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:33,label_flip,label_flip,0,0,0,sentinel,iid,44,,matrix_fullscale_label_flip_sentinel_iid_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:34,label_flip,label_flip,0,0,0,sentinel,dirichlet,42,0.5,matrix_fullscale_label_flip_sentinel_dirichlet_s42,1,0.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:34,label_flip,label_flip,0,0,0,sentinel,dirichlet,43,0.5,matrix_fullscale_label_flip_sentinel_dirichlet_s43,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:35,label_flip,label_flip,0,0,0,sentinel,dirichlet,44,0.5,matrix_fullscale_label_flip_sentinel_dirichlet_s44,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:35,label_flip,label_flip,0,0,0,sentinel,pathological,42,,matrix_fullscale_label_flip_sentinel_pathological_s42,1,0.48,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:35,label_flip,label_flip,0,0,0,sentinel,pathological,43,,matrix_fullscale_label_flip_sentinel_pathological_s43,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:36,label_flip,label_flip,0,0,0,sentinel,pathological,44,,matrix_fullscale_label_flip_sentinel_pathological_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:36,model_replacement,backdoor,1,0,0,avg,iid,42,,matrix_fullscale_model_replacement_avg_iid_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:36,model_replacement,backdoor,1,0,0,avg,iid,43,,matrix_fullscale_model_replacement_avg_iid_s43,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:36,model_replacement,backdoor,1,0,0,avg,iid,44,,matrix_fullscale_model_replacement_avg_iid_s44,1,0.24,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:37,model_replacement,backdoor,1,0,0,avg,dirichlet,42,0.5,matrix_fullscale_model_replacement_avg_dirichlet_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:37,model_replacement,backdoor,1,0,0,avg,dirichlet,43,0.5,matrix_fullscale_model_replacement_avg_dirichlet_s43,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:37,model_replacement,backdoor,1,0,0,avg,dirichlet,44,0.5,matrix_fullscale_model_replacement_avg_dirichlet_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:38,model_replacement,backdoor,1,0,0,avg,pathological,42,,matrix_fullscale_model_replacement_avg_pathological_s42,1,0.41,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:38,model_replacement,backdoor,1,0,0,avg,pathological,43,,matrix_fullscale_model_replacement_avg_pathological_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:38,model_replacement,backdoor,1,0,0,avg,pathological,44,,matrix_fullscale_model_replacement_avg_pathological_s44,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:39,model_replacement,backdoor,1,0,0,median,iid,42,,matrix_fullscale_model_replacement_median_iid_s42,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:39,model_replacement,backdoor,1,0,0,median,iid,43,,matrix_fullscale_model_replacement_median_iid_s43,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:39,model_replacement,backdoor,1,0,0,median,iid,44,,matrix_fullscale_model_replacement_median_iid_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:40,model_replacement,backdoor,1,0,0,median,dirichlet,42,0.5,matrix_fullscale_model_replacement_median_dirichlet_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:40,model_replacement,backdoor,1,0,0,median,dirichlet,43,0.5,matrix_fullscale_model_replacement_median_dirichlet_s43,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:40,model_replacement,backdoor,1,0,0,median,dirichlet,44,0.5,matrix_fullscale_model_replacement_median_dirichlet_s44,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:41,model_replacement,backdoor,1,0,0,median,pathological,42,,matrix_fullscale_model_replacement_median_pathological_s42,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:41,model_replacement,backdoor,1,0,0,median,pathological,43,,matrix_fullscale_model_replacement_median_pathological_s43,1,0.41,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:41,model_replacement,backdoor,1,0,0,median,pathological,44,,matrix_fullscale_model_replacement_median_pathological_s44,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:42,model_replacement,backdoor,1,0,0,trimmed_mean,iid,42,,matrix_fullscale_model_replacement_trimmed_mean_iid_s42,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:42,model_replacement,backdoor,1,0,0,trimmed_mean,iid,43,,matrix_fullscale_model_replacement_trimmed_mean_iid_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:42,model_replacement,backdoor,1,0,0,trimmed_mean,iid,44,,matrix_fullscale_model_replacement_trimmed_mean_iid_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:42,model_replacement,backdoor,1,0,0,trimmed_mean,dirichlet,42,0.5,matrix_fullscale_model_replacement_trimmed_mean_dirichlet_s42,1,0.24,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:43,model_replacement,backdoor,1,0,0,trimmed_mean,dirichlet,43,0.5,matrix_fullscale_model_replacement_trimmed_mean_dirichlet_s43,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:43,model_replacement,backdoor,1,0,0,trimmed_mean,dirichlet,44,0.5,matrix_fullscale_model_replacement_trimmed_mean_dirichlet_s44,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:43,model_replacement,backdoor,1,0,0,trimmed_mean,pathological,42,,matrix_fullscale_model_replacement_trimmed_mean_pathological_s42,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:43,model_replacement,backdoor,1,0,0,trimmed_mean,pathological,43,,matrix_fullscale_model_replacement_trimmed_mean_pathological_s43,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:44,model_replacement,backdoor,1,0,0,trimmed_mean,pathological,44,,matrix_fullscale_model_replacement_trimmed_mean_pathological_s44,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:44,model_replacement,backdoor,1,0,0,krum,iid,42,,matrix_fullscale_model_replacement_krum_iid_s42,1,0.41,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:45,model_replacement,backdoor,1,0,0,krum,iid,43,,matrix_fullscale_model_replacement_krum_iid_s43,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:45,model_replacement,backdoor,1,0,0,krum,iid,44,,matrix_fullscale_model_replacement_krum_iid_s44,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:45,model_replacement,backdoor,1,0,0,krum,dirichlet,42,0.5,matrix_fullscale_model_replacement_krum_dirichlet_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:45,model_replacement,backdoor,1,0,0,krum,dirichlet,43,0.5,matrix_fullscale_model_replacement_krum_dirichlet_s43,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:46,model_replacement,backdoor,1,0,0,krum,dirichlet,44,0.5,matrix_fullscale_model_replacement_krum_dirichlet_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:46,model_replacement,backdoor,1,0,0,krum,pathological,42,,matrix_fullscale_model_replacement_krum_pathological_s42,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:46,model_replacement,backdoor,1,0,0,krum,pathological,43,,matrix_fullscale_model_replacement_krum_pathological_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:47,model_replacement,backdoor,1,0,0,krum,pathological,44,,matrix_fullscale_model_replacement_krum_pathological_s44,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:47,model_replacement,backdoor,1,0,0,multi_krum,iid,42,,matrix_fullscale_model_replacement_multi_krum_iid_s42,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:47,model_replacement,backdoor,1,0,0,multi_krum,iid,43,,matrix_fullscale_model_replacement_multi_krum_iid_s43,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:48,model_replacement,backdoor,1,0,0,multi_krum,iid,44,,matrix_fullscale_model_replacement_multi_krum_iid_s44,1,0.42,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:48,model_replacement,backdoor,1,0,0,multi_krum,dirichlet,42,0.5,matrix_fullscale_model_replacement_multi_krum_dirichlet_s42,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:48,model_replacement,backdoor,1,0,0,multi_krum,dirichlet,43,0.5,matrix_fullscale_model_replacement_multi_krum_dirichlet_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:49,model_replacement,backdoor,1,0,0,multi_krum,dirichlet,44,0.5,matrix_fullscale_model_replacement_multi_krum_dirichlet_s44,1,0.24,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:49,model_replacement,backdoor,1,0,0,multi_krum,pathological,42,,matrix_fullscale_model_replacement_multi_krum_pathological_s42,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:49,model_replacement,backdoor,1,0,0,multi_krum,pathological,43,,matrix_fullscale_model_replacement_multi_krum_pathological_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:50,model_replacement,backdoor,1,0,0,multi_krum,pathological,44,,matrix_fullscale_model_replacement_multi_krum_pathological_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:50,model_replacement,backdoor,1,0,0,flame,iid,42,,matrix_fullscale_model_replacement_flame_iid_s42,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:50,model_replacement,backdoor,1,0,0,flame,iid,43,,matrix_fullscale_model_replacement_flame_iid_s43,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:51,model_replacement,backdoor,1,0,0,flame,iid,44,,matrix_fullscale_model_replacement_flame_iid_s44,1,0.45,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:51,model_replacement,backdoor,1,0,0,flame,dirichlet,42,0.5,matrix_fullscale_model_replacement_flame_dirichlet_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:51,model_replacement,backdoor,1,0,0,flame,dirichlet,43,0.5,matrix_fullscale_model_replacement_flame_dirichlet_s43,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:52,model_replacement,backdoor,1,0,0,flame,dirichlet,44,0.5,matrix_fullscale_model_replacement_flame_dirichlet_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:52,model_replacement,backdoor,1,0,0,flame,pathological,42,,matrix_fullscale_model_replacement_flame_pathological_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:52,model_replacement,backdoor,1,0,0,flame,pathological,43,,matrix_fullscale_model_replacement_flame_pathological_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:52,model_replacement,backdoor,1,0,0,flame,pathological,44,,matrix_fullscale_model_replacement_flame_pathological_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:53,model_replacement,backdoor,1,0,0,adaptive_clipping,iid,42,,matrix_fullscale_model_replacement_adaptive_clipping_iid_s42,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:53,model_replacement,backdoor,1,0,0,adaptive_clipping,iid,43,,matrix_fullscale_model_replacement_adaptive_clipping_iid_s43,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:53,model_replacement,backdoor,1,0,0,adaptive_clipping,iid,44,,matrix_fullscale_model_replacement_adaptive_clipping_iid_s44,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:54,model_replacement,backdoor,1,0,0,adaptive_clipping,dirichlet,42,0.5,matrix_fullscale_model_replacement_adaptive_clipping_dirichlet_s42,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:54,model_replacement,backdoor,1,0,0,adaptive_clipping,dirichlet,43,0.5,matrix_fullscale_model_replacement_adaptive_clipping_dirichlet_s43,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:54,model_replacement,backdoor,1,0,0,adaptive_clipping,dirichlet,44,0.5,matrix_fullscale_model_replacement_adaptive_clipping_dirichlet_s44,1,0.24,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:55,model_replacement,backdoor,1,0,0,adaptive_clipping,pathological,42,,matrix_fullscale_model_replacement_adaptive_clipping_pathological_s42,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:55,model_replacement,backdoor,1,0,0,adaptive_clipping,pathological,43,,matrix_fullscale_model_replacement_adaptive_clipping_pathological_s43,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:55,model_replacement,backdoor,1,0,0,adaptive_clipping,pathological,44,,matrix_fullscale_model_replacement_adaptive_clipping_pathological_s44,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:55,model_replacement,backdoor,1,0,0,sentinel,iid,42,,matrix_fullscale_model_replacement_sentinel_iid_s42,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:56,model_replacement,backdoor,1,0,0,sentinel,iid,43,,matrix_fullscale_model_replacement_sentinel_iid_s43,1,0.41,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:56,model_replacement,backdoor,1,0,0,sentinel,iid,44,,matrix_fullscale_model_replacement_sentinel_iid_s44,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:57,model_replacement,backdoor,1,0,0,sentinel,dirichlet,42,0.5,matrix_fullscale_model_replacement_sentinel_dirichlet_s42,1,0.43,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:57,model_replacement,backdoor,1,0,0,sentinel,dirichlet,43,0.5,matrix_fullscale_model_replacement_sentinel_dirichlet_s43,1,0.41,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:57,model_replacement,backdoor,1,0,0,sentinel,dirichlet,44,0.5,matrix_fullscale_model_replacement_sentinel_dirichlet_s44,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:58,model_replacement,backdoor,1,0,0,sentinel,pathological,42,,matrix_fullscale_model_replacement_sentinel_pathological_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:58,model_replacement,backdoor,1,0,0,sentinel,pathological,43,,matrix_fullscale_model_replacement_sentinel_pathological_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:58,model_replacement,backdoor,1,0,0,sentinel,pathological,44,,matrix_fullscale_model_replacement_sentinel_pathological_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:58,stealthy_ninja,backdoor,0,1,0,avg,iid,42,,matrix_fullscale_stealthy_ninja_avg_iid_s42,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:59,stealthy_ninja,backdoor,0,1,0,avg,iid,43,,matrix_fullscale_stealthy_ninja_avg_iid_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:43:59,stealthy_ninja,backdoor,0,1,0,avg,iid,44,,matrix_fullscale_stealthy_ninja_avg_iid_s44,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:00,stealthy_ninja,backdoor,0,1,0,avg,dirichlet,42,0.5,matrix_fullscale_stealthy_ninja_avg_dirichlet_s42,1,0.44,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:00,stealthy_ninja,backdoor,0,1,0,avg,dirichlet,43,0.5,matrix_fullscale_stealthy_ninja_avg_dirichlet_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:00,stealthy_ninja,backdoor,0,1,0,avg,dirichlet,44,0.5,matrix_fullscale_stealthy_ninja_avg_dirichlet_s44,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:00,stealthy_ninja,backdoor,0,1,0,avg,pathological,42,,matrix_fullscale_stealthy_ninja_avg_pathological_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:01,stealthy_ninja,backdoor,0,1,0,avg,pathological,43,,matrix_fullscale_stealthy_ninja_avg_pathological_s43,1,0.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:01,stealthy_ninja,backdoor,0,1,0,avg,pathological,44,,matrix_fullscale_stealthy_ninja_avg_pathological_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:01,stealthy_ninja,backdoor,0,1,0,median,iid,42,,matrix_fullscale_stealthy_ninja_median_iid_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:02,stealthy_ninja,backdoor,0,1,0,median,iid,43,,matrix_fullscale_stealthy_ninja_median_iid_s43,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:02,stealthy_ninja,backdoor,0,1,0,median,iid,44,,matrix_fullscale_stealthy_ninja_median_iid_s44,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:03,stealthy_ninja,backdoor,0,1,0,median,dirichlet,42,0.5,matrix_fullscale_stealthy_ninja_median_dirichlet_s42,1,0.59,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:03,stealthy_ninja,backdoor,0,1,0,median,dirichlet,43,0.5,matrix_fullscale_stealthy_ninja_median_dirichlet_s43,1,0.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:03,stealthy_ninja,backdoor,0,1,0,median,dirichlet,44,0.5,matrix_fullscale_stealthy_ninja_median_dirichlet_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:04,stealthy_ninja,backdoor,0,1,0,median,pathological,42,,matrix_fullscale_stealthy_ninja_median_pathological_s42,1,0.24,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:04,stealthy_ninja,backdoor,0,1,0,median,pathological,43,,matrix_fullscale_stealthy_ninja_median_pathological_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:04,stealthy_ninja,backdoor,0,1,0,median,pathological,44,,matrix_fullscale_stealthy_ninja_median_pathological_s44,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:04,stealthy_ninja,backdoor,0,1,0,trimmed_mean,iid,42,,matrix_fullscale_stealthy_ninja_trimmed_mean_iid_s42,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:05,stealthy_ninja,backdoor,0,1,0,trimmed_mean,iid,43,,matrix_fullscale_stealthy_ninja_trimmed_mean_iid_s43,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:05,stealthy_ninja,backdoor,0,1,0,trimmed_mean,iid,44,,matrix_fullscale_stealthy_ninja_trimmed_mean_iid_s44,1,0.39,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:06,stealthy_ninja,backdoor,0,1,0,trimmed_mean,dirichlet,42,0.5,matrix_fullscale_stealthy_ninja_trimmed_mean_dirichlet_s42,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:06,stealthy_ninja,backdoor,0,1,0,trimmed_mean,dirichlet,43,0.5,matrix_fullscale_stealthy_ninja_trimmed_mean_dirichlet_s43,1,0.42,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:06,stealthy_ninja,backdoor,0,1,0,trimmed_mean,dirichlet,44,0.5,matrix_fullscale_stealthy_ninja_trimmed_mean_dirichlet_s44,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:07,stealthy_ninja,backdoor,0,1,0,trimmed_mean,pathological,42,,matrix_fullscale_stealthy_ninja_trimmed_mean_pathological_s42,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:07,stealthy_ninja,backdoor,0,1,0,trimmed_mean,pathological,43,,matrix_fullscale_stealthy_ninja_trimmed_mean_pathological_s43,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:07,stealthy_ninja,backdoor,0,1,0,trimmed_mean,pathological,44,,matrix_fullscale_stealthy_ninja_trimmed_mean_pathological_s44,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:07,stealthy_ninja,backdoor,0,1,0,krum,iid,42,,matrix_fullscale_stealthy_ninja_krum_iid_s42,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:08,stealthy_ninja,backdoor,0,1,0,krum,iid,43,,matrix_fullscale_stealthy_ninja_krum_iid_s43,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:08,stealthy_ninja,backdoor,0,1,0,krum,iid,44,,matrix_fullscale_stealthy_ninja_krum_iid_s44,1,0.46,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:09,stealthy_ninja,backdoor,0,1,0,krum,dirichlet,42,0.5,matrix_fullscale_stealthy_ninja_krum_dirichlet_s42,1,0.42,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:09,stealthy_ninja,backdoor,0,1,0,krum,dirichlet,43,0.5,matrix_fullscale_stealthy_ninja_krum_dirichlet_s43,1,0.41,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:09,stealthy_ninja,backdoor,0,1,0,krum,dirichlet,44,0.5,matrix_fullscale_stealthy_ninja_krum_dirichlet_s44,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:10,stealthy_ninja,backdoor,0,1,0,krum,pathological,42,,matrix_fullscale_stealthy_ninja_krum_pathological_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:10,stealthy_ninja,backdoor,0,1,0,krum,pathological,43,,matrix_fullscale_stealthy_ninja_krum_pathological_s43,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:10,stealthy_ninja,backdoor,0,1,0,krum,pathological,44,,matrix_fullscale_stealthy_ninja_krum_pathological_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:10,stealthy_ninja,backdoor,0,1,0,multi_krum,iid,42,,matrix_fullscale_stealthy_ninja_multi_krum_iid_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:11,stealthy_ninja,backdoor,0,1,0,multi_krum,iid,43,,matrix_fullscale_stealthy_ninja_multi_krum_iid_s43,1,0.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:11,stealthy_ninja,backdoor,0,1,0,multi_krum,iid,44,,matrix_fullscale_stealthy_ninja_multi_krum_iid_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:11,stealthy_ninja,backdoor,0,1,0,multi_krum,dirichlet,42,0.5,matrix_fullscale_stealthy_ninja_multi_krum_dirichlet_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:12,stealthy_ninja,backdoor,0,1,0,multi_krum,dirichlet,43,0.5,matrix_fullscale_stealthy_ninja_multi_krum_dirichlet_s43,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:12,stealthy_ninja,backdoor,0,1,0,multi_krum,dirichlet,44,0.5,matrix_fullscale_stealthy_ninja_multi_krum_dirichlet_s44,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:12,stealthy_ninja,backdoor,0,1,0,multi_krum,pathological,42,,matrix_fullscale_stealthy_ninja_multi_krum_pathological_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:13,stealthy_ninja,backdoor,0,1,0,multi_krum,pathological,43,,matrix_fullscale_stealthy_ninja_multi_krum_pathological_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:13,stealthy_ninja,backdoor,0,1,0,multi_krum,pathological,44,,matrix_fullscale_stealthy_ninja_multi_krum_pathological_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:13,stealthy_ninja,backdoor,0,1,0,flame,iid,42,,matrix_fullscale_stealthy_ninja_flame_iid_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:14,stealthy_ninja,backdoor,0,1,0,flame,iid,43,,matrix_fullscale_stealthy_ninja_flame_iid_s43,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:14,stealthy_ninja,backdoor,0,1,0,flame,iid,44,,matrix_fullscale_stealthy_ninja_flame_iid_s44,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:14,stealthy_ninja,backdoor,0,1,0,flame,dirichlet,42,0.5,matrix_fullscale_stealthy_ninja_flame_dirichlet_s42,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:15,stealthy_ninja,backdoor,0,1,0,flame,dirichlet,43,0.5,matrix_fullscale_stealthy_ninja_flame_dirichlet_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:15,stealthy_ninja,backdoor,0,1,0,flame,dirichlet,44,0.5,matrix_fullscale_stealthy_ninja_flame_dirichlet_s44,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:15,stealthy_ninja,backdoor,0,1,0,flame,pathological,42,,matrix_fullscale_stealthy_ninja_flame_pathological_s42,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:15,stealthy_ninja,backdoor,0,1,0,flame,pathological,43,,matrix_fullscale_stealthy_ninja_flame_pathological_s43,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:16,stealthy_ninja,backdoor,0,1,0,flame,pathological,44,,matrix_fullscale_stealthy_ninja_flame_pathological_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:16,stealthy_ninja,backdoor,0,1,0,adaptive_clipping,iid,42,,matrix_fullscale_stealthy_ninja_adaptive_clipping_iid_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:16,stealthy_ninja,backdoor,0,1,0,adaptive_clipping,iid,43,,matrix_fullscale_stealthy_ninja_adaptive_clipping_iid_s43,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:17,stealthy_ninja,backdoor,0,1,0,adaptive_clipping,iid,44,,matrix_fullscale_stealthy_ninja_adaptive_clipping_iid_s44,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:17,stealthy_ninja,backdoor,0,1,0,adaptive_clipping,dirichlet,42,0.5,matrix_fullscale_stealthy_ninja_adaptive_clipping_dirichlet_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:17,stealthy_ninja,backdoor,0,1,0,adaptive_clipping,dirichlet,43,0.5,matrix_fullscale_stealthy_ninja_adaptive_clipping_dirichlet_s43,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:18,stealthy_ninja,backdoor,0,1,0,adaptive_clipping,dirichlet,44,0.5,matrix_fullscale_stealthy_ninja_adaptive_clipping_dirichlet_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:18,stealthy_ninja,backdoor,0,1,0,adaptive_clipping,pathological,42,,matrix_fullscale_stealthy_ninja_adaptive_clipping_pathological_s42,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:18,stealthy_ninja,backdoor,0,1,0,adaptive_clipping,pathological,43,,matrix_fullscale_stealthy_ninja_adaptive_clipping_pathological_s43,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:19,stealthy_ninja,backdoor,0,1,0,adaptive_clipping,pathological,44,,matrix_fullscale_stealthy_ninja_adaptive_clipping_pathological_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:19,stealthy_ninja,backdoor,0,1,0,sentinel,iid,42,,matrix_fullscale_stealthy_ninja_sentinel_iid_s42,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:19,stealthy_ninja,backdoor,0,1,0,sentinel,iid,43,,matrix_fullscale_stealthy_ninja_sentinel_iid_s43,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:19,stealthy_ninja,backdoor,0,1,0,sentinel,iid,44,,matrix_fullscale_stealthy_ninja_sentinel_iid_s44,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:20,stealthy_ninja,backdoor,0,1,0,sentinel,dirichlet,42,0.5,matrix_fullscale_stealthy_ninja_sentinel_dirichlet_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:20,stealthy_ninja,backdoor,0,1,0,sentinel,dirichlet,43,0.5,matrix_fullscale_stealthy_ninja_sentinel_dirichlet_s43,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:20,stealthy_ninja,backdoor,0,1,0,sentinel,dirichlet,44,0.5,matrix_fullscale_stealthy_ninja_sentinel_dirichlet_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:20,stealthy_ninja,backdoor,0,1,0,sentinel,pathological,42,,matrix_fullscale_stealthy_ninja_sentinel_pathological_s42,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:21,stealthy_ninja,backdoor,0,1,0,sentinel,pathological,43,,matrix_fullscale_stealthy_ninja_sentinel_pathological_s43,1,0.42,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:21,stealthy_ninja,backdoor,0,1,0,sentinel,pathological,44,,matrix_fullscale_stealthy_ninja_sentinel_pathological_s44,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:22,flame_evasive,backdoor,0,0,1,avg,iid,42,,matrix_fullscale_flame_evasive_avg_iid_s42,1,0.42,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:22,flame_evasive,backdoor,0,0,1,avg,iid,43,,matrix_fullscale_flame_evasive_avg_iid_s43,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:22,flame_evasive,backdoor,0,0,1,avg,iid,44,,matrix_fullscale_flame_evasive_avg_iid_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:23,flame_evasive,backdoor,0,0,1,avg,dirichlet,42,0.5,matrix_fullscale_flame_evasive_avg_dirichlet_s42,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:23,flame_evasive,backdoor,0,0,1,avg,dirichlet,43,0.5,matrix_fullscale_flame_evasive_avg_dirichlet_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:23,flame_evasive,backdoor,0,0,1,avg,dirichlet,44,0.5,matrix_fullscale_flame_evasive_avg_dirichlet_s44,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:23,flame_evasive,backdoor,0,0,1,avg,pathological,42,,matrix_fullscale_flame_evasive_avg_pathological_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:24,flame_evasive,backdoor,0,0,1,avg,pathological,43,,matrix_fullscale_flame_evasive_avg_pathological_s43,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:24,flame_evasive,backdoor,0,0,1,avg,pathological,44,,matrix_fullscale_flame_evasive_avg_pathological_s44,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:24,flame_evasive,backdoor,0,0,1,median,iid,42,,matrix_fullscale_flame_evasive_median_iid_s42,1,0.41,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:25,flame_evasive,backdoor,0,0,1,median,iid,43,,matrix_fullscale_flame_evasive_median_iid_s43,1,0.4,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:25,flame_evasive,backdoor,0,0,1,median,iid,44,,matrix_fullscale_flame_evasive_median_iid_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:25,flame_evasive,backdoor,0,0,1,median,dirichlet,42,0.5,matrix_fullscale_flame_evasive_median_dirichlet_s42,1,0.24,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:26,flame_evasive,backdoor,0,0,1,median,dirichlet,43,0.5,matrix_fullscale_flame_evasive_median_dirichlet_s43,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:26,flame_evasive,backdoor,0,0,1,median,dirichlet,44,0.5,matrix_fullscale_flame_evasive_median_dirichlet_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:26,flame_evasive,backdoor,0,0,1,median,pathological,42,,matrix_fullscale_flame_evasive_median_pathological_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:26,flame_evasive,backdoor,0,0,1,median,pathological,43,,matrix_fullscale_flame_evasive_median_pathological_s43,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:27,flame_evasive,backdoor,0,0,1,median,pathological,44,,matrix_fullscale_flame_evasive_median_pathological_s44,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:27,flame_evasive,backdoor,0,0,1,trimmed_mean,iid,42,,matrix_fullscale_flame_evasive_trimmed_mean_iid_s42,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:27,flame_evasive,backdoor,0,0,1,trimmed_mean,iid,43,,matrix_fullscale_flame_evasive_trimmed_mean_iid_s43,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:28,flame_evasive,backdoor,0,0,1,trimmed_mean,iid,44,,matrix_fullscale_flame_evasive_trimmed_mean_iid_s44,1,0.48,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:28,flame_evasive,backdoor,0,0,1,trimmed_mean,dirichlet,42,0.5,matrix_fullscale_flame_evasive_trimmed_mean_dirichlet_s42,1,0.44,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:29,flame_evasive,backdoor,0,0,1,trimmed_mean,dirichlet,43,0.5,matrix_fullscale_flame_evasive_trimmed_mean_dirichlet_s43,1,0.47,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:29,flame_evasive,backdoor,0,0,1,trimmed_mean,dirichlet,44,0.5,matrix_fullscale_flame_evasive_trimmed_mean_dirichlet_s44,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:30,flame_evasive,backdoor,0,0,1,trimmed_mean,pathological,42,,matrix_fullscale_flame_evasive_trimmed_mean_pathological_s42,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:30,flame_evasive,backdoor,0,0,1,trimmed_mean,pathological,43,,matrix_fullscale_flame_evasive_trimmed_mean_pathological_s43,1,0.49,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:30,flame_evasive,backdoor,0,0,1,trimmed_mean,pathological,44,,matrix_fullscale_flame_evasive_trimmed_mean_pathological_s44,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:31,flame_evasive,backdoor,0,0,1,krum,iid,42,,matrix_fullscale_flame_evasive_krum_iid_s42,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:31,flame_evasive,backdoor,0,0,1,krum,iid,43,,matrix_fullscale_flame_evasive_krum_iid_s43,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:32,flame_evasive,backdoor,0,0,1,krum,iid,44,,matrix_fullscale_flame_evasive_krum_iid_s44,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:32,flame_evasive,backdoor,0,0,1,krum,dirichlet,42,0.5,matrix_fullscale_flame_evasive_krum_dirichlet_s42,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:32,flame_evasive,backdoor,0,0,1,krum,dirichlet,43,0.5,matrix_fullscale_flame_evasive_krum_dirichlet_s43,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:33,flame_evasive,backdoor,0,0,1,krum,dirichlet,44,0.5,matrix_fullscale_flame_evasive_krum_dirichlet_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:33,flame_evasive,backdoor,0,0,1,krum,pathological,42,,matrix_fullscale_flame_evasive_krum_pathological_s42,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:33,flame_evasive,backdoor,0,0,1,krum,pathological,43,,matrix_fullscale_flame_evasive_krum_pathological_s43,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:34,flame_evasive,backdoor,0,0,1,krum,pathological,44,,matrix_fullscale_flame_evasive_krum_pathological_s44,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:34,flame_evasive,backdoor,0,0,1,multi_krum,iid,42,,matrix_fullscale_flame_evasive_multi_krum_iid_s42,1,0.36,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:34,flame_evasive,backdoor,0,0,1,multi_krum,iid,43,,matrix_fullscale_flame_evasive_multi_krum_iid_s43,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:35,flame_evasive,backdoor,0,0,1,multi_krum,iid,44,,matrix_fullscale_flame_evasive_multi_krum_iid_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:35,flame_evasive,backdoor,0,0,1,multi_krum,dirichlet,42,0.5,matrix_fullscale_flame_evasive_multi_krum_dirichlet_s42,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:35,flame_evasive,backdoor,0,0,1,multi_krum,dirichlet,43,0.5,matrix_fullscale_flame_evasive_multi_krum_dirichlet_s43,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:36,flame_evasive,backdoor,0,0,1,multi_krum,dirichlet,44,0.5,matrix_fullscale_flame_evasive_multi_krum_dirichlet_s44,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:36,flame_evasive,backdoor,0,0,1,multi_krum,pathological,42,,matrix_fullscale_flame_evasive_multi_krum_pathological_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:36,flame_evasive,backdoor,0,0,1,multi_krum,pathological,43,,matrix_fullscale_flame_evasive_multi_krum_pathological_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:36,flame_evasive,backdoor,0,0,1,multi_krum,pathological,44,,matrix_fullscale_flame_evasive_multi_krum_pathological_s44,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:37,flame_evasive,backdoor,0,0,1,flame,iid,42,,matrix_fullscale_flame_evasive_flame_iid_s42,1,0.29,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:37,flame_evasive,backdoor,0,0,1,flame,iid,43,,matrix_fullscale_flame_evasive_flame_iid_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:37,flame_evasive,backdoor,0,0,1,flame,iid,44,,matrix_fullscale_flame_evasive_flame_iid_s44,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:38,flame_evasive,backdoor,0,0,1,flame,dirichlet,42,0.5,matrix_fullscale_flame_evasive_flame_dirichlet_s42,1,0.38,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:38,flame_evasive,backdoor,0,0,1,flame,dirichlet,43,0.5,matrix_fullscale_flame_evasive_flame_dirichlet_s43,1,0.31,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:38,flame_evasive,backdoor,0,0,1,flame,dirichlet,44,0.5,matrix_fullscale_flame_evasive_flame_dirichlet_s44,1,0.34,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:39,flame_evasive,backdoor,0,0,1,flame,pathological,42,,matrix_fullscale_flame_evasive_flame_pathological_s42,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:39,flame_evasive,backdoor,0,0,1,flame,pathological,43,,matrix_fullscale_flame_evasive_flame_pathological_s43,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:39,flame_evasive,backdoor,0,0,1,flame,pathological,44,,matrix_fullscale_flame_evasive_flame_pathological_s44,1,0.24,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:40,flame_evasive,backdoor,0,0,1,adaptive_clipping,iid,42,,matrix_fullscale_flame_evasive_adaptive_clipping_iid_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:40,flame_evasive,backdoor,0,0,1,adaptive_clipping,iid,43,,matrix_fullscale_flame_evasive_adaptive_clipping_iid_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:40,flame_evasive,backdoor,0,0,1,adaptive_clipping,iid,44,,matrix_fullscale_flame_evasive_adaptive_clipping_iid_s44,1,0.27,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:40,flame_evasive,backdoor,0,0,1,adaptive_clipping,dirichlet,42,0.5,matrix_fullscale_flame_evasive_adaptive_clipping_dirichlet_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:41,flame_evasive,backdoor,0,0,1,adaptive_clipping,dirichlet,43,0.5,matrix_fullscale_flame_evasive_adaptive_clipping_dirichlet_s43,1,0.44,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:41,flame_evasive,backdoor,0,0,1,adaptive_clipping,dirichlet,44,0.5,matrix_fullscale_flame_evasive_adaptive_clipping_dirichlet_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:41,flame_evasive,backdoor,0,0,1,adaptive_clipping,pathological,42,,matrix_fullscale_flame_evasive_adaptive_clipping_pathological_s42,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:42,flame_evasive,backdoor,0,0,1,adaptive_clipping,pathological,43,,matrix_fullscale_flame_evasive_adaptive_clipping_pathological_s43,1,0.43,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:42,flame_evasive,backdoor,0,0,1,adaptive_clipping,pathological,44,,matrix_fullscale_flame_evasive_adaptive_clipping_pathological_s44,1,0.35,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:43,flame_evasive,backdoor,0,0,1,sentinel,iid,42,,matrix_fullscale_flame_evasive_sentinel_iid_s42,1,0.3,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:43,flame_evasive,backdoor,0,0,1,sentinel,iid,43,,matrix_fullscale_flame_evasive_sentinel_iid_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:43,flame_evasive,backdoor,0,0,1,sentinel,iid,44,,matrix_fullscale_flame_evasive_sentinel_iid_s44,1,0.25,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:43,flame_evasive,backdoor,0,0,1,sentinel,dirichlet,42,0.5,matrix_fullscale_flame_evasive_sentinel_dirichlet_s42,1,0.26,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:44,flame_evasive,backdoor,0,0,1,sentinel,dirichlet,43,0.5,matrix_fullscale_flame_evasive_sentinel_dirichlet_s43,1,0.28,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:44,flame_evasive,backdoor,0,0,1,sentinel,dirichlet,44,0.5,matrix_fullscale_flame_evasive_sentinel_dirichlet_s44,1,0.32,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:44,flame_evasive,backdoor,0,0,1,sentinel,pathological,42,,matrix_fullscale_flame_evasive_sentinel_pathological_s42,1,0.37,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:45,flame_evasive,backdoor,0,0,1,sentinel,pathological,43,,matrix_fullscale_flame_evasive_sentinel_pathological_s43,1,0.33,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"
+2026-03-14T07:44:45,flame_evasive,backdoor,0,0,1,sentinel,pathological,44,,matrix_fullscale_flame_evasive_sentinel_pathological_s44,1,0.41,,,,,"Traceback (most recent call last):
+  File ""/home/e20284/FYP/e20-4yp-backdoor-resilient-federated-nids/main.py"", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'"

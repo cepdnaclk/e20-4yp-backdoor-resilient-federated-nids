@@ -160,10 +160,11 @@ class Client:
         # 🆕 ATTACK LOGIC
         final_weights = self.model.state_dict()
         
-        # Check if malicious AND if 'aggressive' mode is enabled in config
+        # Apply post-training attacker scaling when strategy requires it
         if self.is_malicious and hasattr(self, 'attacker'):
-            # 🔴 CRITICAL FIX: Only run Model Replacement if aggressive=True
-            if self.config.attack.get("aggressive", False):
+            use_aggressive = self.config.attack.get("aggressive", False)
+            use_stealth = self.config.attack.get("stealth", False)
+            if use_aggressive or use_stealth:
                 final_weights = self.attacker.scale_update(global_weights, final_weights)
 
         return final_weights, len(self.dataset), avg_loss

@@ -6,6 +6,7 @@ import itertools
 import os
 import re
 import subprocess
+import sys
 import time
 from pathlib import Path
 
@@ -14,7 +15,14 @@ ROUND_METRIC_RE = re.compile(
 )
 
 
-DEFAULT_ATTACKS = ["clean", "backdoor", "label_flip"]
+DEFAULT_ATTACKS = [
+    "clean",
+    "backdoor",
+    "label_flip",
+    "model_replacement",
+    "stealthy_ninja",
+    "flame_evasive",
+]
 DEFAULT_DEFENSES = [
     "avg",
     "median",
@@ -26,6 +34,81 @@ DEFAULT_DEFENSES = [
     "sentinel",
 ]
 DEFAULT_PARTITIONS = ["iid", "dirichlet", "pathological"]
+
+
+def resolve_attack_profile(attack_name: str) -> dict:
+    name = attack_name.strip().lower()
+
+    if name == "clean":
+        return {
+            "strategy": "clean",
+            "attack_type": "clean",
+            "aggressive": False,
+            "stealth": False,
+            "flame_evasion": False,
+        }
+
+    if name in {"backdoor", "standard_backdoor"}:
+        return {
+            "strategy": "backdoor",
+            "attack_type": "backdoor",
+            "aggressive": False,
+            "stealth": False,
+            "flame_evasion": False,
+        }
+
+    if name in {"label_flip", "labelflip"}:
+        return {
+            "strategy": "label_flip",
+            "attack_type": "label_flip",
+            "aggressive": False,
+            "stealth": False,
+            "flame_evasion": False,
+        }
+
+    if name in {"model_replacement", "modelreplacement", "aggressive_backdoor"}:
+        return {
+            "strategy": "model_replacement",
+            "attack_type": "backdoor",
+            "aggressive": True,
+            "stealth": False,
+            "flame_evasion": False,
+        }
+
+    if name in {
+        "stealthy_ninja",
+        "stealth_ninja",
+        "stealthyninja",
+        "ninja",
+        "nija",
+        "stealth_backdoor",
+    }:
+        return {
+            "strategy": "stealthy_ninja",
+            "attack_type": "backdoor",
+            "aggressive": False,
+            "stealth": True,
+            "flame_evasion": False,
+        }
+
+    if name in {
+        "flame_evasive",
+        "flame_evasion",
+        "gradient_alignment",
+        "pfedba",
+    }:
+        return {
+            "strategy": "flame_evasive",
+            "attack_type": "backdoor",
+            "aggressive": False,
+            "stealth": False,
+            "flame_evasion": True,
+        }
+
+    raise ValueError(
+        f"Unknown attack strategy '{attack_name}'. "
+        "Supported: clean, backdoor, label_flip, model_replacement, stealthy_ninja, flame_evasive"
+    )
 
 
 def parse_args() -> argparse.Namespace:
@@ -52,6 +135,13 @@ def parse_args() -> argparse.Namespace:
 
 def run_one(project_root: Path, main_script: str, combo: dict, wandb_mode: str) -> dict:
     attack = combo["attack"]
+    profile = resolve_attack_profile(attack)
+    strategy = profile["strategy"]
+    attack_type = profile["attack_type"]
+    aggressive = profile["aggressive"]
+    stealth = profile["stealth"]
+    flame_evasion = profile["flame_evasion"]
+
     defense = combo["defense"]
     partition = combo["partition"]
     seed = combo["seed"]
@@ -60,10 +150,13 @@ def run_one(project_root: Path, main_script: str, combo: dict, wandb_mode: str) 
     device = combo.get("device")
 
     cmd = [
-        "python",
+        sys.executable,
         main_script,
         f"+group={group}",
-        f"attack.type={attack}",
+        f"attack.type={attack_type}",
+        f"attack.aggressive={'true' if aggressive else 'false'}",
+        f"attack.stealth={'true' if stealth else 'false'}",
+        f"attack.flame_evasion={'true' if flame_evasion else 'false'}",
         f"server.defense={defense}",
         f"simulation.partition_method={partition}",
         f"simulation.random_seed={seed}",
@@ -104,7 +197,11 @@ def run_one(project_root: Path, main_script: str, combo: dict, wandb_mode: str) 
 
     row = {
         "timestamp": dt.datetime.now().isoformat(timespec="seconds"),
-        "attack": attack,
+        "attack": strategy,
+        "attack_type": attack_type,
+        "aggressive": int(aggressive),
+        "stealth": int(stealth),
+        "flame_evasion": int(flame_evasion),
         "defense": defense,
         "partition": partition,
         "seed": seed,
@@ -128,6 +225,10 @@ def summarize(rows: list[dict], out_dir: Path) -> None:
     summary_csv = out_dir / "summary_by_attack_defense_partition.csv"
     fields = [
         "attack",
+        "attack_type",
+        "aggressive",
+        "stealth",
+        "flame_evasion",
         "defense",
         "partition",
         "runs",
@@ -143,7 +244,15 @@ def summarize(rows: list[dict], out_dir: Path) -> None:
 
     grouped: dict[tuple, list[dict]] = {}
     for row in rows:
-        key = (row["attack"], row["defense"], row["partition"])
+        key = (
+            row["attack"],
+            row.get("attack_type", ""),
+            row.get("aggressive", ""),
+            row.get("stealth", ""),
+            row.get("flame_evasion", ""),
+            row["defense"],
+            row["partition"],
+        )
         grouped.setdefault(key, []).append(row)
 
     def _mean_std(values: list[float]) -> tuple[float, float]:
@@ -156,7 +265,7 @@ def summarize(rows: list[dict], out_dir: Path) -> None:
     with summary_csv.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
-        for (attack, defense, partition), group_rows in sorted(grouped.items()):
+        for (attack, attack_type, aggressive, stealth, flame_evasion, defense, partition), group_rows in sorted(grouped.items()):
             succ = [r for r in group_rows if r["return_code"] == 0 and r["accuracy"] != ""]
             fails = len(group_rows) - len(succ)
 
@@ -173,6 +282,10 @@ def summarize(rows: list[dict], out_dir: Path) -> None:
             writer.writerow(
                 {
                     "attack": attack,
+                    "attack_type": attack_type,
+                    "aggressive": aggressive,
+                    "stealth": stealth,
+                    "flame_evasion": flame_evasion,
                     "defense": defense,
                     "partition": partition,
                     "runs": len(group_rows),
@@ -245,6 +358,10 @@ def main() -> None:
     fields = [
         "timestamp",
         "attack",
+        "attack_type",
+        "aggressive",
+        "stealth",
+        "flame_evasion",
         "defense",
         "partition",
         "seed",
@@ -274,9 +391,14 @@ def main() -> None:
                     )
                 )
 
+    normalized_combos = []
+    for attack, defense, partition, seed in all_combos:
+        profile = resolve_attack_profile(attack)
+        normalized_combos.append((profile["strategy"], defense, partition, seed, attack))
+
     combos = [
         combo
-        for combo in all_combos
+        for combo in normalized_combos
         if (combo[0], combo[1], combo[2], combo[3]) not in completed_keys
     ]
 
@@ -294,10 +416,10 @@ def main() -> None:
         if write_mode == "w":
             writer.writeheader()
 
-        for idx, (attack, defense, partition, seed) in enumerate(combos, start=1):
-            group = f"{args.group_prefix}_{attack}_{defense}_{partition}_s{seed}"
+        for idx, (norm_attack, defense, partition, seed, attack_input) in enumerate(combos, start=1):
+            group = f"{args.group_prefix}_{norm_attack}_{defense}_{partition}_s{seed}"
             combo = {
-                "attack": attack,
+                "attack": attack_input,
                 "defense": defense,
                 "partition": partition,
                 "seed": seed,
@@ -306,7 +428,9 @@ def main() -> None:
                 "device": args.device,
             }
 
-            print(f"[{idx}/{total}] attack={attack} defense={defense} partition={partition} seed={seed}")
+            print(
+                f"[{idx}/{total}] attack={norm_attack} defense={defense} partition={partition} seed={seed}"
+            )
             row = run_one(project_root, args.main_script, combo, args.wandb_mode)
             all_rows.append(row)
             writer.writerow(row)

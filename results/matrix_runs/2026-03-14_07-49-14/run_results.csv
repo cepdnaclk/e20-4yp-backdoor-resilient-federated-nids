@@ -1,0 +1,1001 @@
+timestamp,attack,attack_type,aggressive,stealth,flame_evasion,defense,partition,seed,alpha,group,return_code,duration_sec,final_round,accuracy,f1,asr,stderr_tail
+2026-03-14T07:58:28,clean,clean,0,0,0,avg,iid,42,,matrix_fullscale_clean_avg_iid_s42,0,553.69,20,92.68,0.94,0.0,"issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading history steps 18-19, summary, console lines 318-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▄▄▆▆▇▇▆█████████▇▇
+wandb: f1-score ▁▃▃▄▆▅▆▇▆█▇███████▇▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.68264
+wandb: f1-score 0.9408
+wandb: 
+wandb: 🚀 View run blackberry-pie-668 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/he9to9xm
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_074925-he9to9xm/logs"
+2026-03-14T08:07:36,clean,clean,0,0,0,avg,iid,43,,matrix_fullscale_clean_avg_iid_s43,0,548.13,20,92.6,0.94,0.0,"ue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 320-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▃▅▆▇▇▇▇▇▇██▇▇▇▇▇█▇
+wandb: f1-score ▁▂▂▅▆▇▆▇▆▇▇██▇▇▇▇▆█▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.59726
+wandb: f1-score 0.93987
+wandb: 
+wandb: 🚀 View run currant-strudel-670 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/3t3hvf4f
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_075838-3t3hvf4f/logs"
+2026-03-14T08:18:37,clean,clean,0,0,0,avg,iid,44,,matrix_fullscale_clean_avg_iid_s44,0,660.67,20,92.84,0.94,0.0,"elated to this experimental feature.
+  data = torch.load(path)
+wandb: uploading console lines 317-323; updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading history steps 18-19, summary, console lines 324-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▄▄▅▆▇▇▇▇█▆██▇▇█▇▇█
+wandb: f1-score ▁▃▃▄▄▆▆▇▇▆▇▅▇█▇▇▇▇▇▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.83594
+wandb: f1-score 0.94222
+wandb: 
+wandb: 🚀 View run hershey-cake-672 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/xfh66fbr
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_080958-xfh66fbr/logs"
+2026-03-14T08:28:51,clean,clean,0,0,0,avg,dirichlet,42,0.5,matrix_fullscale_clean_avg_dirichlet_s42,0,613.84,20,92.25,0.94,0.0,"ue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 320-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▃▄▄▄▄▅▅▆▅▅▄▅▇▆▆██▇
+wandb: f1-score ▁▃▃▄▄▄▄▄▅▆▅▅▄▅▇▆▆██▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.24993
+wandb: f1-score 0.94101
+wandb: 
+wandb: 🚀 View run pumpkin-flambee-674 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/44ims8l3
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_081848-44ims8l3/logs"
+2026-03-14T08:36:56,clean,clean,0,0,0,avg,dirichlet,43,0.5,matrix_fullscale_clean_avg_dirichlet_s43,0,485.5,20,91.81,0.94,0.0,"file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading wandb-summary.json
+wandb: uploading wandb-summary.json; uploading output.log; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 322-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▂▃▃▄▅▄▅▄▃▇▅▇█▇▇▇▆▇▇
+wandb: f1-score ▁▂▃▃▄▅▄▅▅▃▇▅▇█▇█▇▆▇▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 91.81333
+wandb: f1-score 0.93831
+wandb: 
+wandb: 🚀 View run berry-strudel-676 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/9h46y9gu
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_082902-9h46y9gu/logs"
+2026-03-14T08:43:59,clean,clean,0,0,0,avg,dirichlet,44,0.5,matrix_fullscale_clean_avg_dirichlet_s44,0,423.11,20,91.91,0.94,0.0,"le. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: uploading console lines 318-323; updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 324-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▂▃▄▄▄▅▄▅▅▆▇▇▆█▇██▇▇
+wandb: f1-score ▁▂▃▄▄▄▅▄▅▅▆▇▇▆█▇██▇▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 91.90647
+wandb: f1-score 0.93892
+wandb: 
+wandb: 🚀 View run butterscotch-mousse-678 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/8ss7nqpl
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_083708-8ss7nqpl/logs"
+2026-03-14T08:51:46,clean,clean,0,0,0,avg,pathological,42,,matrix_fullscale_clean_avg_pathological_s42,0,467.05,20,89.88,0.93,0.0,"ues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: updating run metadata; uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 322-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▅▇█████████████████
+wandb: f1-score ▁▅▇█████████████████
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 89.87872
+wandb: f1-score 0.92641
+wandb: 
+wandb: 🚀 View run bumbleberry-tart-680 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/lc4ub21u
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_084409-lc4ub21u/logs"
+2026-03-14T08:59:39,clean,clean,0,0,0,avg,pathological,43,,matrix_fullscale_clean_avg_pathological_s43,0,472.81,20,89.77,0.93,0.0,"issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 320-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▅██████████████████
+wandb: f1-score ▁▅██████████████████
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 89.77006
+wandb: f1-score 0.92572
+wandb: 
+wandb: 🚀 View run ricotta-tart-682 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/vd1n4c7w
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_085157-vd1n4c7w/logs"
+2026-03-14T09:07:13,clean,clean,0,0,0,avg,pathological,44,,matrix_fullscale_clean_avg_pathological_s44,0,453.56,20,89.64,0.92,0.0," an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 321-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▅▇▇████████████████
+wandb: f1-score ▁▄▇▇████████████████
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 89.64005
+wandb: f1-score 0.9249
+wandb: 
+wandb: 🚀 View run peach-bun-684 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/ygory3j5
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_085949-ygory3j5/logs"
+2026-03-14T09:14:13,clean,clean,0,0,0,median,iid,42,,matrix_fullscale_clean_median_iid_s42,0,420.28,20,92.86,0.94,0.0," feature.
+  data = torch.load(path)
+wandb: uploading console lines 315-323; updating run metadata
+wandb: uploading console lines 315-323; uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 324-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▃▅▅▅▆▇▅▇▇▇██████▇█
+wandb: f1-score ▁▃▃▄▄▄▆▆▅▇▆▇█▇███▇▆█
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.85922
+wandb: f1-score 0.94241
+wandb: 
+wandb: 🚀 View run cheese-mousse-687 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/hu2hpavg
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_090722-hu2hpavg/logs"
+2026-03-14T09:21:43,clean,clean,0,0,0,median,iid,43,,matrix_fullscale_clean_median_iid_s43,0,449.69,20,92.32,0.94,0.0,"h.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml; uploading history steps 18-19, summary, console lines 316-329
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading history steps 18-19, summary, console lines 316-329
+wandb: uploading data
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▂▃▅▆▇▇▇▇▇▇██▇▇▆▇▇▇▇
+wandb: f1-score ▁▁▂▅▆▇▆▇▇▇▆▇█▆▇▅▇▆▇▆
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.32366
+wandb: f1-score 0.93736
+wandb: 
+wandb: 🚀 View run ricotta-crumble-690 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/yk304xgp
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_091422-yk304xgp/logs"
+2026-03-14T09:29:24,clean,clean,0,0,0,median,iid,44,,matrix_fullscale_clean_median_iid_s44,0,461.81,20,92.82,0.94,0.0,"'t have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 318-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▄▄▅▆▇▇▇▇▇▅▇█▆▇▇▇██
+wandb: f1-score ▁▃▃▄▄▆▆▇▆▆▇▄▇█▅▇▆▆██
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.82041
+wandb: f1-score 0.94196
+wandb: 
+wandb: 🚀 View run custard-flambee-695 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/or4r0xod
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_092153-or4r0xod/logs"
+2026-03-14T09:37:02,clean,clean,0,0,0,median,dirichlet,42,0.5,matrix_fullscale_clean_median_dirichlet_s42,0,457.89,20,92.52,0.94,0.0,"an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 321-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▂▄▅▅▆▆▆▆▇▇▇▇███████
+wandb: f1-score ▁▂▄▅▅▅▆▆▆▇▇▇████████
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.52159
+wandb: f1-score 0.94058
+wandb: 
+wandb: 🚀 View run apple-bun-697 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/jvigpdvm
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_092934-jvigpdvm/logs"
+2026-03-14T09:44:27,clean,clean,0,0,0,median,dirichlet,43,0.5,matrix_fullscale_clean_median_dirichlet_s43,0,444.35,20,92.34,0.94,0.0," loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 319-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▂▅▅▆▆▆▇▇▇▇▇▇▇██████
+wandb: f1-score ▁▂▅▅▆▆▆▆▇▇▆▇▇▇▇█████
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.33919
+wandb: f1-score 0.94055
+wandb: 
+wandb: 🚀 View run cherry-square-699 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/auopuqfe
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_093712-auopuqfe/logs"
+2026-03-14T09:53:12,clean,clean,0,0,0,median,dirichlet,44,0.5,matrix_fullscale_clean_median_dirichlet_s44,0,525.81,20,92.54,0.94,0.0,"xperimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading history steps 18-19, summary, console lines 318-329; uploading config.yaml
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading wandb-summary.json
+wandb: uploading data
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▂▃▅▅▆▆▆▇▇▇█▇███████
+wandb: f1-score ▁▁▃▅▅▆▆▆▇▇▇█▇█▇█▇▇██
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.53905
+wandb: f1-score 0.94125
+wandb: 
+wandb: 🚀 View run lemon-pie-701 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/lje4uztt
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_094619-lje4uztt/logs"
+2026-03-14T09:59:33,clean,clean,0,0,0,median,pathological,42,,matrix_fullscale_clean_median_pathological_s42,0,380.86,20,92.64,0.94,0.0,"open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 320-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▁▃▄▅▅▅▅▆▇▇▇▇▇▇███▇█
+wandb: f1-score ▃▁▄▅▅▅▅▆▆▇▇▇▇▇▇█▇█▇█
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.63995
+wandb: f1-score 0.94149
+wandb: 
+wandb: 🚀 View run pear-cobbler-703 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/jo4yw04r
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_095321-jo4yw04r/logs"
+2026-03-14T10:07:09,clean,clean,0,0,0,median,pathological,43,,matrix_fullscale_clean_median_pathological_s43,0,455.31,20,90.78,0.92,0.0," an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 321-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▅▇▇████████████████
+wandb: f1-score ▁▄▇▇███████████▇█▇█▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 90.78296
+wandb: f1-score 0.92352
+wandb: 
+wandb: 🚀 View run bumbleberry-flan-706 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/vgewetn1
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_095944-vgewetn1/logs"
+2026-03-14T10:14:25,clean,clean,0,0,0,median,pathological,44,,matrix_fullscale_clean_median_pathological_s44,0,436.55,20,92.55,0.94,0.0,"open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 321-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▅▇▇▇▇▇█▇████████▇██
+wandb: f1-score ▁▄▆▇▇▇▇▇▇▇▇████▇█▇██
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.55263
+wandb: f1-score 0.94039
+wandb: 
+wandb: 🚀 View run mud-meringue-709 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/yq7svmy6
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_100716-yq7svmy6/logs"
+2026-03-14T10:21:33,clean,clean,0,0,0,trimmed_mean,iid,42,,matrix_fullscale_clean_trimmed_mean_iid_s42,0,427.81,20,93.15,0.95,0.0,"n't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 320-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▃▄▅▅▆▆▅▇▇▇▇███▇█▇█
+wandb: f1-score ▁▃▃▃▅▄▅▆▅▆▆▆▇█▇█▇█▇█
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 93.15223
+wandb: f1-score 0.94526
+wandb: 
+wandb: 🚀 View run blueberry-bun-710 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/z97hxet0
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_101434-z97hxet0/logs"
+2026-03-14T10:29:27,clean,clean,0,0,0,trimmed_mean,iid,43,,matrix_fullscale_clean_trimmed_mean_iid_s43,0,473.78,20,92.84,0.94,0.0,"sue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading output.log
+wandb: uploading wandb-summary.json; uploading output.log; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading output.log
+wandb: uploading history steps 18-19, summary, console lines 321-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▂▃▅▆▆▆▇▇▇▇██▇▇▇▇███
+wandb: f1-score ▁▁▂▄▅▆▆▆▆▇▆▇█▇▇▇▇▇█▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.8437
+wandb: f1-score 0.94211
+wandb: 
+wandb: 🚀 View run sweet-potato-bun-714 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/safrd2dv
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_102146-safrd2dv/logs"
+2026-03-14T10:37:31,clean,clean,0,0,0,trimmed_mean,iid,44,,matrix_fullscale_clean_trimmed_mean_iid_s44,0,483.79,20,92.95,0.94,0.0,"pen an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 322-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▄▄▅▆▇▇▇▇▇▇██▇██▇██
+wandb: f1-score ▁▃▃▄▄▆▇▇▇▆▇▆██▇▇█▇██
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.9543
+wandb: f1-score 0.94324
+wandb: 
+wandb: 🚀 View run chocolate-cake-717 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/hy60cuq7
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_102937-hy60cuq7/logs"
+2026-03-14T10:45:29,clean,clean,0,0,0,trimmed_mean,dirichlet,42,0.5,matrix_fullscale_clean_trimmed_mean_dirichlet_s42,0,478.25,20,92.5,0.94,0.0,"ny issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading history steps 18-19, summary, console lines 318-329; uploading output.log; uploading wandb-summary.json
+wandb: uploading history steps 18-19, summary, console lines 318-329; uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading data
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▂▄▅▅▆▆▆▆▇▇▇▇▇██████
+wandb: f1-score ▁▂▃▅▅▅▆▆▆▆▇▇▇▇██████
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.50218
+wandb: f1-score 0.94125
+wandb: 
+wandb: 🚀 View run hazelnut-cake-721 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/9e8a1mf8
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_103739-9e8a1mf8/logs"
+2026-03-14T10:53:31,clean,clean,0,0,0,trimmed_mean,dirichlet,43,0.5,matrix_fullscale_clean_trimmed_mean_dirichlet_s43,0,482.66,20,92.37,0.94,0.0,"pen an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 322-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▂▄▅▆▆▆▆▇▇▇▇█▇██████
+wandb: f1-score ▁▂▄▄▅▆▆▆▆▇▇▇█▇██████
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.36635
+wandb: f1-score 0.94121
+wandb: 
+wandb: 🚀 View run cookie-brulee-722 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/t390lfsd
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_104539-t390lfsd/logs"
+2026-03-14T11:01:41,clean,clean,0,0,0,trimmed_mean,dirichlet,44,0.5,matrix_fullscale_clean_trimmed_mean_dirichlet_s44,0,489.63,20,92.52,0.94,0.0,"e on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 321-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▁▃▅▅▅▆▆▆▇▇▇▇███████
+wandb: f1-score ▁▁▃▄▅▅▆▆▆▇▇▇▇█▇█▇███
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.52159
+wandb: f1-score 0.94158
+wandb: 
+wandb: 🚀 View run cinnamon-brownie-724 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/bd74fsds
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_105343-bd74fsds/logs"
+2026-03-14T11:09:25,clean,clean,0,0,0,trimmed_mean,pathological,42,,matrix_fullscale_clean_trimmed_mean_pathological_s42,0,464.08,20,92.75,0.94,0.0,"es related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading history steps 18-19, summary, console lines 316-329
+wandb: uploading output.log; uploading wandb-summary.json; uploading history steps 18-19, summary, console lines 316-329; uploading config.yaml
+wandb: uploading data
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▄▅▅▆▆▆▆▇▇▇▇█████▇█
+wandb: f1-score ▁▁▄▅▅▅▅▅▅▇▇▇▆▇████▇▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.75444
+wandb: f1-score 0.94201
+wandb: 
+wandb: 🚀 View run cookies-n-cream-cake-726 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/jfd8ofi3
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_110151-jfd8ofi3/logs"
+2026-03-14T11:16:56,clean,clean,0,0,0,trimmed_mean,pathological,43,,matrix_fullscale_clean_trimmed_mean_pathological_s43,0,451.24,20,92.04,0.94,0.0,"n an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 322-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▅▇▇▇▇▇██▇█████▇████
+wandb: f1-score ▁▄▇▇▇▇▇▇█▇▇████▇▇██▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.04036
+wandb: f1-score 0.93526
+wandb: 
+wandb: 🚀 View run hershey-flambee-728 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/jz9u4eur
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_110934-jz9u4eur/logs"
+2026-03-14T11:22:10,clean,clean,0,0,0,trimmed_mean,pathological,44,,matrix_fullscale_clean_trimmed_mean_pathological_s44,0,314.0,20,92.46,0.94,0.0,".log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading history steps 18-19, summary, console lines 313-329
+wandb: uploading history steps 18-19, summary, console lines 313-329
+wandb: uploading data
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▆▆▇▇▇▇▇█████████▇██
+wandb: f1-score ▁▅▆▇▇▇▇▇█▇▇██████▇██
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.46143
+wandb: f1-score 0.93934
+wandb: 
+wandb: 🚀 View run mudslide-square-730 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/plsv6s0g
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_111706-plsv6s0g/logs"
+2026-03-14T11:30:29,clean,clean,0,0,0,krum,iid,42,,matrix_fullscale_clean_krum_iid_s42,0,498.43,20,93.18,0.95,0.0," don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 322-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▄▅▆▆▇▆▆▇▆▇▇▇▇▇▇▆▇▇█
+wandb: f1-score ▁▅▅▆▆▇▆▆▆▆▇▇▇▇▇▇▆▇▇█
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 93.17745
+wandb: f1-score 0.9458
+wandb: 
+wandb: 🚀 View run peach-square-732 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/8j6kpm37
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_112350-8j6kpm37/logs"
+2026-03-14T11:36:48,clean,clean,0,0,0,krum,iid,43,,matrix_fullscale_clean_krum_iid_s43,0,378.72,20,92.62,0.94,0.0,"t have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading output.log
+wandb: uploading wandb-summary.json; uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 320-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▂▂▂▅▅▆▆▇▆▇▇▆▇▇▆▇█▆▇
+wandb: f1-score ▂▂▁▁▅▅▆▆▇▆▇█▆▇▇▆▇█▅▆
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.62443
+wandb: f1-score 0.94058
+wandb: 
+wandb: 🚀 View run mudslide-brownie-733 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/onzky63u
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_113038-onzky63u/logs"
+2026-03-14T11:42:51,clean,clean,0,0,0,krum,iid,44,,matrix_fullscale_clean_krum_iid_s44,0,363.51,20,93.06,0.94,0.0,"ssue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 320-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▃▄▄▆▆▆▇▆▇▅▇█▇▇▇▇██
+wandb: f1-score ▁▃▃▃▃▆▆▆▇▅▇▅▇█▇▇▇▇█▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 93.05715
+wandb: f1-score 0.94466
+wandb: 
+wandb: 🚀 View run peanut-butter-brownie-735 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/yc49lnr3
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_113656-yc49lnr3/logs"
+2026-03-14T11:49:01,clean,clean,0,0,0,krum,dirichlet,42,0.5,matrix_fullscale_clean_krum_dirichlet_s42,0,370.15,20,86.09,0.88,0.0," have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 319-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▆▇▅▇██▇▇▇▇█████▇██▄
+wandb: f1-score ▁▆▇▅▇██▇▇▇▇▇▇███▇██▄
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 86.09489
+wandb: f1-score 0.87848
+wandb: 
+wandb: 🚀 View run coconut-cream-pie-738 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/jbrtilgu
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_114300-jbrtilgu/logs"
+2026-03-14T11:54:56,clean,clean,0,0,0,krum,dirichlet,43,0.5,matrix_fullscale_clean_krum_dirichlet_s43,0,354.51,20,90.61,0.92,0.0,"GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 318-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▆▇▇▇▇▆▆█▇█▇█▇▇██▇██
+wandb: f1-score ▁▆▇▇▇▇▆▆█▇█▇█▇▇██▇██
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 90.61221
+wandb: f1-score 0.92304
+wandb: 
+wandb: 🚀 View run peanut-butter-strudel-743 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/lie2dxd5
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_114909-lie2dxd5/logs"
+2026-03-14T12:00:29,clean,clean,0,0,0,krum,dirichlet,44,0.5,matrix_fullscale_clean_krum_dirichlet_s44,0,333.25,20,90.97,0.93,0.0," issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: updating run metadata; uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 321-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▆▇▆▇▇▇▇▇███▇▇▇█████
+wandb: f1-score ▁▆▇▆██▇▇▇███▇▇▇█████
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 90.97313
+wandb: f1-score 0.92733
+wandb: 
+wandb: 🚀 View run banana-cream-flambee-746 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/hh1ntsjh
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_115506-hh1ntsjh/logs"
+2026-03-14T12:09:27,clean,clean,0,0,0,krum,pathological,42,,matrix_fullscale_clean_krum_pathological_s42,0,538.03,20,36.09,0.0,0.0,"n an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 321-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: f1-score ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 36.09198
+wandb: f1-score 0
+wandb: 
+wandb: 🚀 View run mudslide-tart-754 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/frgvc059
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_120231-frgvc059/logs"
+2026-03-14T12:18:12,clean,clean,0,0,0,krum,pathological,43,,matrix_fullscale_clean_krum_pathological_s43,0,525.2,20,36.09,0.0,0.0,"e open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 314-329
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: f1-score ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 36.09198
+wandb: f1-score 0
+wandb: 
+wandb: 🚀 View run caramel-meringue-757 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/4g4owhaw
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_121120-4g4owhaw/logs"
+2026-03-14T12:28:22,clean,clean,0,0,0,krum,pathological,44,,matrix_fullscale_clean_krum_pathological_s44,0,609.43,20,63.91,0.78,0.0,"issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml; uploading history steps 18-19, summary, console lines 313-329
+wandb: uploading data
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: f1-score ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 63.90802
+wandb: f1-score 0.7798
+wandb: 
+wandb: 🚀 View run apple-square-759 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/pkyilz56
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_122157-pkyilz56/logs"
+2026-03-14T12:40:22,clean,clean,0,0,0,multi_krum,iid,42,,matrix_fullscale_clean_multi_krum_iid_s42,0,720.83,20,92.86,0.94,0.0,"ssue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 341-349
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▄▄▅▆▆▆▇▅▇█▇███▇▇█▇█
+wandb: f1-score ▁▄▄▅▆▆▆▇▅▇█▇███▇▇█▇▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.85728
+wandb: f1-score 0.94249
+wandb: 
+wandb: 🚀 View run cheese-square-768 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/0b3x9a7a
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_123109-0b3x9a7a/logs"
+2026-03-14T12:48:03,clean,clean,0,0,0,multi_krum,iid,43,,matrix_fullscale_clean_multi_krum_iid_s43,0,460.24,20,92.89,0.94,0.0,"sue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading history steps 18-19, summary, console lines 339-349
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▃▅▅▆▇▇▇▇▇██▇▇▇▇███
+wandb: f1-score ▁▂▂▄▅▆▇▇▇▆▇██▆▇▇▆███
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.88639
+wandb: f1-score 0.94263
+wandb: 
+wandb: 🚀 View run strawberry-cake-779 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/690hpkeu
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_124033-690hpkeu/logs"
+2026-03-14T12:58:01,clean,clean,0,0,0,multi_krum,iid,44,,matrix_fullscale_clean_multi_krum_iid_s44,0,598.23,20,92.96,0.94,0.0,"ue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading output.log
+wandb: uploading wandb-summary.json; uploading output.log; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading output.log
+wandb: uploading history steps 18-19, summary, console lines 338-349
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▃▄▄▅▆▇▇▇▇▇▆▇█▇▇▇▇██
+wandb: f1-score ▁▃▃▃▄▆▇▇▇▆▇▆▆█▇▆▇▇█▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.96206
+wandb: f1-score 0.94326
+wandb: 
+wandb: 🚀 View run key-lime-cobbler-781 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/mjxon8e3
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_124813-mjxon8e3/logs"
+2026-03-14T13:08:40,clean,clean,0,0,0,multi_krum,dirichlet,42,0.5,matrix_fullscale_clean_multi_krum_dirichlet_s42,0,638.57,20,92.03,0.94,0.0,"'t have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 341-349
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▁▃▅▅▆▆▆▇▇▆▆▇▇▇▇▇███
+wandb: f1-score ▃▁▅▅▆▆▇▆▇▇▆▆▇▇▇▇▇▇██
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.0326
+wandb: f1-score 0.93612
+wandb: 
+wandb: 🚀 View run bumbleberry-tart-783 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/avbixsv6
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_125815-avbixsv6/logs"
+2026-03-14T13:19:36,clean,clean,0,0,0,multi_krum,dirichlet,43,0.5,matrix_fullscale_clean_multi_krum_dirichlet_s43,0,656.49,20,92.05,0.94,0.0,"d file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading output.log
+wandb: uploading wandb-summary.json; uploading output.log; uploading config.yaml
+wandb: uploading wandb-summary.json
+wandb: uploading history steps 18-19, summary, console lines 340-349
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▂▁▅▆▇▆▆▆▇▇▇▇▇▇█▇████
+wandb: f1-score ▄▁▆▇▇▆▆▆▇▇▇▇▇▇█▇▇███
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.04618
+wandb: f1-score 0.93623
+wandb: 
+wandb: 🚀 View run hershey-flan-795 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/j979x5yz
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_130850-j979x5yz/logs"
+2026-03-14T13:30:24,clean,clean,0,0,0,multi_krum,dirichlet,44,0.5,matrix_fullscale_clean_multi_krum_dirichlet_s44,0,648.47,20,91.85,0.93,0.0," open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 340-349
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▁▅▆▆▆▆▆▆▇▇▇▇▇▆████▇
+wandb: f1-score ▃▁▅▆▇▇▆▆▆▇▇▇▇▇▆█▇██▇
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 91.85214
+wandb: f1-score 0.93425
+wandb: 
+wandb: 🚀 View run pear-square-798 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/fmgegxn2
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_131948-fmgegxn2/logs"
+2026-03-14T13:42:01,clean,clean,0,0,0,multi_krum,pathological,42,,matrix_fullscale_clean_multi_krum_pathological_s42,0,696.18,20,53.08,0.49,0.0," file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading wandb-summary.json
+wandb: uploading wandb-summary.json; uploading output.log; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 339-349
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▆▇██▂▁▁▁▂▂▂▂▂▂▂▂▂▂▂▂
+wandb: f1-score ▇██▇▃▁▁▁▂▂▂▂▂▂▂▂▃▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 53.08237
+wandb: f1-score 0.4904
+wandb: 
+wandb: 🚀 View run spiced-mousse-800 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/u3f6axt7
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_133041-u3f6axt7/logs"
+2026-03-14T13:56:03,clean,clean,0,0,0,multi_krum,pathological,43,,matrix_fullscale_clean_multi_krum_pathological_s43,0,842.71,20,51.43,0.39,0.0,"'t have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading history steps 18-19, summary, console lines 340-349
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy █▂▁▁▁▃▃▃▅▅▅▅▅▅▅▅▅▅▅▅
+wandb: f1-score █▂▁▁▁▃▃▃▄▄▄▄▄▄▄▄▄▄▄▄
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 51.43107
+wandb: f1-score 0.38814
+wandb: 
+wandb: 🚀 View run pumpkin-flambee-801 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/vjbzp515
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_134337-vjbzp515/logs"
+2026-03-14T14:09:28,clean,clean,0,0,0,multi_krum,pathological,44,,matrix_fullscale_clean_multi_krum_pathological_s44,0,804.77,20,51.5,0.39,0.0,"ssue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 338-349
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▁████▅▅▅▆▄▄▄▅▄▄▄▄▄▄
+wandb: f1-score ▁▁████▆▆▅▆▅▄▄▆▅▅▅▅▆▄
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 51.4951
+wandb: f1-score 0.39491
+wandb: 
+wandb: 🚀 View run strawberry-pie-803 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/4tx4bpf6
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_135803-4tx4bpf6/logs"
+2026-03-14T14:22:10,clean,clean,0,0,0,flame,iid,42,,matrix_fullscale_clean_flame_iid_s42,0,762.33,20,92.51,0.94,0.0,"ing `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(path)
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading config.yaml
+wandb: uploading history steps 18-19, summary, console lines 356-369
+wandb: 
+wandb: Run history:
+wandb:      ASR ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Accuracy ▁▆▇▇▇▇▇▇▇▇▇▇████████
+wandb: f1-score ▁▇▇▇█▇█▇▇█▇▇████████
+wandb: 
+wandb: Run summary:
+wandb:      ASR 0
+wandb: Accuracy 92.508
+wandb: f1-score 0.94084
+wandb: 
+wandb: 🚀 View run neapolitan-flan-804 at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids/runs/9bz4sv1i
+wandb: ⭐️ View project at: https://wandb.ai/fyp-group8/e20-4yp-backdoor-resilient-federated-nids
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260314_141144-9bz4sv1i/logs"

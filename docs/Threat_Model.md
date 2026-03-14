@@ -5,6 +5,16 @@
 - **Network Topology**: 40 Clients (IID Partition)
 - **Aggregation Protocol**: FedAvg (Baseline) & Krum (Defense)
 
+### 🧭 Matrix Strategy Legend (CLI → Hydra Flags)
+- `clean` → `attack.type=clean`, `attack.aggressive=false`, `attack.stealth=false`, `attack.flame_evasion=false`
+- `backdoor` → `attack.type=backdoor`, `attack.aggressive=false`, `attack.stealth=false`, `attack.flame_evasion=false`
+- `label_flip` → `attack.type=label_flip`, `attack.aggressive=false`, `attack.stealth=false`, `attack.flame_evasion=false`
+- `model_replacement` (**Phase 1**) → `attack.type=backdoor`, `attack.aggressive=true`, `attack.stealth=false`, `attack.flame_evasion=false`
+- `stealthy_ninja` / `ninja` / `nija` (**Phase 2**) → `attack.type=backdoor`, `attack.aggressive=false`, `attack.stealth=true`, `attack.flame_evasion=false`
+- `flame_evasive` (**Phase 3**) → `attack.type=backdoor`, `attack.aggressive=false`, `attack.stealth=false`, `attack.flame_evasion=true`
+
+> Note: `estimated_n_clients` controls model-replacement amplification, and `target_norm_bound` controls stealth projection.
+
 ---
 
 ## 1️⃣ Experiment A: Simple Data Poisoning (The Baseline)
