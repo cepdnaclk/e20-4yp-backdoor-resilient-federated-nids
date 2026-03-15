@@ -216,3 +216,277 @@ Total runs: 432 | Completed: 0 | Pending: 432
 [108/432] attack=backdoor defense=krum partition=pathological seed=44
     -> OK | acc=36.09 f1=0.0 asr=100.0 | 413.04s
 [109/432] attack=backdoor defense=multi_krum partition=iid seed=42
+    -> OK | acc=93.03 f1=0.94 asr=99.96 | 423.44s
+[110/432] attack=backdoor defense=multi_krum partition=iid seed=43
+    -> OK | acc=92.93 f1=0.94 asr=99.94 | 1081.0s
+[111/432] attack=backdoor defense=multi_krum partition=iid seed=44
+    -> OK | acc=92.81 f1=0.94 asr=99.97 | 910.32s
+[112/432] attack=backdoor defense=multi_krum partition=dirichlet seed=42
+    -> OK | acc=92.16 f1=0.94 asr=99.99 | 605.74s
+[113/432] attack=backdoor defense=multi_krum partition=dirichlet seed=43
+    -> OK | acc=92.14 f1=0.94 asr=100.0 | 960.22s
+[114/432] attack=backdoor defense=multi_krum partition=dirichlet seed=44
+    -> OK | acc=92.1 f1=0.94 asr=100.0 | 724.91s
+[115/432] attack=backdoor defense=multi_krum partition=pathological seed=42
+    -> OK | acc=73.25 f1=0.74 asr=78.82 | 740.57s
+[116/432] attack=backdoor defense=multi_krum partition=pathological seed=43
+    -> OK | acc=80.05 f1=0.82 asr=30.51 | 474.42s
+[117/432] attack=backdoor defense=multi_krum partition=pathological seed=44
+    -> OK | acc=91.8 f1=0.94 asr=8.83 | 796.97s
+[118/432] attack=backdoor defense=flame partition=iid seed=42
+    -> OK | acc=92.1 f1=0.94 asr=75.21 | 833.79s
+[119/432] attack=backdoor defense=flame partition=iid seed=43
+    -> OK | acc=91.65 f1=0.93 asr=0.28 | 392.35s
+[120/432] attack=backdoor defense=flame partition=iid seed=44
+    -> OK | acc=92.28 f1=0.94 asr=78.28 | 505.12s
+[121/432] attack=backdoor defense=flame partition=dirichlet seed=42
+    -> OK | acc=90.94 f1=0.93 asr=77.07 | 341.69s
+[122/432] attack=backdoor defense=flame partition=dirichlet seed=43
+    -> OK | acc=88.16 f1=0.9 asr=5.42 | 338.97s
+[123/432] attack=backdoor defense=flame partition=dirichlet seed=44
+    -> OK | acc=91.68 f1=0.94 asr=0.8 | 728.19s
+[124/432] attack=backdoor defense=flame partition=pathological seed=42
+    -> OK | acc=89.68 f1=0.93 asr=0.0 | 682.34s
+[125/432] attack=backdoor defense=flame partition=pathological seed=43
+    -> OK | acc=89.75 f1=0.93 asr=0.01 | 352.86s
+[126/432] attack=backdoor defense=flame partition=pathological seed=44
+    -> OK | acc=89.77 f1=0.93 asr=0.1 | 325.39s
+[127/432] attack=backdoor defense=adaptive_clipping partition=iid seed=42
+    -> OK | acc=92.24 f1=0.94 asr=99.99 | 537.27s
+[128/432] attack=backdoor defense=adaptive_clipping partition=iid seed=43
+    -> OK | acc=91.79 f1=0.93 asr=99.75 | 346.1s
+[129/432] attack=backdoor defense=adaptive_clipping partition=iid seed=44
+    -> OK | acc=92.06 f1=0.94 asr=100.0 | 338.29s
+[130/432] attack=backdoor defense=adaptive_clipping partition=dirichlet seed=42
+    -> OK | acc=90.23 f1=0.93 asr=100.0 | 251.15s
+[131/432] attack=backdoor defense=adaptive_clipping partition=dirichlet seed=43
+    -> OK | acc=91.39 f1=0.93 asr=81.55 | 540.06s
+[132/432] attack=backdoor defense=adaptive_clipping partition=dirichlet seed=44
+    -> OK | acc=90.51 f1=0.93 asr=99.95 | 440.15s
+[133/432] attack=backdoor defense=adaptive_clipping partition=pathological seed=42
+    -> OK | acc=89.39 f1=0.91 asr=100.0 | 263.95s
+[134/432] attack=backdoor defense=adaptive_clipping partition=pathological seed=43
+    -> OK | acc=87.72 f1=0.9 asr=28.9 | 677.4s
+[135/432] attack=backdoor defense=adaptive_clipping partition=pathological seed=44
+    -> OK | acc=90.3 f1=0.93 asr=85.89 | 757.79s
+[136/432] attack=backdoor defense=sentinel partition=iid seed=42
+    -> OK | acc=92.21 f1=0.94 asr=73.75 | 690.86s
+[137/432] attack=backdoor defense=sentinel partition=iid seed=43
+    -> OK | acc=91.39 f1=0.93 asr=0.0 | 702.53s
+[138/432] attack=backdoor defense=sentinel partition=iid seed=44
+    -> OK | acc=92.46 f1=0.94 asr=65.81 | 461.84s
+[139/432] attack=backdoor defense=sentinel partition=dirichlet seed=42
+    -> OK | acc=90.92 f1=0.93 asr=1.22 | 639.6s
+[140/432] attack=backdoor defense=sentinel partition=dirichlet seed=43
+    -> OK | acc=90.95 f1=0.93 asr=0.0 | 661.61s
+[141/432] attack=backdoor defense=sentinel partition=dirichlet seed=44
+    -> OK | acc=91.45 f1=0.93 asr=0.45 | 708.27s
+[142/432] attack=backdoor defense=sentinel partition=pathological seed=42
+    -> OK | acc=89.59 f1=0.92 asr=13.46 | 538.61s
+[143/432] attack=backdoor defense=sentinel partition=pathological seed=43
+    -> OK | acc=91.88 f1=0.94 asr=0.0 | 555.28s
+[144/432] attack=backdoor defense=sentinel partition=pathological seed=44
+    -> OK | acc=89.86 f1=0.93 asr=1.55 | 610.06s
+[145/432] attack=label_flip defense=avg partition=iid seed=42
+    -> OK | acc=93.0 f1=0.94 asr=0.0 | 622.7s
+[146/432] attack=label_flip defense=avg partition=iid seed=43
+    -> OK | acc=92.89 f1=0.94 asr=0.0 | 628.87s
+[147/432] attack=label_flip defense=avg partition=iid seed=44
+    -> OK | acc=92.9 f1=0.94 asr=0.0 | 378.71s
+[148/432] attack=label_flip defense=avg partition=dirichlet seed=42
+    -> OK | acc=92.63 f1=0.94 asr=0.0 | 630.71s
+[149/432] attack=label_flip defense=avg partition=dirichlet seed=43
+    -> OK | acc=91.72 f1=0.94 asr=0.0 | 651.67s
+[150/432] attack=label_flip defense=avg partition=dirichlet seed=44
+    -> OK | acc=91.58 f1=0.94 asr=0.0 | 626.74s
+[151/432] attack=label_flip defense=avg partition=pathological seed=42
+    -> OK | acc=89.89 f1=0.93 asr=0.0 | 788.17s
+[152/432] attack=label_flip defense=avg partition=pathological seed=43
+    -> OK | acc=90.05 f1=0.93 asr=0.0 | 553.92s
+[153/432] attack=label_flip defense=avg partition=pathological seed=44
+    -> OK | acc=89.56 f1=0.92 asr=0.0 | 585.88s
+[154/432] attack=label_flip defense=median partition=iid seed=42
+    -> OK | acc=92.96 f1=0.94 asr=0.0 | 665.11s
+[155/432] attack=label_flip defense=median partition=iid seed=43
+    -> OK | acc=92.56 f1=0.94 asr=0.0 | 714.34s
+[156/432] attack=label_flip defense=median partition=iid seed=44
+    -> OK | acc=93.08 f1=0.94 asr=0.0 | 580.23s
+[157/432] attack=label_flip defense=median partition=dirichlet seed=42
+    -> OK | acc=92.52 f1=0.94 asr=0.0 | 604.8s
+[158/432] attack=label_flip defense=median partition=dirichlet seed=43
+    -> OK | acc=92.5 f1=0.94 asr=0.0 | 613.08s
+[159/432] attack=label_flip defense=median partition=dirichlet seed=44
+    -> OK | acc=92.54 f1=0.94 asr=0.0 | 736.57s
+[160/432] attack=label_flip defense=median partition=pathological seed=42
+    -> OK | acc=91.88 f1=0.93 asr=0.0 | 554.97s
+[161/432] attack=label_flip defense=median partition=pathological seed=43
+    -> OK | acc=91.81 f1=0.93 asr=0.0 | 592.96s
+[162/432] attack=label_flip defense=median partition=pathological seed=44
+    -> OK | acc=90.69 f1=0.92 asr=0.0 | 575.65s
+[163/432] attack=label_flip defense=trimmed_mean partition=iid seed=42
+    -> OK | acc=92.97 f1=0.94 asr=0.0 | 592.0s
+[164/432] attack=label_flip defense=trimmed_mean partition=iid seed=43
+    -> OK | acc=93.02 f1=0.94 asr=0.0 | 755.08s
+[165/432] attack=label_flip defense=trimmed_mean partition=iid seed=44
+    -> OK | acc=92.96 f1=0.94 asr=0.0 | 333.83s
+[166/432] attack=label_flip defense=trimmed_mean partition=dirichlet seed=42
+    -> OK | acc=92.59 f1=0.94 asr=0.0 | 645.07s
+[167/432] attack=label_flip defense=trimmed_mean partition=dirichlet seed=43
+    -> OK | acc=92.46 f1=0.94 asr=0.0 | 590.74s
+[168/432] attack=label_flip defense=trimmed_mean partition=dirichlet seed=44
+    -> OK | acc=92.56 f1=0.94 asr=0.0 | 705.26s
+[169/432] attack=label_flip defense=trimmed_mean partition=pathological seed=42
+    -> OK | acc=92.62 f1=0.94 asr=0.0 | 398.59s
+[170/432] attack=label_flip defense=trimmed_mean partition=pathological seed=43
+    -> OK | acc=92.74 f1=0.94 asr=0.0 | 379.38s
+[171/432] attack=label_flip defense=trimmed_mean partition=pathological seed=44
+    -> OK | acc=92.48 f1=0.94 asr=0.0 | 415.53s
+[172/432] attack=label_flip defense=krum partition=iid seed=42
+    -> OK | acc=93.15 f1=0.95 asr=0.0 | 604.44s
+[173/432] attack=label_flip defense=krum partition=iid seed=43
+    -> OK | acc=93.19 f1=0.95 asr=0.0 | 484.14s
+[174/432] attack=label_flip defense=krum partition=iid seed=44
+    -> OK | acc=93.0 f1=0.94 asr=0.0 | 309.22s
+[175/432] attack=label_flip defense=krum partition=dirichlet seed=42
+    -> OK | acc=91.36 f1=0.93 asr=0.0 | 352.97s
+[176/432] attack=label_flip defense=krum partition=dirichlet seed=43
+    -> OK | acc=91.45 f1=0.93 asr=0.0 | 331.59s
+[177/432] attack=label_flip defense=krum partition=dirichlet seed=44
+    -> OK | acc=85.64 f1=0.87 asr=0.0 | 300.61s
+[178/432] attack=label_flip defense=krum partition=pathological seed=42
+    -> OK | acc=36.09 f1=0.0 asr=0.0 | 256.93s
+[179/432] attack=label_flip defense=krum partition=pathological seed=43
+    -> OK | acc=36.09 f1=0.0 asr=0.0 | 228.02s
+[180/432] attack=label_flip defense=krum partition=pathological seed=44
+    -> OK | acc=36.09 f1=0.0 asr=0.0 | 328.55s
+[181/432] attack=label_flip defense=multi_krum partition=iid seed=42
+    -> OK | acc=92.94 f1=0.94 asr=0.0 | 321.91s
+[182/432] attack=label_flip defense=multi_krum partition=iid seed=43
+    -> OK | acc=92.67 f1=0.94 asr=0.0 | 369.8s
+[183/432] attack=label_flip defense=multi_krum partition=iid seed=44
+    -> OK | acc=92.96 f1=0.94 asr=0.0 | 331.37s
+[184/432] attack=label_flip defense=multi_krum partition=dirichlet seed=42
+    -> OK | acc=91.92 f1=0.93 asr=0.0 | 335.7s
+[185/432] attack=label_flip defense=multi_krum partition=dirichlet seed=43
+    -> OK | acc=92.11 f1=0.94 asr=0.0 | 326.47s
+[186/432] attack=label_flip defense=multi_krum partition=dirichlet seed=44
+    -> OK | acc=91.87 f1=0.93 asr=0.0 | 342.07s
+[187/432] attack=label_flip defense=multi_krum partition=pathological seed=42
+    -> OK | acc=53.72 f1=0.49 asr=0.0 | 340.34s
+[188/432] attack=label_flip defense=multi_krum partition=pathological seed=43
+    -> OK | acc=51.53 f1=0.4 asr=0.0 | 280.47s
+[189/432] attack=label_flip defense=multi_krum partition=pathological seed=44
+    -> OK | acc=68.73 f1=0.79 asr=0.0 | 474.45s
+[190/432] attack=label_flip defense=flame partition=iid seed=42
+    -> OK | acc=92.28 f1=0.94 asr=0.0 | 425.52s
+[191/432] attack=label_flip defense=flame partition=iid seed=43
+    -> OK | acc=92.29 f1=0.94 asr=0.0 | 428.23s
+[192/432] attack=label_flip defense=flame partition=iid seed=44
+    -> OK | acc=92.25 f1=0.94 asr=0.0 | 417.8s
+[193/432] attack=label_flip defense=flame partition=dirichlet seed=42
+    -> OK | acc=90.63 f1=0.93 asr=0.0 | 429.32s
+[194/432] attack=label_flip defense=flame partition=dirichlet seed=43
+    -> OK | acc=91.42 f1=0.93 asr=0.0 | 442.27s
+[195/432] attack=label_flip defense=flame partition=dirichlet seed=44
+    -> OK | acc=90.86 f1=0.93 asr=0.0 | 393.74s
+[196/432] attack=label_flip defense=flame partition=pathological seed=42
+    -> OK | acc=89.29 f1=0.92 asr=0.0 | 443.51s
+[197/432] attack=label_flip defense=flame partition=pathological seed=43
+    -> OK | acc=81.46 f1=0.83 asr=0.0 | 426.36s
+[198/432] attack=label_flip defense=flame partition=pathological seed=44
+    -> OK | acc=82.01 f1=0.84 asr=0.0 | 261.58s
+[199/432] attack=label_flip defense=adaptive_clipping partition=iid seed=42
+    -> OK | acc=92.12 f1=0.94 asr=0.0 | 559.52s
+[200/432] attack=label_flip defense=adaptive_clipping partition=iid seed=43
+    -> OK | acc=92.28 f1=0.94 asr=0.0 | 407.54s
+[201/432] attack=label_flip defense=adaptive_clipping partition=iid seed=44
+    -> OK | acc=91.9 f1=0.94 asr=0.0 | 431.6s
+[202/432] attack=label_flip defense=adaptive_clipping partition=dirichlet seed=42
+    -> OK | acc=90.72 f1=0.93 asr=0.0 | 425.65s
+[203/432] attack=label_flip defense=adaptive_clipping partition=dirichlet seed=43
+    -> OK | acc=91.43 f1=0.93 asr=0.0 | 429.09s
+[204/432] attack=label_flip defense=adaptive_clipping partition=dirichlet seed=44
+    -> OK | acc=90.78 f1=0.93 asr=0.0 | 425.1s
+[205/432] attack=label_flip defense=adaptive_clipping partition=pathological seed=42
+    -> OK | acc=90.71 f1=0.93 asr=0.0 | 428.7s
+[206/432] attack=label_flip defense=adaptive_clipping partition=pathological seed=43
+    -> OK | acc=89.67 f1=0.92 asr=0.0 | 419.06s
+[207/432] attack=label_flip defense=adaptive_clipping partition=pathological seed=44
+    -> OK | acc=90.55 f1=0.93 asr=0.0 | 427.5s
+[208/432] attack=label_flip defense=sentinel partition=iid seed=42
+    -> OK | acc=91.92 f1=0.94 asr=0.0 | 373.3s
+[209/432] attack=label_flip defense=sentinel partition=iid seed=43
+    -> OK | acc=92.12 f1=0.94 asr=0.0 | 440.23s
+[210/432] attack=label_flip defense=sentinel partition=iid seed=44
+    -> OK | acc=92.12 f1=0.94 asr=0.0 | 411.82s
+[211/432] attack=label_flip defense=sentinel partition=dirichlet seed=42
+    -> OK | acc=89.43 f1=0.92 asr=0.0 | 441.85s
+[212/432] attack=label_flip defense=sentinel partition=dirichlet seed=43
+    -> OK | acc=89.76 f1=0.93 asr=0.0 | 346.41s
+[213/432] attack=label_flip defense=sentinel partition=dirichlet seed=44
+    -> OK | acc=89.63 f1=0.92 asr=0.0 | 374.6s
+[214/432] attack=label_flip defense=sentinel partition=pathological seed=42
+    -> OK | acc=90.63 f1=0.93 asr=0.0 | 305.83s
+[215/432] attack=label_flip defense=sentinel partition=pathological seed=43
+    -> OK | acc=91.84 f1=0.94 asr=0.0 | 288.44s
+[216/432] attack=label_flip defense=sentinel partition=pathological seed=44
+    -> OK | acc=84.98 f1=0.87 asr=0.0 | 309.84s
+[217/432] attack=model_replacement defense=avg partition=iid seed=42
+    -> OK | acc=63.91 f1=0.78 asr=0.0 | 285.61s
+[218/432] attack=model_replacement defense=avg partition=iid seed=43
+    -> OK | acc=36.09 f1=0.0 asr=100.0 | 425.54s
+[219/432] attack=model_replacement defense=avg partition=iid seed=44
+    -> OK | acc=36.09 f1=0.0 asr=100.0 | 430.05s
+[220/432] attack=model_replacement defense=avg partition=dirichlet seed=42
+    -> OK | acc=36.09 f1=0.0 asr=100.0 | 379.16s
+[221/432] attack=model_replacement defense=avg partition=dirichlet seed=43
+    -> OK | acc=63.91 f1=0.78 asr=0.0 | 442.34s
+[222/432] attack=model_replacement defense=avg partition=dirichlet seed=44
+    -> OK | acc=36.09 f1=0.0 asr=100.0 | 415.62s
+[223/432] attack=model_replacement defense=avg partition=pathological seed=42
+    -> OK | acc=63.91 f1=0.78 asr=0.0 | 502.31s
+[224/432] attack=model_replacement defense=avg partition=pathological seed=43
+    -> OK | acc=63.91 f1=0.78 asr=0.0 | 500.66s
+[225/432] attack=model_replacement defense=avg partition=pathological seed=44
+    -> OK | acc=65.37 f1=0.79 asr=0.0 | 498.89s
+[226/432] attack=model_replacement defense=median partition=iid seed=42
+    -> OK | acc=92.8 f1=0.94 asr=99.96 | 501.18s
+[227/432] attack=model_replacement defense=median partition=iid seed=43
+    -> OK | acc=92.95 f1=0.94 asr=99.98 | 500.94s
+[228/432] attack=model_replacement defense=median partition=iid seed=44
+    -> OK | acc=92.75 f1=0.94 asr=100.0 | 504.31s
+[229/432] attack=model_replacement defense=median partition=dirichlet seed=42
+    -> OK | acc=92.65 f1=0.94 asr=99.99 | 496.03s
+[230/432] attack=model_replacement defense=median partition=dirichlet seed=43
+    -> OK | acc=92.79 f1=0.94 asr=99.99 | 489.65s
+[231/432] attack=model_replacement defense=median partition=dirichlet seed=44
+    -> OK | acc=92.68 f1=0.94 asr=100.0 | 477.75s
+[232/432] attack=model_replacement defense=median partition=pathological seed=42
+    -> OK | acc=89.17 f1=0.91 asr=81.4 | 451.39s
+[233/432] attack=model_replacement defense=median partition=pathological seed=43
+    -> OK | acc=89.83 f1=0.91 asr=81.88 | 489.54s
+[234/432] attack=model_replacement defense=median partition=pathological seed=44
+    -> OK | acc=90.56 f1=0.92 asr=87.61 | 494.89s
+[235/432] attack=model_replacement defense=trimmed_mean partition=iid seed=42
+    -> OK | acc=93.07 f1=0.94 asr=99.98 | 497.8s
+[236/432] attack=model_replacement defense=trimmed_mean partition=iid seed=43
+    -> OK | acc=93.08 f1=0.94 asr=99.99 | 458.81s
+[237/432] attack=model_replacement defense=trimmed_mean partition=iid seed=44
+    -> OK | acc=93.36 f1=0.95 asr=100.0 | 478.0s
+[238/432] attack=model_replacement defense=trimmed_mean partition=dirichlet seed=42
+    -> OK | acc=92.82 f1=0.94 asr=100.0 | 500.05s
+[239/432] attack=model_replacement defense=trimmed_mean partition=dirichlet seed=43
+    -> OK | acc=92.89 f1=0.94 asr=100.0 | 516.16s
+[240/432] attack=model_replacement defense=trimmed_mean partition=dirichlet seed=44
+    -> OK | acc=92.85 f1=0.94 asr=100.0 | 501.4s
+[241/432] attack=model_replacement defense=trimmed_mean partition=pathological seed=42
+    -> OK | acc=92.26 f1=0.94 asr=100.0 | 494.67s
+[242/432] attack=model_replacement defense=trimmed_mean partition=pathological seed=43
+    -> OK | acc=91.5 f1=0.93 asr=100.0 | 496.84s
+[243/432] attack=model_replacement defense=trimmed_mean partition=pathological seed=44
+    -> OK | acc=92.6 f1=0.94 asr=100.0 | 491.51s
+[244/432] attack=model_replacement defense=krum partition=iid seed=42
+    -> OK | acc=92.43 f1=0.94 asr=0.01 | 498.45s
+[245/432] attack=model_replacement defense=krum partition=iid seed=43
+    -> OK | acc=93.17 f1=0.95 asr=0.16 | 504.4s
+[246/432] attack=model_replacement defense=krum partition=iid seed=44
