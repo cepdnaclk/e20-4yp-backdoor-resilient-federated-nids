@@ -1,7 +1,7 @@
 import torch
 from sklearn.metrics import f1_score
 from .aggregation import fed_avg, fed_median, fed_trimmed_mean, fed_krum, fed_multi_krum, fed_adaptive_clipping, sentinel_aggregate
-from src.server.clustering import flame_clustering, sentinel_filtering
+from src.server.clustering import flame_clustering, sentinel_filtering, sentinel_v2_filtering
 
 class Server:
     def __init__(self, config, global_model, test_loader, device='cpu', defense='avg', expected_malicious=0, num_classes=10):
@@ -87,6 +87,25 @@ class Server:
             # 1. SYBIL-AWARE FILTERING (remove top expected_malicious clients)
             sensitivity = self.config.server.get('sentinel_sensitivity', 1.5)
             filtered_weights = sentinel_filtering(
+                weights_list,
+                self.global_model.state_dict(),
+                sensitivity=sensitivity,
+                expected_malicious=self.expected_malicious
+            )
+
+            # 2. ROBUST AGGREGATION: trimmed median + DP noise
+            privacy_cfg = self.config.server.get('privacy', None)
+            new_weights = sentinel_aggregate(
+                filtered_weights,
+                self.global_model.state_dict(),
+                privacy_cfg=privacy_cfg,
+                expected_malicious=self.expected_malicious
+            )
+
+        elif self.defense == "sentinel_v2":
+            # 1. SYBIL-AWARE FILTERING + TWO-SIDED NORM AND SPARSITY
+            sensitivity = self.config.server.get('sentinel_sensitivity', 1.5)
+            filtered_weights = sentinel_v2_filtering(
                 weights_list,
                 self.global_model.state_dict(),
                 sensitivity=sensitivity,

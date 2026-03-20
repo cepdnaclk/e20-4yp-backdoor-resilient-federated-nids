@@ -2,6 +2,7 @@ defaults:
   - _self_
 
 simulation:
+
   rounds: 100 
   n_clients: 10
   fraction: 1.0
@@ -22,8 +23,10 @@ client:
   early_stopping_patience: 3  # Keep for safety, but unlikely to trigger with 5 epochs
 
 server:
-  defense: "flame"   # "avg", "median", "trimmed_mean", "krum", "multi_krum", "flame","sentinel"
-  expected_malicious: 3  # Defender's ESTIMATE of malicious clients (safety condition n>2f+2) (used by "krum")
+
+  defense: "flame"   # "avg", "median", "trimmed_mean", "krum", "multi_krum", "flame","sentinel", "sentinel_v2"
+  expected_malicious: 4  # Defender's ESTIMATE of malicious clients (safety condition n>2f+2) (used by "krum")
+
   # FLAME: Differential Privacy noise parameters (required for DP guarantee — Theorem 1)
   privacy:
     epsilon: 300.0   # Privacy budget. Higher = less noise, less privacy.
@@ -50,8 +53,9 @@ attack:
   stealth: false           # Enable stealth mode (Krum bypass)
   target_norm_bound: 3    # L2 norm "speed limit" for stealth scaling
   estimated_n_clients: 10  # Model replacement scale factor — MUST match simulation.n_clients (used oly for Model replacement attacks)
-  flame_evasion: true       # Evasion technique from PFedBA (gradient alignment)
+  flame_evasion: false       # Evasion technique from PFedBA (gradient alignment)
   flame_evasion_lambda: 5.0 # Penalty scaling for evasion
 
   # How many attackers?
-  num_malicious_clients: 1  # Example: 10% of the network (4 out of 40) (used by attacker)
+  num_malicious_clients: 4  # Example: 10% of the network (4 out of 40) (used by attacker)
+
