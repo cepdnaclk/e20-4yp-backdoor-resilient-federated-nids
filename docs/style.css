@@ -136,6 +136,11 @@ tr { border-left: 3px solid transparent; }
 /* ── FOOTER ── */
 footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: .82rem; color: var(--text); }
 
+/* ── LINK CARDS ── */
+a.card { color: var(--text); }
+a.card h3 { color: var(--text-h); }
+a.card p { color: var(--text); }
+
 /* ── RESPONSIVE ── */
 @media(max-width:768px) {
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
