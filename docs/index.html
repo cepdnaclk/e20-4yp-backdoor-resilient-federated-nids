@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backdoor-Resilient Federated Learning for NIDS</title>
+  <meta name="description" content="SENTINEL — a novel backdoor-resilient federated aggregation algorithm for Network Intrusion Detection Systems. Research by Group 08, University of Peradeniya." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span>🛡️</span>
+      <span><span style="color:var(--blue)">Federated</span> NIDS</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#related-works">Related Works</a></li>
+      <li><a href="#methodology">Methodology</a></li>
+      <li><a href="#experiments">Experiments</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#links">Links</a></li>
+    </ul>
+    <a href="https://github.com/cepdnaclk/e20-4yp-backdoor-resilient-federated-nids" target="_blank" class="nav-github">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+    <button class="burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span class="hero-tag-dot"></span>
+      Final Year Research Project · Group 08 · University of Peradeniya
+    </div>
+    <h1 class="hero-title">
+      Backdoor-Resilient
+      <span class="grad"> Federated Learning</span><br>
+      for <span class="accent">Network Intrusion Detection</span>
+    </h1>
+    <p class="hero-subtitle">
+      Building a federated NIDS that withstands sophisticated backdoor attacks in
+      Non-IID, privacy-constrained network environments — introducing
+      <strong style="color:var(--text-h)">SENTINEL</strong>, a novel defense
+      combining multi-signal anomaly filtering with coordinate-wise trimmed median aggregation.
+    </p>
+    <div class="hero-badges">
+      <span class="badge badge-blue">🔬 Federated Learning</span>
+      <span class="badge badge-purple">🛡️ SENTINEL Defense</span>
+      <span class="badge badge-teal">📡 NIDS</span>
+      <span class="badge badge-blue">📊 UNSW-NB15</span>
+      <span class="badge badge-purple">⚡ Non-IID</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#abstract" class="btn btn-primary">Read the Research ↓</a>
+      <a href="https://github.com/cepdnaclk/e20-4yp-backdoor-resilient-federated-nids" target="_blank" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABSTRACT ═══════════════════════════════════════════════════════ -->
+<section class="section" id="abstract">
+  <div class="container">
+    <div class="section-label">01</div>
+    <h2 class="section-title"><span>Abstract</span></h2>
+    <div class="section-divider"></div>
+    <div class="grid-2 abstract-grid">
+      <div>
+        <p style="margin-bottom:20px;font-size:1rem;line-height:1.85">
+          Network Intrusion Detection Systems (NIDS) are a critical line of defence against cyberattacks.
+          Federated Learning (FL) enables collaborative model training across distributed organisations
+          without sharing raw network traffic — making it an attractive paradigm for privacy-preserving NIDS.
+        </p>
+        <p style="margin-bottom:20px;font-size:1rem;line-height:1.85">
+          However, FL is inherently vulnerable to <strong style="color:var(--text-h)">backdoor attacks</strong>,
+          where malicious clients poison the global model to misclassify specific traffic patterns as benign.
+          Our experiments demonstrate that a model achieving <strong style="color:var(--amber)">93% main task accuracy</strong>
+          can simultaneously suffer a devastating <strong style="color:var(--red)">99.95% Attack Success Rate (ASR)</strong>,
+          proving that accuracy alone is a dangerously insufficient security metric.
+        </p>
+        <p style="font-size:1rem;line-height:1.85">
+          This research investigates how sophisticated backdoor attacks evolve to evade state-of-the-art defences
+          (FLAME, Multi-Krum) and proposes <strong style="color:var(--blue)">SENTINEL</strong> — a novel
+          backdoor-resilient aggregation algorithm combining multi-signal anomaly filtering (L2 norm + Sybil similarity)
+          with coordinate-wise trimmed median aggregation and optional Differential Privacy.
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="card" style="padding:16px 20px;display:flex;gap:16px;align-items:center">
+          <div style="min-width:60px;height:60px;border-radius:10px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:800;color:var(--red);font-family:'Space Grotesk',sans-serif;text-align:center">95.2%</div>
+          <div><div style="font-size:.82rem;font-weight:600;color:var(--text-h);margin-bottom:3px">Attack Success Rate (FedAvg, IID)</div><div style="font-size:.78rem;color:#5a6a8a">without any defense</div></div>
+        </div>
+        <div class="card" style="padding:16px 20px;display:flex;gap:16px;align-items:center">
+          <div style="min-width:60px;height:60px;border-radius:10px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:800;color:var(--green);font-family:'Space Grotesk',sans-serif;text-align:center">≈ 0%</div>
+          <div><div style="font-size:.82rem;font-weight:600;color:var(--text-h);margin-bottom:3px">SENTINEL ASR (IID scenario)</div><div style="font-size:.78rem;color:#5a6a8a">under stealthy backdoor attack</div></div>
+        </div>
+        <div class="card" style="padding:16px 20px;display:flex;gap:16px;align-items:center">
+          <div style="min-width:60px;height:60px;border-radius:10px;background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.25);display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:800;color:var(--blue);font-family:'Space Grotesk',sans-serif;text-align:center">10.5%</div>
+          <div><div style="font-size:.82rem;font-weight:600;color:var(--text-h);margin-bottom:3px">SENTINEL ASR (Non-IID, α=0.5)</div><div style="font-size:.78rem;color:#5a6a8a">vs 99.5% for FedAvg</div></div>
+        </div>
+        <div class="card" style="padding:16px 20px;display:flex;gap:16px;align-items:center">
+          <div style="min-width:60px;height:60px;border-radius:10px;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.25);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800;color:var(--teal);font-family:'Space Grotesk',sans-serif;text-align:center;line-height:1.2">UNSW-NB15</div>
+          <div><div style="font-size:.82rem;font-weight:600;color:var(--text-h);margin-bottom:3px">Dataset</div><div style="font-size:.78rem;color:#5a6a8a">3 Dirichlet distributions (α = 100, 0.5, 0.1)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RELATED WORKS ══════════════════════════════════════════════════ -->
+<section class="section" id="related-works">
+  <div class="container">
+    <div class="section-label">02</div>
+    <h2 class="section-title">Related <span>Works</span></h2>
+    <div class="section-divider"></div>
+    <div class="grid-2">
+      <div class="card">
+        <div style="width:44px;height:44px;border-radius:10px;background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px">🌐</div>
+        <h3 style="margin-bottom:12px">Federated Learning for NIDS</h3>
+        <p style="font-size:.9rem;line-height:1.75">Federated Learning enables collaborative model training across distributed organisations without sharing raw network traffic data, preserving privacy while building powerful intrusion detection models. FL requires continuous training with distributed data from heterogeneous network environments.</p>
+      </div>
+      <div class="card">
+        <div style="width:44px;height:44px;border-radius:10px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px">☠️</div>
+        <h3 style="margin-bottom:12px">Backdoor Attacks in FL</h3>
+        <p style="font-size:.9rem;line-height:1.75">In a backdoor attack, malicious clients inject poisoned model updates into the federated aggregation process. A carefully crafted "trigger" in network traffic causes the global model to misclassify targeted malicious traffic as benign — while maintaining normal accuracy on clean samples. "Trust becomes the vulnerability."</p>
+      </div>
+      <div class="card">
+        <div style="width:44px;height:44px;border-radius:10px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px">🧠</div>
+        <h3 style="margin-bottom:12px">Byzantine-Robust Aggregation</h3>
+        <p style="font-size:.9rem;line-height:1.75">Existing defences include FedAvg (no defence), Median, Trimmed Mean, Krum, Multi-Krum, and FLAME. Our evaluation shows all existing SOTA methods fail against the sophisticated PFedBA attacker — with FLAME reaching up to 100% ASR in Non-IID settings.</p>
+      </div>
+      <div class="card">
+        <div style="width:44px;height:44px;border-radius:10px;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px">📡</div>
+        <h3 style="margin-bottom:12px">Non-IID Network Environments</h3>
+        <p style="font-size:.9rem;line-height:1.75">Real-world federated NIDS deployments face heterogeneous (Non-IID) data distributions across clients. We model this using Dirichlet distributions (α = 100 for IID, α = 0.5 and α = 0.1 for increasing heterogeneity), reflecting realistic scenarios where different organisations see different traffic patterns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ METHODOLOGY ════════════════════════════════════════════════════ -->
+<section class="section" id="methodology">
+  <div class="container">
+    <div class="section-label">03</div>
+    <h2 class="section-title"><span>Methodology</span></h2>
+    <div class="section-divider"></div>
+
+    <!-- SENTINEL -->
+    <div class="sentinel-block" style="margin-bottom:56px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+        <span style="font-size:1.8rem">🛡️</span>
+        <div>
+          <div style="font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:4px">Our Proposed Defense</div>
+          <h3 style="font-size:1.4rem;color:var(--text-h)">SENTINEL</h3>
+        </div>
+      </div>
+      <p style="font-size:.9rem;margin-bottom:28px;max-width:700px">
+        A backdoor-resilient federated aggregation algorithm that fuses multiple anomaly detection signals
+        to identify and filter malicious clients before performing robust coordinate-wise trimmed median aggregation.
+      </p>
+      <div class="sentinel-steps">
+        <div class="sentinel-step">
+          <div class="step-line"></div>
+          <div class="step-num">1</div>
+          <div class="step-content"><div class="step-title">Extract Client Deltas</div><p style="font-size:.85rem;line-height:1.65">Compute per-client model weight deltas (update − global model).</p></div>
+        </div>
+        <div class="sentinel-step">
+          <div class="step-line"></div>
+          <div class="step-num">2</div>
+          <div class="step-content"><div class="step-title">Compute Anomaly Signals</div><p style="font-size:.85rem;line-height:1.65">Calculate L2 norm anomaly score and Sybil similarity score (cosine similarity between clients). Normalize using Median Absolute Deviation (MAD).</p></div>
+        </div>
+        <div class="sentinel-step">
+          <div class="step-line"></div>
+          <div class="step-num">3</div>
+          <div class="step-content"><div class="step-title">Fuse &amp; Filter</div><p style="font-size:.85rem;line-height:1.65">Combine signals into a unified anomaly score. Sort clients, reject outliers using IQR threshold. Ensure minimum benign clients remain.</p></div>
+        </div>
+        <div class="sentinel-step">
+          <div class="step-line"></div>
+          <div class="step-num">4</div>
+          <div class="step-content"><div class="step-title">Trimmed Median Aggregation</div><p style="font-size:.85rem;line-height:1.65">Stack deltas per coordinate, sort and trim top/bottom f values, compute coordinate-wise trimmed median, update global model.</p></div>
+        </div>
+        <div class="sentinel-step">
+          <div class="step-num teal">5</div>
+          <div class="step-content"><div class="step-title">Differential Privacy (Optional)</div><p style="font-size:.85rem;line-height:1.65">Add calibrated Gaussian noise to the aggregated update to provide formal privacy guarantees.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flowchart -->
+    <div class="flowchart-wrap" style="margin-bottom:56px">
+      <div class="flowchart-label">System Overview — Methodology Flowchart</div>
+      <img src="team/methodology.png" alt="Methodology Flowchart" onerror="this.parentElement.style.display='none'"/>
+    </div>
+
+    <!-- Attack Evolution -->
+    <h3 style="margin-bottom:8px;color:var(--text-h)">Attack Evolution</h3>
+    <p style="margin-bottom:28px;font-size:.9rem">We study three generations of backdoor attacks — each designed to evade the defences that defeated the previous generation.</p>
+    <div class="grid-3">
+      <div class="card" style="border-top:3px solid var(--red)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+          <span class="badge" style="background:rgba(239,68,68,0.1);color:var(--red);border:1px solid rgba(239,68,68,0.2);font-size:.72rem">Brute-Force</span>
+          <span style="font-size:1.5rem">💥</span>
+        </div>
+        <h3 style="font-size:.95rem;margin-bottom:10px">Model Poisoning &amp; Replacement</h3>
+        <p style="font-size:.85rem;line-height:1.7">Train a backdoored model locally, compute the model update, and scale it with a large factor (λ) to replace the global model in a single round. Easily detected by large update norms.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--amber)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+          <span class="badge" style="background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.2);font-size:.72rem">Phase 2 — Stealth</span>
+          <span style="font-size:1.5rem">🥷</span>
+        </div>
+        <h3 style="font-size:.95rem;margin-bottom:10px">Geometric Camouflage</h3>
+        <p style="font-size:.85rem;line-height:1.7">"Ninja logic" — the attacker measures the magnitude of honest updates and caps the malicious update norm at the median of honest clients using L2 projection. Bypasses norm-based filters while maintaining high ASR.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--purple)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+          <span class="badge" style="background:rgba(124,58,237,0.1);color:var(--purple);border:1px solid rgba(124,58,237,0.2);font-size:.72rem">Phase 3 — PFedBA</span>
+          <span style="font-size:1.5rem">👾</span>
+        </div>
+        <h3 style="font-size:.95rem;margin-bottom:10px">Proxy Federated Backdoor Attack</h3>
+        <p style="font-size:.85rem;line-height:1.7">The most sophisticated threat model. Uses Shadow Training to simulate clean update directions, then applies a Gradient Alignment Penalty in the loss function — forcing malicious updates to mimic benign ones. Bypasses FLAME (SOTA).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERIMENTS ════════════════════════════════════════════════════ -->
+<section class="section" id="experiments">
+  <div class="container">
+    <div class="section-label">04</div>
+    <h2 class="section-title">Experiment Setup &amp; <span>Implementation</span></h2>
+    <div class="section-divider"></div>
+    <div class="grid-2" style="margin-bottom:48px">
+      <div class="card" style="border-left:3px solid var(--blue)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="font-size:1.4rem">📊</span><h3 style="font-size:.95rem">Dataset: UNSW-NB15</h3></div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--blue);font-size:.65rem;padding-top:5px">◆</span>Network intrusion benchmark dataset</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--blue);font-size:.65rem;padding-top:5px">◆</span>Binary classification: Normal vs. Attack</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--blue);font-size:.65rem;padding-top:5px">◆</span>Feature set: 71 input features</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--blue);font-size:.65rem;padding-top:5px">◆</span>Partitioned across 10 federated clients</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left:3px solid var(--teal)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="font-size:1.4rem">🌐</span><h3 style="font-size:.95rem">Federated Setup</h3></div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--teal);font-size:.65rem;padding-top:5px">◆</span>10 total clients per experiment</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--teal);font-size:.65rem;padding-top:5px">◆</span>3 malicious clients (30%) — baseline</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--teal);font-size:.65rem;padding-top:5px">◆</span>4 malicious clients (40%) — stress test</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--teal);font-size:.65rem;padding-top:5px">◆</span>Round-based FedAvg coordination</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left:3px solid var(--purple)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="font-size:1.4rem">🧮</span><h3 style="font-size:.95rem">Model Architecture</h3></div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--purple);font-size:.65rem;padding-top:5px">◆</span>4-layer Fully Connected Neural Network (FCNN)</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--purple);font-size:.65rem;padding-top:5px">◆</span>71 → 128 → 64 → 32 → 2</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--purple);font-size:.65rem;padding-top:5px">◆</span>Binary cross-entropy loss</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--purple);font-size:.65rem;padding-top:5px">◆</span>Adam optimizer</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left:3px solid var(--amber)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="font-size:1.4rem">📐</span><h3 style="font-size:.95rem">Data Distributions</h3></div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--amber);font-size:.65rem;padding-top:5px">◆</span>IID: Dirichlet α = 100 (homogeneous)</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--amber);font-size:.65rem;padding-top:5px">◆</span>Non-IID moderate: α = 0.5</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--amber);font-size:.65rem;padding-top:5px">◆</span>Non-IID extreme: α = 0.1 (high imbalance)</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#8b9cbb"><span style="color:var(--amber);font-size:.65rem;padding-top:5px">◆</span>Formula: (p₁ₖ,…,pₙₖ) ~ Dir(α)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:20px;font-size:.95rem">Defences Evaluated</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 20px;border-radius:10px;background:rgba(90,106,138,0.08);border:1px solid rgba(90,106,138,0.18);min-width:100px"><span style="font-size:.95rem;font-weight:700;color:#8b9cbb;font-family:'Space Grotesk',sans-serif">FedAvg</span><span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5a6a8a">Baseline</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 20px;border-radius:10px;background:rgba(90,106,138,0.08);border:1px solid rgba(90,106,138,0.18);min-width:100px"><span style="font-size:.95rem;font-weight:700;color:#8b9cbb;font-family:'Space Grotesk',sans-serif">Median</span><span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5a6a8a">Robust Agg.</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 20px;border-radius:10px;background:rgba(90,106,138,0.08);border:1px solid rgba(90,106,138,0.18);min-width:100px"><span style="font-size:.95rem;font-weight:700;color:#8b9cbb;font-family:'Space Grotesk',sans-serif">Trimmed Mean</span><span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5a6a8a">Robust Agg.</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 20px;border-radius:10px;background:rgba(90,106,138,0.08);border:1px solid rgba(90,106,138,0.18);min-width:100px"><span style="font-size:.95rem;font-weight:700;color:#8b9cbb;font-family:'Space Grotesk',sans-serif">Krum</span><span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5a6a8a">Byzantine</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 20px;border-radius:10px;background:rgba(90,106,138,0.08);border:1px solid rgba(90,106,138,0.18);min-width:100px"><span style="font-size:.95rem;font-weight:700;color:#8b9cbb;font-family:'Space Grotesk',sans-serif">Multi-Krum</span><span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5a6a8a">Byzantine</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 20px;border-radius:10px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);min-width:100px"><span style="font-size:.95rem;font-weight:700;color:var(--amber);font-family:'Space Grotesk',sans-serif">FLAME</span><span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)">SOTA</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 20px;border-radius:10px;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.25);min-width:100px"><span style="font-size:.95rem;font-weight:700;color:var(--blue);font-family:'Space Grotesk',sans-serif">SENTINEL</span><span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)">Ours</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESULTS ════════════════════════════════════════════════════════ -->
+<section class="section" id="results">
+  <div class="container">
+    <div class="section-label">05</div>
+    <h2 class="section-title">Results &amp; <span>Analysis</span></h2>
+    <div class="section-divider"></div>
+    <div class="grid-3" style="margin-bottom:48px">
+      <div class="card" style="border-top:3px solid var(--red)">
+        <div style="font-size:1.8rem;margin-bottom:12px">🎯</div>
+        <h3 style="font-size:.95rem;margin-bottom:10px">Accuracy ≠ Security</h3>
+        <p style="font-size:.87rem;line-height:1.7">A model at 93% Main Task Accuracy still suffered 99.95% Attack Success Rate under PFedBA — shattering the assumption that accuracy implies safety.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--green)">
+        <div style="font-size:1.8rem;margin-bottom:12px">🛡️</div>
+        <h3 style="font-size:.95rem;margin-bottom:10px">SENTINEL Dominates</h3>
+        <p style="font-size:.87rem;line-height:1.7">SENTINEL reduces ASR to ≈0% in IID settings and 10.5% under Non-IID (α=0.5) — a 9× improvement over FLAME (SOTA) at 60.4%.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--amber)">
+        <div style="font-size:1.8rem;margin-bottom:12px">⚠️</div>
+        <h3 style="font-size:.95rem;margin-bottom:10px">Extreme Heterogeneity Challenge</h3>
+        <p style="font-size:.87rem;line-height:1.7">At α=0.1, even SENTINEL struggles against PFedBA (ASR ≈100%), exposing a critical open problem in highly heterogeneous FL-NIDS environments.</p>
+      </div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:32px">
+      <div style="padding:20px 28px 16px;border-bottom:1px solid var(--border)">
+        <h3 style="font-size:1rem">Attack Success Rate (ASR %) — PFedBA Attack</h3>
+        <p style="font-size:.82rem;margin-top:4px">Lower is better. All defences evaluated against the strongest threat model (PFedBA).</p>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr><th>Defense</th><th>Type</th><th>IID (α=100)</th><th>Non-IID (α=0.5)</th><th>Non-IID (α=0.1)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td style="color:var(--text-h)">FedAvg</td><td style="color:#5a6a8a">Baseline</td><td style="color:var(--red);font-weight:600">95.2%</td><td style="color:var(--red);font-weight:600">99.5%</td><td style="color:var(--red);font-weight:600">99.8%</td></tr>
+            <tr><td style="color:var(--text-h)">Krum</td><td style="color:#5a6a8a">Byzantine</td><td style="color:var(--red);font-weight:600">90.4%</td><td style="color:var(--red);font-weight:600">99.9%</td><td style="color:var(--red);font-weight:600">99.9%</td></tr>
+            <tr><td style="color:var(--text-h)">Median</td><td style="color:#5a6a8a">Robust Agg.</td><td style="color:var(--red);font-weight:600">High</td><td style="color:var(--red);font-weight:600">High</td><td style="color:var(--red);font-weight:600">High</td></tr>
+            <tr><td style="color:var(--text-h)">Trimmed Mean</td><td style="color:#5a6a8a">Robust Agg.</td><td style="color:var(--red);font-weight:600">High</td><td style="color:var(--red);font-weight:600">High</td><td style="color:var(--red);font-weight:600">High</td></tr>
+            <tr><td style="color:var(--text-h)">Multi-Krum</td><td style="color:#5a6a8a">Byzantine</td><td style="color:var(--red);font-weight:600">High</td><td style="color:var(--red);font-weight:600">High</td><td style="color:var(--red);font-weight:600">High</td></tr>
+            <tr><td style="color:var(--text-h)">FLAME</td><td style="color:#5a6a8a">SOTA</td><td style="color:var(--green);font-weight:600">7.7%</td><td style="color:var(--amber);font-weight:600">60.4%</td><td style="color:var(--red);font-weight:600">90.3%</td></tr>
+            <tr class="hl-row"><td style="color:var(--blue);font-weight:700">SENTINEL <span class="badge badge-blue" style="font-size:.65rem;margin-left:8px">Ours</span></td><td style="color:#5a6a8a">Ours</td><td style="color:var(--green);font-weight:700">≈ 0%</td><td style="color:var(--green);font-weight:700">10.5%</td><td style="color:var(--green);font-weight:700">31.7%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p style="font-size:.83rem;color:#5a6a8a;text-align:center">* All results on UNSW-NB15 dataset with 10 clients (3 malicious). Lower ASR = stronger defense.</p>
+  </div>
+</section>
+
+<!-- ══ CONCLUSION ═════════════════════════════════════════════════════ -->
+<section class="section" id="conclusion">
+  <div class="container">
+    <div class="section-label">06</div>
+    <h2 class="section-title"><span>Conclusion</span></h2>
+    <div class="section-divider"></div>
+    <p style="font-size:1rem;line-height:1.85;margin-bottom:48px;max-width:820px">
+      This research demonstrates a critical gap in federated NIDS security: existing state-of-the-art defences
+      (including FLAME) are fundamentally broken against sophisticated adaptive attackers like PFedBA. Our proposed
+      <strong style="color:var(--blue)">SENTINEL</strong> algorithm significantly outperforms all baselines in IID
+      and moderate Non-IID settings, reducing ASR from 99.5% (FedAvg) to 10.5% (Non-IID α=0.5) — while preserving
+      high main-task accuracy.
+    </p>
+    <h3 style="margin-bottom:20px;color:var(--text-h)">Key Contributions</h3>
+    <div class="grid-3" style="margin-bottom:48px">
+      <div class="card" style="border-top:3px solid var(--blue)">
+        <div style="font-size:1.8rem;margin-bottom:12px">🛡️</div>
+        <h3 style="font-size:.95rem;margin-bottom:10px">SENTINEL Defense Algorithm</h3>
+        <p style="font-size:.87rem;line-height:1.7">A novel backdoor-resilient federated aggregation algorithm combining L2 norm anomaly scoring, Sybil similarity detection, IQR-based filtering, and coordinate-wise trimmed median aggregation — with optional Differential Privacy.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--green)">
+        <div style="font-size:1.8rem;margin-bottom:12px">💡</div>
+        <h3 style="font-size:.95rem;margin-bottom:10px">Accuracy ≠ Security</h3>
+        <p style="font-size:.87rem;line-height:1.7">We formally demonstrated that a model with 93% main-task accuracy can simultaneously achieve 99.95% Attack Success Rate — proving accuracy is a dangerously insufficient metric for evaluating FL-NIDS security.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--purple)">
+        <div style="font-size:1.8rem;margin-bottom:12px">📊</div>
+        <h3 style="font-size:.95rem;margin-bottom:10px">Comprehensive FL-NIDS Benchmark</h3>
+        <p style="font-size:.87rem;line-height:1.7">A systematic evaluation of 7 aggregation strategies (FedAvg, Median, Trimmed Mean, Krum, Multi-Krum, FLAME, SENTINEL) against 3 attack generations across IID and Non-IID data distributions.</p>
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--amber)">
+      <h3 style="margin-bottom:16px;font-size:.95rem">⚠️ Limitations</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div><div style="font-size:.87rem;font-weight:600;color:var(--text-h);margin-bottom:3px">Single-Feature Triggers</div><p style="font-size:.82rem;line-height:1.6">Current experiments use a single-feature trigger; real-world attacks may use multi-feature or adaptive triggers.</p></div>
+        <div><div style="font-size:.87rem;font-weight:600;color:var(--text-h);margin-bottom:3px">Small Federation Scale</div><p style="font-size:.82rem;line-height:1.6">Tested with 10 clients. Behaviour in larger federations (100+ nodes) may differ.</p></div>
+        <div><div style="font-size:.87rem;font-weight:600;color:var(--text-h);margin-bottom:3px">Extreme Heterogeneity</div><p style="font-size:.82rem;line-height:1.6">At α=0.1, SENTINEL still struggles against PFedBA — a critical open challenge for highly Non-IID environments.</p></div>
+        <div><div style="font-size:.87rem;font-weight:600;color:var(--text-h);margin-bottom:3px">Static Trigger Design</div><p style="font-size:.82rem;line-height:1.6">The current threat model uses a static trigger pattern; adaptive trigger-based attacks remain a future challenge.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="team">
+  <div class="container">
+    <div class="section-label">07</div>
+    <h2 class="section-title"><span>Team</span></h2>
+    <div class="section-divider"></div>
+    <h3 style="margin-bottom:20px;color:var(--text-h)">Group 08 — Students</h3>
+    <div class="grid-3" style="margin-bottom:56px">
+      <div class="card" style="text-align:center;align-items:center;display:flex;flex-direction:column;gap:16px">
+        <div class="avatar" style="width:80px;height:80px"><img src="team/e20055.png" alt="De Silva H.D.S." onerror="this.style.display='none'"/></div>
+        <div><div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:4px">E/20/055</div><div style="font-size:.95rem;font-weight:600;color:var(--text-h);margin-bottom:6px">De Silva H.D.S.</div><a href="mailto:e20055@eng.pdn.ac.lk" style="font-size:.8rem;color:#5a6a8a;text-decoration:none">e20055@eng.pdn.ac.lk</a></div>
+      </div>
+      <div class="card" style="text-align:center;align-items:center;display:flex;flex-direction:column;gap:16px">
+        <div class="avatar" style="width:80px;height:80px"><img src="team/e20094.png" alt="Ekanayaka E.M.I.P." onerror="this.style.display='none'"/></div>
+        <div><div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:4px">E/20/094</div><div style="font-size:.95rem;font-weight:600;color:var(--text-h);margin-bottom:6px">Ekanayaka E.M.I.P.</div><a href="mailto:e20094@eng.pdn.ac.lk" style="font-size:.8rem;color:#5a6a8a;text-decoration:none">e20094@eng.pdn.ac.lk</a></div>
+      </div>
+      <div class="card" style="text-align:center;align-items:center;display:flex;flex-direction:column;gap:16px">
+        <div class="avatar" style="width:80px;height:80px"><img src="team/e20284.png" alt="Peiris T.M.S.U." onerror="this.style.display='none'"/></div>
+        <div><div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:4px">E/20/284</div><div style="font-size:.95rem;font-weight:600;color:var(--text-h);margin-bottom:6px">Peiris T.M.S.U.</div><a href="mailto:e20284@eng.pdn.ac.lk" style="font-size:.8rem;color:#5a6a8a;text-decoration:none">e20284@eng.pdn.ac.lk</a></div>
+      </div>
+    </div>
+    <h3 style="margin-bottom:20px;color:var(--text-h)">Supervisors</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+      <div class="card" style="display:flex;gap:20px;align-items:center;border-left:3px solid var(--teal)">
+        <div class="avatar" style="width:64px;height:64px;background:linear-gradient(135deg,var(--teal),var(--blue));flex-shrink:0"><img src="team/supervisor1.png" alt="Dr. Upul Jayasinghe Mendis" onerror="this.style.display='none'"/></div>
+        <div><div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:4px">Supervisor</div><div style="font-size:.95rem;font-weight:600;color:var(--text-h);margin-bottom:6px">Dr. Upul Jayasinghe Mendis</div><a href="mailto:upuljm@eng.pdn.ac.lk" style="font-size:.8rem;color:#5a6a8a;text-decoration:none">upuljm@eng.pdn.ac.lk</a></div>
+      </div>
+      <div class="card" style="display:flex;gap:20px;align-items:center;border-left:3px solid var(--teal)">
+        <div class="avatar" style="width:64px;height:64px;background:linear-gradient(135deg,var(--teal),var(--blue));flex-shrink:0"><img src="team/supervisor2.png" alt="Dr. Suneth Namal Karunarathna" onerror="this.style.display='none'"/></div>
+        <div><div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:4px">Supervisor</div><div style="font-size:.95rem;font-weight:600;color:var(--text-h);margin-bottom:6px">Dr. Suneth Namal Karunarathna</div><a href="mailto:namal@eng.pdn.ac.lk" style="font-size:.8rem;color:#5a6a8a;text-decoration:none">namal@eng.pdn.ac.lk</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LINKS ══════════════════════════════════════════════════════════ -->
+<section class="section" id="links">
+  <div class="container">
+    <div class="section-label">08</div>
+    <h2 class="section-title"><span>Links</span></h2>
+    <div class="section-divider"></div>
+    <div class="grid-2">
+      <a href="https://github.com/cepdnaclk/e20-4yp-backdoor-resilient-federated-nids" target="_blank" class="card" style="display:flex;gap:18px;align-items:flex-start;text-decoration:none;cursor:pointer">
+        <div style="width:48px;height:48px;border-radius:12px;background:rgba(79,142,247,0.1);border:1.5px solid rgba(79,142,247,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">📁</div>
+        <div><h3 style="font-size:.95rem;margin-bottom:6px">Project Repository</h3><p style="font-size:.85rem;margin-bottom:12px;line-height:1.5">Full source code, notebooks, and experiment scripts.</p><span style="font-size:.8rem;font-weight:600;color:var(--blue)">GitHub →</span></div>
+      </a>
+      <a href="https://cepdnaclk.github.io/e20-4yp-backdoor-resilient-federated-nids" target="_blank" class="card" style="display:flex;gap:18px;align-items:flex-start;text-decoration:none;cursor:pointer">
+        <div style="width:48px;height:48px;border-radius:12px;background:rgba(124,58,237,0.1);border:1.5px solid rgba(124,58,237,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">🌐</div>
+        <div><h3 style="font-size:.95rem;margin-bottom:6px">Project Page</h3><p style="font-size:.85rem;margin-bottom:12px;line-height:1.5">This GitHub Pages site for the research project.</p><span style="font-size:.8rem;font-weight:600;color:var(--purple)">Visit →</span></div>
+      </a>
+      <a href="http://www.ce.pdn.ac.lk/" target="_blank" class="card" style="display:flex;gap:18px;align-items:flex-start;text-decoration:none;cursor:pointer">
+        <div style="width:48px;height:48px;border-radius:12px;background:rgba(20,184,166,0.1);border:1.5px solid rgba(20,184,166,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">🏫</div>
+        <div><h3 style="font-size:.95rem;margin-bottom:6px">Department of Computer Engineering</h3><p style="font-size:.85rem;margin-bottom:12px;line-height:1.5">Faculty of Engineering, University of Peradeniya.</p><span style="font-size:.8rem;font-weight:600;color:var(--teal)">Website →</span></div>
+      </a>
+      <a href="https://eng.pdn.ac.lk/" target="_blank" class="card" style="display:flex;gap:18px;align-items:flex-start;text-decoration:none;cursor:pointer">
+        <div style="width:48px;height:48px;border-radius:12px;background:rgba(245,158,11,0.1);border:1.5px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">🎓</div>
+        <div><h3 style="font-size:.95rem;margin-bottom:6px">University of Peradeniya</h3><p style="font-size:.85rem;margin-bottom:12px;line-height:1.5">Faculty of Engineering, Peradeniya, Sri Lanka.</p><span style="font-size:.8rem;font-weight:600;color:var(--amber)">Website →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════════ -->
+<footer>
+  <p>© 2025 Group 08 — University of Peradeniya · Department of Computer Engineering</p>
+  <p style="margin-top:6px;color:#3d4f6e">Backdoor-Resilient Federated Learning for NIDS · SENTINEL Defense</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

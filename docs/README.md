@@ -35,12 +35,11 @@ title:
 
 ---
 
-<!-- 
+<!--
 DELETE THIS SAMPLE before publishing to GitHub Pages !!!
 This is a sample image, to show how to add images to your page. To learn more options, please refer [this](https://projects.ce.pdn.ac.lk/docs/faq/how-to-add-an-image/)
-![Sample Image](./images/sample.png) 
+![Sample Image](./images/sample.png)
 -->
-
 
 ## Abstract
 
@@ -55,6 +54,7 @@ This is a sample image, to show how to add images to your page. To learn more op
 ## Conclusion
 
 ## Publications
+
 [//]: # "Note: Uncomment each once you uploaded the files to the repository"
 
 <!-- 1. [Semester 7 report](./) -->
@@ -63,10 +63,9 @@ This is a sample image, to show how to add images to your page. To learn more op
 <!-- 4. [Semester 8 slides](./) -->
 <!-- 5. Author 1, Author 2 and Author 3 "Research paper title" (2021). [PDF](./). -->
 
-
 ## Links
 
-[//]: # ( NOTE: EDIT THIS LINKS WITH YOUR REPO DETAILS )
+[//]: # " NOTE: EDIT THIS LINKS WITH YOUR REPO DETAILS "
 
 - [Project Repository](https://github.com/cepdnaclk/repository-name)
 - [Project Page](https://cepdnaclk.github.io/repository-name)
