@@ -6,7 +6,7 @@ Setup instructions: [Setup Guide](docs/Project/SETUP_GUIDE.md)
 UMAP documentation: [UMAP](docs/Project/UMAP_DOCUMENTATION.md) -->
 
 
-# Backdoor-Resilient Federated Learning for NIDS - Temporary README
+# Backdoor-Resilient Federated Learning for NIDS 
 
 ## Project Overview
 This is a final year research project on **Backdoor-Resilient Federated Learning for Network Intrusion Detection Systems (NIDS)**.
@@ -150,5 +150,5 @@ Experiment tracking and logging
 - UMAP details: [UMAP Documentation](docs/Project/UMAP_DOCUMENTATION.md)
 
 ---
-*This is a temporary README for quick reference. Refer to the main README.md and documentation for complete details.*
+
 
