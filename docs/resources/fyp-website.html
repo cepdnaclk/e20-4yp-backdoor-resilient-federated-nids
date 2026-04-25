@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backdoor-Resilient Federated Learning for NIDS</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy2: #1a2d42;
+    --navy3: #243b55;
+    --blue: #1565c0;
+    --blue2: #1976d2;
+    --cyan: #00b4d8;
+    --cyan2: #48cae4;
+    --accent: #f0a500;
+    --accent2: #ffd166;
+    --danger: #e63946;
+    --success: #2dc653;
+    --text: #e8edf4;
+    --text2: #a0b0c4;
+    --text3: #667a92;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.15);
+    --card: rgba(255,255,255,0.04);
+    --card2: rgba(255,255,255,0.07);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13, 27, 42, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--cyan);
+    letter-spacing: 0.05em;
+  }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--text2);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--cyan); }
+
+  /* ─── HERO ─────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 100px 6vw 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,180,216,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,180,216,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(21,101,192,0.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-content { position: relative; max-width: 860px; }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,180,216,0.1);
+    border: 1px solid rgba(0,180,216,0.3);
+    color: var(--cyan);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  h1 span { color: var(--cyan); }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text2);
+    font-weight: 300;
+    max-width: 620px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .meta-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--text2);
+  }
+  .meta-item .icon { color: var(--cyan); font-size: 16px; }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary {
+    background: var(--cyan);
+    color: var(--navy);
+  }
+  .btn-primary:hover { background: var(--cyan2); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--border2);
+    color: var(--text);
+  }
+  .btn-outline:hover { background: var(--card2); border-color: var(--cyan); color: var(--cyan); }
+
+  /* ─── SECTIONS ─────────────────────────────────────── */
+  section { padding: 80px 6vw; }
+  section:nth-child(even) { background: rgba(255,255,255,0.015); }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+  .section-intro {
+    color: var(--text2);
+    font-size: 1rem;
+    max-width: 680px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  /* ─── TEAM ─────────────────────────────────────────── */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .team-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .team-card:hover { border-color: var(--border2); background: var(--card2); }
+  .team-avatar {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: rgba(0,180,216,0.15);
+    border: 1px solid rgba(0,180,216,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--cyan);
+    margin: 0 auto 1rem;
+  }
+  .team-name { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+  .team-role { font-size: 12px; color: var(--text3); }
+  .team-id {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; color: var(--cyan);
+    margin-top: 6px;
+  }
+
+  /* ─── OVERVIEW ─────────────────────────────────────── */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .overview-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    display: flex; align-items: center; gap: 12px;
+    transition: border-color 0.2s;
+  }
+  .overview-item:hover { border-color: rgba(0,180,216,0.3); }
+  .ov-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 22px; font-weight: 500;
+    color: var(--cyan);
+    min-width: 32px;
+  }
+  .ov-text { font-size: 13px; color: var(--text2); line-height: 1.4; }
+
+  /* ─── CONTENT CARDS ─────────────────────────────────── */
+  .content-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .content-card.highlight {
+    border-left: 3px solid var(--cyan);
+    background: rgba(0,180,216,0.04);
+  }
+  .content-card p { color: var(--text2); font-size: 0.95rem; line-height: 1.8; }
+
+  /* ─── TWO COLUMN ─────────────────────────────────────── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media(max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ─── FLOW DIAGRAM ─────────────────────────────────── */
+  .flow-diagram {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 2rem 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    justify-content: center;
+  }
+  .flow-node {
+    background: rgba(0,180,216,0.12);
+    border: 1px solid rgba(0,180,216,0.3);
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cyan2);
+    text-align: center;
+    white-space: nowrap;
+  }
+  .flow-node.red {
+    background: rgba(230,57,70,0.12);
+    border-color: rgba(230,57,70,0.3);
+    color: #ff8085;
+  }
+  .flow-node.green {
+    background: rgba(45,198,83,0.12);
+    border-color: rgba(45,198,83,0.3);
+    color: #5dde7d;
+  }
+  .flow-node.diamond {
+    background: rgba(240,165,0,0.1);
+    border-color: rgba(240,165,0,0.3);
+    color: var(--accent2);
+    transform: rotate(0deg);
+    border-radius: 4px;
+  }
+  .flow-arrow {
+    font-size: 18px;
+    color: var(--text3);
+    padding: 0 10px;
+  }
+
+  /* ─── ATTACK PHASES ─────────────────────────────────── */
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  @media(max-width: 800px) { .phase-grid { grid-template-columns: 1fr; } }
+
+  .phase-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .phase-card:hover { border-color: var(--border2); }
+  .phase-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .phase-card.p1::before { background: var(--blue2); }
+  .phase-card.p2::before { background: var(--accent); }
+  .phase-card.p3::before { background: var(--danger); }
+
+  .phase-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 0.5rem;
+  }
+  .phase-card h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+  .phase-card p { font-size: 13px; color: var(--text2); line-height: 1.7; }
+  .phase-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  .phase-card.p1 .phase-tag { background: rgba(21,101,192,0.15); color: #6bb5ff; }
+  .phase-card.p2 .phase-tag { background: rgba(240,165,0,0.15); color: var(--accent2); }
+  .phase-card.p3 .phase-tag { background: rgba(230,57,70,0.15); color: #ff8085; }
+
+  /* ─── EXPERIMENT GRID ─────────────────────────────────── */
+  .exp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .exp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .exp-card .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+  .exp-card ul { list-style: none; }
+  .exp-card li {
+    font-size: 13px;
+    color: var(--text2);
+    padding: 3px 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .exp-card li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--cyan);
+    flex-shrink: 0;
+  }
+
+  /* ─── RESULTS TABLE ─────────────────────────────────── */
+  .results-section { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--text3);
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border2);
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text2);
+    font-size: 13px;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--card); }
+  .td-best { color: var(--success); font-weight: 500; }
+  .td-bad { color: var(--danger); }
+  .td-mid { color: var(--accent); }
+  .defense-highlight td { background: rgba(0,180,216,0.05); }
+  .defense-highlight td:first-child { color: var(--cyan); font-weight: 500; }
+
+  /* ─── STAT CARDS ─────────────────────────────────────── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .stat-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-val.good { color: var(--success); }
+  .stat-val.bad { color: var(--danger); }
+  .stat-label { font-size: 12px; color: var(--text3); }
+
+  /* ─── ALGO BOX ─────────────────────────────────────── */
+  .algo-box {
+    background: rgba(13,27,42,0.8);
+    border: 1px solid rgba(0,180,216,0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    line-height: 2;
+    color: var(--text2);
+  }
+  .algo-box .kw { color: var(--cyan); }
+  .algo-box .comment { color: var(--text3); }
+  .algo-box .num { color: var(--accent2); }
+
+  /* ─── IMPACT ─────────────────────────────────────────── */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .impact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex; gap: 1rem;
+  }
+  .impact-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  /* ─── LIMITATIONS ─────────────────────────────────────── */
+  .limit-list { list-style: none; }
+  .limit-list li {
+    display: flex; gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .limit-list li:last-child { border-bottom: none; }
+  .limit-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text3);
+    min-width: 24px;
+    padding-top: 2px;
+  }
+  .limit-content h4 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+  .limit-content p { font-size: 13px; color: var(--text2); line-height: 1.6; }
+
+  /* ─── FOOTER ─────────────────────────────────────────── */
+  footer {
+    background: rgba(0,0,0,0.3);
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer .f-left {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text3);
+  }
+  footer .f-left span { color: var(--cyan); }
+
+  /* ─── DIVIDER ─────────────────────────────────────────── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+  }
+
+  /* ─── SCROLL REVEAL ─────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">FYP // GROUP-08</div>
+  <ul class="nav-links">
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#attacks">Attack Model</a></li>
+    <li><a href="#methodology">Methodology</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#impact">Impact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Final Year Project · University of Peradeniya
+    </div>
+    <h1>Backdoor-Resilient<br>Federated Learning for<br><span>Network Intrusion Detection</span></h1>
+    <p class="hero-subtitle">
+      Designing and evaluating SENTINEL — a novel defense mechanism against backdoor attacks in federated learning–based Network Intrusion Detection Systems under non-IID network environments.
+    </p>
+    <div class="meta-row">
+      <div class="meta-item"><span class="icon">◈</span> Group 08</div>
+      <div class="meta-item"><span class="icon">◈</span> Dataset: UNSW-NB15</div>
+      <div class="meta-item"><span class="icon">◈</span> Federated Learning · Security</div>
+      <div class="meta-item"><span class="icon">◈</span> University of Peradeniya, Sri Lanka</div>
+    </div>
+    <div class="hero-actions">
+      <a href="#results" class="btn btn-primary">View Results ↓</a>
+      <a href="#methodology" class="btn btn-outline">Our Method →</a>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-label">The Team</div>
+  <h2>Research Group</h2>
+  <p class="section-intro">Faculty members and student researchers from the Department of Computer Engineering, University of Peradeniya.</p>
+  <div class="team-grid reveal">
+    <div class="team-card">
+      <div class="team-avatar">SN</div>
+      <div class="team-name">Dr. Suneth Namal Karunarathna</div>
+      <div class="team-role">Supervisor</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">UJ</div>
+      <div class="team-name">Dr. Upul Jayasinghe</div>
+      <div class="team-role">Co-Supervisor</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">TP</div>
+      <div class="team-name">Peiris T.M.S.U</div>
+      <div class="team-role">Student Researcher</div>
+      <div class="team-id">E/20/284</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">IE</div>
+      <div class="team-name">Ekanayaka E.M.I.P</div>
+      <div class="team-role">Student Researcher</div>
+      <div class="team-id">E/20/094</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">HD</div>
+      <div class="team-name">De Silva H.D.S.</div>
+      <div class="team-role">Student Researcher</div>
+      <div class="team-id">E/20/055</div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section>
+  <div class="section-label">Outline</div>
+  <h2>Project Overview</h2>
+  <div class="overview-grid reveal">
+    <div class="overview-item"><div class="ov-num">01</div><div class="ov-text">Introduction &amp; Background</div></div>
+    <div class="overview-item"><div class="ov-num">02</div><div class="ov-text">Problem Statement</div></div>
+    <div class="overview-item"><div class="ov-num">03</div><div class="ov-text">Attack Evolution</div></div>
+    <div class="overview-item"><div class="ov-num">04</div><div class="ov-text">Experiment Setup</div></div>
+    <div class="overview-item"><div class="ov-num">05</div><div class="ov-text">Methodology</div></div>
+    <div class="overview-item"><div class="ov-num">06</div><div class="ov-text">Results &amp; Analysis</div></div>
+    <div class="overview-item"><div class="ov-num">07</div><div class="ov-text">Impact &amp; Limitations</div></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="section-label">01 · Introduction</div>
+  <h2>Background</h2>
+
+  <div class="two-col reveal">
+    <div>
+      <div class="content-card highlight">
+        <h3>What is a NIDS?</h3>
+        <p>A Network Intrusion Detection System (NIDS) monitors incoming network traffic and classifies it as benign or malicious. When malicious traffic is detected, the system takes action; otherwise, it allows access.</p>
+      </div>
+      <div class="flow-diagram">
+        <div class="flow-node">Incoming Traffic</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">IDS Model</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node diamond">Prediction</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node red">Take Action</div>
+      </div>
+      <div style="text-align:center; margin-top: -0.5rem; font-size: 12px; color: var(--text3);">Benign → Allow Access &nbsp;|&nbsp; Malicious → Take Action</div>
+    </div>
+    <div>
+      <div class="content-card">
+        <h3>Why Federated Learning for IDS?</h3>
+        <p style="margin-bottom:1rem;">Traditional IDS approaches require centralized data sharing, which organizations cannot do due to privacy constraints. Federated Learning (FL) addresses this by allowing collaborative model training without sharing raw data.</p>
+        <ul style="list-style:none; color: var(--text2); font-size: 0.9rem; line-height: 2;">
+          <li>✦ Organizations cannot share raw traffic due to privacy regulations</li>
+          <li>✦ FL allows collaborative model training without sharing data</li>
+          <li>✦ Requires continuous training with distributed network data</li>
+        </ul>
+      </div>
+      <div class="content-card" style="margin-top:1rem; border-left: 3px solid var(--danger); background: rgba(230,57,70,0.03);">
+        <h3>The Vulnerability</h3>
+        <p><strong style="color: var(--text);">Trust becomes the vulnerability.</strong> When participants in federated learning are malicious, they can inject backdoors into the global model without being detected — compromising the entire IDS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM STATEMENT -->
+<section>
+  <div class="section-label">02 · Problem Statement</div>
+  <h2>Research Challenge</h2>
+  <div class="content-card highlight reveal" style="text-align: center; padding: 3rem 2rem;">
+    <p style="font-family: 'Syne', sans-serif; font-size: clamp(1.1rem, 2.5vw, 1.6rem); font-weight: 600; color: var(--text); line-height: 1.6; margin-bottom: 0;">
+      How can we build a <span style="color: var(--cyan);">Backdoor-Resilient</span><br>
+      Federated NIDS for<br>
+      <span style="color: var(--accent2);">Non-IID Network Environments</span>?
+    </p>
+  </div>
+
+  <div class="exp-grid reveal" style="margin-top: 2rem;">
+    <div class="exp-card">
+      <div class="label">OBJECTIVES</div>
+      <ul>
+        <li>Investigate backdoor attack impact in federated NIDS</li>
+        <li>Implement baseline federated aggregation</li>
+        <li>Design and evaluate defense mechanisms</li>
+        <li>Compare performance using attack success rate</li>
+        <li>Assess detection accuracy</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ATTACK PHASES -->
+<section id="attacks">
+  <div class="section-label">03 · Attack Evolution</div>
+  <h2>Threat Model Evolution</h2>
+  <p class="section-intro">The attack model evolved across three phases, from basic poisoning to sophisticated stealth attacks designed to evade defenses.</p>
+
+  <div class="phase-grid reveal">
+    <div class="phase-card p1">
+      <div class="phase-num">PHASE 01</div>
+      <h3>Model Poisoning + Replacement</h3>
+      <p>The attacker's goal is to insert a backdoor into the global model. Achieved by manipulating model updates during the federated aggregation round.</p>
+      <span class="phase-tag">Brute-Force Attack</span>
+    </div>
+    <div class="phase-card p2">
+      <div class="phase-num">PHASE 02</div>
+      <h3>Adaptive Stealth Attacker</h3>
+      <p>The attacker measures and adjusts the magnitude of their update to blend in with honest clients. Uses "Ninja" logic with L2 projection for geometric camouflage, making updates indistinguishable from benign ones.</p>
+      <span class="phase-tag">Stealth Attack</span>
+    </div>
+    <div class="phase-card p3">
+      <div class="phase-num">PHASE 03</div>
+      <h3>PfedBA — Final Threat Model</h3>
+      <p>The most sophisticated model combining personalized federated learning with backdoor injection. Designed to overcome state-of-the-art defenses including FLAME.</p>
+      <span class="phase-tag">Advanced Persistent</span>
+    </div>
+  </div>
+
+  <div class="content-card reveal" style="margin-top: 1.5rem; background: rgba(240,165,0,0.04); border-color: rgba(240,165,0,0.2);">
+    <h3>Stealth Scaling Strategy</h3>
+    <p>The adaptive attacker employs <em>geometric camouflage</em> — scaling malicious updates so their L2 norm matches honest updates. Standard attacks are "loud" (large weight amplification creates detectable outliers). The stealth approach scales the malicious update norm to match the honest update norm, enabling seamless integration into the aggregation process.</p>
+  </div>
+</section>
+
+<!-- EXPERIMENT SETUP -->
+<section id="setup">
+  <div class="section-label">04 · Experiment Setup</div>
+  <h2>Configuration</h2>
+
+  <div class="exp-grid reveal">
+    <div class="exp-card">
+      <div class="label">DATASET</div>
+      <ul>
+        <li>UNSW-NB15</li>
+        <li>Network intrusion benchmark</li>
+        <li>IID &amp; Non-IID distributions</li>
+        <li>Dirichlet distribution (α = 0.1, 0.5)</li>
+      </ul>
+    </div>
+    <div class="exp-card">
+      <div class="label">DEFENSES TESTED</div>
+      <ul>
+        <li>FedAvg (baseline)</li>
+        <li>Median</li>
+        <li>Trimmed Mean</li>
+        <li>Krum / Multi-Krum</li>
+        <li>FLAME (SOTA)</li>
+        <li>Sentinel (ours)</li>
+      </ul>
+    </div>
+    <div class="exp-card">
+      <div class="label">METRICS</div>
+      <ul>
+        <li>Accuracy</li>
+        <li>F1-score</li>
+        <li>ASR (Attack Success Rate)</li>
+      </ul>
+    </div>
+    <div class="exp-card">
+      <div class="label">CONFIGURATION</div>
+      <ul>
+        <li>10 total clients</li>
+        <li>3 malicious clients (30%)</li>
+        <li>Dirichlet α = 0.5</li>
+        <li>Backdoor attack type</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-card reveal">
+    <h3>Attack Success Rate (ASR)</h3>
+    <p>ASR measures: <em>of the samples the attacker wants to misclassify, what fraction did the model actually misclassify the way the attacker intended?</em> A lower ASR means the defense is more effective at neutralizing the backdoor.</p>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section id="methodology">
+  <div class="section-label">05 · Methodology</div>
+  <h2>SENTINEL — Our Algorithm</h2>
+  <p class="section-intro">SENTINEL is a novel federated aggregation defense designed to resist both standard and stealth backdoor attacks while preserving NIDS detection accuracy under non-IID data distributions.</p>
+
+  <div class="algo-box reveal">
+    <div><span class="kw">Algorithm</span> SENTINEL_Aggregation(client_updates, global_model):</div>
+    <div>&nbsp;&nbsp;<span class="comment">// Step 1: Compute cosine similarities between updates</span></div>
+    <div>&nbsp;&nbsp;<span class="kw">similarities</span> = compute_cosine_similarity(client_updates)</div>
+    <div>&nbsp;&nbsp;<span class="comment">// Step 2: Cluster updates by behavior</span></div>
+    <div>&nbsp;&nbsp;<span class="kw">clusters</span> = cluster_by_similarity(similarities)</div>
+    <div>&nbsp;&nbsp;<span class="comment">// Step 3: Identify and down-weight suspicious clusters</span></div>
+    <div>&nbsp;&nbsp;<span class="kw">weights</span> = assign_trust_weights(clusters, global_model)</div>
+    <div>&nbsp;&nbsp;<span class="comment">// Step 4: Weighted aggregation</span></div>
+    <div>&nbsp;&nbsp;<span class="kw">return</span> weighted_aggregate(client_updates, weights)</div>
+  </div>
+
+  <div class="two-col reveal" style="margin-top: 1.5rem;">
+    <div class="content-card highlight">
+      <h3>Key Design Insight</h3>
+      <p>SENTINEL detects that accuracy alone cannot identify backdoors. A model with 99.95% ASR can still achieve 93% overall accuracy — proving that accuracy metrics hide backdoor success. SENTINEL uses behavioral clustering to identify malicious updates before aggregation.</p>
+    </div>
+    <div class="content-card">
+      <h3>Non-IID Robustness</h3>
+      <p>Unlike many defenses that degrade under heterogeneous (non-IID) data, SENTINEL is specifically designed to handle Dirichlet-distributed data across clients, making it practical for real-world federated NIDS deployments where network traffic patterns differ across organizations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results">
+  <div class="section-label">06 · Results</div>
+  <h2>Defense Performance</h2>
+  <p class="section-intro">ASR comparison across defenses under Stealthy Backdoor + Model Replacement attack. Lower ASR is better for the defender.</p>
+
+  <div class="results-section reveal">
+    <table>
+      <thead>
+        <tr>
+          <th>Defense</th>
+          <th>IID — ASR (%)</th>
+          <th>Dirichlet α=0.5 — ASR (%)</th>
+          <th>Dirichlet α=0.1 — ASR (%)</th>
+          <th>Effectiveness</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>FedAvg</td>
+          <td class="td-bad">95.2</td>
+          <td class="td-bad">99.5</td>
+          <td class="td-bad">99.8</td>
+          <td><span style="color: var(--danger); font-size: 12px;">Baseline — No Defense</span></td>
+        </tr>
+        <tr>
+          <td>Krum</td>
+          <td class="td-mid">90.4</td>
+          <td class="td-bad">99.9</td>
+          <td class="td-bad">99.9</td>
+          <td><span style="color: var(--accent); font-size: 12px;">Partially Effective</span></td>
+        </tr>
+        <tr>
+          <td>FLAME (SOTA)</td>
+          <td class="td-mid">7.7</td>
+          <td class="td-mid">60.4</td>
+          <td class="td-bad">90.3</td>
+          <td><span style="color: var(--accent); font-size: 12px;">Fails at Non-IID</span></td>
+        </tr>
+        <tr class="defense-highlight">
+          <td>SENTINEL (Ours)</td>
+          <td class="td-best">~0%</td>
+          <td class="td-best">10.5</td>
+          <td class="td-best">31.7</td>
+          <td><span style="color: var(--success); font-size: 12px;">Best Overall</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="stat-grid reveal">
+    <div class="stat-card">
+      <div class="stat-val good">~0%</div>
+      <div class="stat-label">SENTINEL ASR under IID conditions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val good">10.5%</div>
+      <div class="stat-label">SENTINEL ASR at Dirichlet α=0.5</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val bad">90.3%</div>
+      <div class="stat-label">FLAME fails under heavy non-IID (α=0.1)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val bad">99.9%</div>
+      <div class="stat-label">FedAvg baseline ASR (undefended)</div>
+    </div>
+  </div>
+
+  <div class="content-card reveal" style="margin-top: 1.5rem; background: rgba(45,198,83,0.03); border-color: rgba(45,198,83,0.2);">
+    <h3>Key Result: Accuracy Does Not Reveal Backdoors</h3>
+    <p>A critical finding: a model can achieve 93% classification accuracy while simultaneously having 99.95% ASR. This demonstrates that standard accuracy metrics are insufficient for evaluating federated NIDS security — specialized defense mechanisms like SENTINEL are necessary.</p>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="section-label">08 · Impact</div>
+  <h2>Contributions</h2>
+
+  <div class="impact-grid reveal">
+    <div class="impact-card">
+      <div class="impact-icon">🛡</div>
+      <div>
+        <h3>Novel Defense Algorithm</h3>
+        <p style="font-size: 13px; color: var(--text2); line-height: 1.7;">SENTINEL: a backdoor-resilient defense for federated learning–based NIDS that outperforms all existing aggregation algorithms under both IID and non-IID conditions.</p>
+      </div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">⚡</div>
+      <div>
+        <h3>Accuracy Deception Exposed</h3>
+        <p style="font-size: 13px; color: var(--text2); line-height: 1.7;">Demonstrated that accuracy alone cannot detect backdoors — 99.95% ASR at 93% accuracy proves that standard metrics miss backdoor success entirely.</p>
+      </div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">📊</div>
+      <div>
+        <h3>Comprehensive Benchmark</h3>
+        <p style="font-size: 13px; color: var(--text2); line-height: 1.7;">Evaluated FedAvg, Median, Trimmed Mean, Krum, Multi-Krum, and FLAME aggregation algorithms on the FL-NIDS domain with UNSW-NB15.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIMITATIONS -->
+<section>
+  <div class="section-label">07 · Limitations</div>
+  <h2>Current Limitations</h2>
+  <p class="section-intro">Transparency about the boundaries of our research — areas for future work and improvement.</p>
+
+  <ul class="limit-list reveal">
+    <li>
+      <div class="limit-num">01</div>
+      <div class="limit-content">
+        <h4>Single-Feature Trigger</h4>
+        <p>Our experiments used a single-feature trigger (feature[0] = 5.0). Real-world attacks typically employ multi-feature triggers, which may behave differently against SENTINEL's clustering approach.</p>
+      </div>
+    </li>
+    <li>
+      <div class="limit-num">02</div>
+      <div class="limit-content">
+        <h4>Limited Federation Scale</h4>
+        <p>Tested with only 10 clients. Larger federations with 100+ participants may exhibit significantly different dynamics, and SENTINEL's performance at scale remains unexplored.</p>
+      </div>
+    </li>
+    <li>
+      <div class="limit-num">03</div>
+      <div class="limit-content">
+        <h4>Static Trigger Design</h4>
+        <p>In practice, adversaries may use dynamic or adaptive triggers that change across rounds. SENTINEL was designed against static triggers and may need extension for adaptive adversaries.</p>
+      </div>
+    </li>
+    <li>
+      <div class="limit-num">04</div>
+      <div class="limit-content">
+        <h4>PfedBA Vulnerability</h4>
+        <p>Under the most advanced PfedBA attack with 40% malicious clients, SENTINEL shows reduced robustness. The personalized federated approach of PfedBA represents a harder challenge requiring further investigation.</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-left">
+    <div>Backdoor-Resilient Federated NIDS · <span>Group 08</span></div>
+    <div style="margin-top: 4px;">University of Peradeniya · Department of Computer Engineering</div>
+  </div>
+  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text3);">
+    UNSW-NB15 · Federated Learning · Network Security
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
